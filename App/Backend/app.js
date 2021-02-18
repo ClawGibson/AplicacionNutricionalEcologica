@@ -4,13 +4,12 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 
-const dbname = 'AppNutricionalEcologica';
-
 require('dotenv/config')
 const {
     API_URL,
     PORT,
-    MONGODB
+    MONGODB,
+    DBNAME
 } = process.env
 
 // middlewares
@@ -23,10 +22,10 @@ mongoose
     .connect(MONGODB, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        dbName: dbname
+        dbName: DBNAME
     })
     .then(() => {
-        console.log(`Succefully connected to database ${dbname}`)
+        console.log(`Succefully connected to database ${DBNAME}`)
     })
     .catch(err => {
         console.log(err)
