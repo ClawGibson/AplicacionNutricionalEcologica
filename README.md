@@ -63,7 +63,7 @@ Contributions are what make the open source community such an amazing place to b
 
 Gamaliel Bernal - [Gamaliel Joaquín](https://www.facebook.com/JakousiClaw/) - gamalielbj@gmail.com
 
-Project Link: [https://github.com/ClawGibson/Aplicaci-nNutricionalEcol-gica](https://github.com/ClawGibson/Aplicaci-nNutricionalEcol-gica)
+Project Link: Pending
 
 
 
