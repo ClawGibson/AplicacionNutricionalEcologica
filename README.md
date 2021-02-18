@@ -22,6 +22,7 @@
 * [NodeJs](https://nodejs.org/en/)
 * [ExpressJs](https://expressjs.com/)
 * [ExpoCLI](https://docs.expo.io/)
+* [Mongoose](https://www.npmjs.com/package/mongoose)
 
 ### Prerequisites
 * npm
