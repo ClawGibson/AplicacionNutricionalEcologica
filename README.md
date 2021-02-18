@@ -3,7 +3,7 @@
 [![NodeJs](https://img.shields.io/badge/NodeJs-v14.15.1-green.svg)](https://nodejs.org/dist/v14.15.1/docs/api/)
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/app-logo_v2.png" alt="Logo" width="150" height="150">
+    <img src="images/app-logo-white.png" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">DietaSo</h3>
