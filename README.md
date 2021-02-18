@@ -17,12 +17,15 @@
   </p>
 </p>
 
+
+
 ### Built With
 
 * [NodeJs](https://nodejs.org/en/)
 * [ExpressJs](https://expressjs.com/)
 * [ExpoCLI](https://docs.expo.io/)
 * [Mongoose](https://www.npmjs.com/package/mongoose)
+
 
 ### Prerequisites
 * npm
@@ -46,6 +49,11 @@
    API_URL = 'Request the url from the administrador'
    PORT =  'Enter your favorite port'
    ```
+4. Run
+   ```sh
+   npm start
+   ```
+
 
 <!-- CONTRIBUTING -->
 ## Contributing
