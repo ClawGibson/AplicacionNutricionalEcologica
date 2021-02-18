@@ -3,23 +3,19 @@
 [![NodeJs](https://img.shields.io/badge/NodeJs-v14.15.1-green.svg)](https://nodejs.org/dist/v14.15.1/docs/api/)
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/app-logo_v2.png" alt="Logo" width="80" height="80">
+    <img src="images/app-logo_v2.png" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">DietaSo</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    A nutritional and ecological application with react native.
     <br />
     <a href="https://www.figma.com/proto/gRJRtkQBGebLt9kRrsC6SV/Mobile-design?node-id=1%3A3&viewport=308%2C200%2C0.141961008310318&scaling=scale-down"><strong>Explore the prototype »</strong></a>
     <br />
     <br />
   </p>
 </p>
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-Lorem
 
 ### Built With
 
