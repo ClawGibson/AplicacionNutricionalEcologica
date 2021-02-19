@@ -1,0 +1,407 @@
+[
+    {
+        "id_alimento": {
+            "id": "c4ca4238a0b923820dcc509a6f75849b"
+        },
+        "nombreAlimento": "Leche descremada (light)",
+        "grupoExportable": "Leches",
+        "subGrupoExportable": "Leche sin azúcar",
+        "clasificacionExp": "",
+        "subGrupoAdecuadaExp": "",
+        "grupoAlimento": "Leche descremada",
+        "mensaje": {
+            "nutricional": "La leche descremada evita la elevación de tus niveles de colesterol en comparación con los lácteos enteros",
+            "ambiental": "La leche descremada tiene una menor huella hídrica y genera menos emisiones de gases de efecto invernadero que la leche entera"
+        },
+        "icono": {
+            "nutricional": "urlIconoNutriconal :)",
+            "ambiental": "urlIconoAmbiental :)"
+        },
+        "opcionesPreparacion": "Sola, Con cereal, Licuados caseros",
+        "cantidadAlimento": {
+            "cantidadSugerida": 1,
+            "unidad": "taza",
+            "pesoNeto": "245 g"
+        },
+        "caloriasMacronutrientes": {
+            "energia": "86.00 kcal",
+            "proteina": "8.40 g",
+            "lipidos": "0.40 g",
+            "agSaturados": "0.00 g",
+            "agMonoinsaturados": "0.00 g",
+            "agPoliinsatuirados": "0.00 g",
+            "colesterol": "4.00 mg",
+            "omega3": "",
+            "omega6": "",
+            "omega9": "",
+            "hidratosDeCarbono": "11.9 g",
+            "fibra": "0.00 g",
+            "fibraInsoluble": "",
+            "fibraSoluble": "",
+            "azucar": "11.45 g",
+            "etanol": "0.00 g"
+        },
+        "vitaminas": {
+            "tiamina": "0.00 mg",
+            "riboflavin": "0.00 mg",
+            "niacina": "0.00 mg",
+            "acidoPantotenico": " g",
+            "piridoxina": "0.00 mg",
+            "biotina": " g",
+            "cobalamina": "0.00 mg",
+            "acidoAscorbico": "0.00 mg",
+            "acidoFolico": "0.00 µg",
+            "vitaminaA": "149.00 µg",
+            "vitaminaD": " µg",
+            "vitaminaK": " µg",
+            "vitaminaE": " µg"
+        },
+        "minerales": {
+            "calcio": "302.00 mg",
+            "fosforo": "0.00 mg",
+            "hierro": "0.00 mg",
+            "hierroNoHem": "0.00 mg",
+            "hierroTotal": "0.00 mg",
+            "magnesio": "0.00 mg",
+            "sodio": "126.00 mg",
+            "potasio": "0.00 mg",
+            "zing": "0.00 mg",
+            "selenio": "0.00 mg"
+        },
+        "aspectoGlucemico": {
+            "indiceGlicemico": "",
+            "cargaGlicemica": ""
+        },
+        "aspectoMedioambiental": {
+            "factorDeCorreccionParaHuellaHidricaYEGEI": 1,
+            "tipo": "Milk not concentrated and unsweetened not exceeding 1% fat",
+            "lugar": "México",
+            "huellaHidricaTotal": "1837.00 L/kg",
+            "huellaHidricaVerde": "1586.00 L/kg",
+            "huellaHidricaAzul": "134.00 L/kg",
+            "huellaHidricaGris": "117.00 L/kg",
+            "aguaParaLavado": "0 L/kg",
+            "aguaparaCoccion": "0",
+            "lugarEGEI": "",
+            "citaEGEI": "",
+            "EGEI": "",
+            "huellaEcologica": "",
+            "usoDeSuelo": "",
+            "energiaFosil": "",
+            "nitrogeno": "",
+            "fosforo": "",
+            "puntajeEcologico": 0
+        },
+        "aspectoEconomico": {
+            "precio": 5.5,
+            "lugarDeCompra": "",
+            "lugarDeVenta": ""
+        },
+        "componentesBioactivos": {
+            "fitoquímicos": "",
+            "polifenoles": "",
+            "antocianinas": "",
+            "taninos": "",
+            "isoflavonas": "",
+            "resveratrol": "",
+            "isotiocianatos": "",
+            "carotenoides": "",
+            "betacarotenos": "",
+            "licopeno": "",
+            "luteina": "",
+            "alicina": "",
+            "cafeina": "",
+            "UFC": ""
+        },
+        "aditivosAlimentarios": {
+            "benzoatoDeSodio": "",
+            "polisorbato": "",
+            "azulBrillanteFCFoE133": "",
+            "azurrubinaOE122": "",
+            "amarilloOcasoFDFoE110": "",
+            "tartrazinaOE102": "",
+            "verdeSoE142": "",
+            "negroBrillanteBNoE151": "",
+            "sucralosa": "",
+            "estevia": "",
+            "sacarina": "",
+            "aspartame": "",
+            "acesulfameK": "",
+            "carboxymethylcellulose": "",
+            "dioxidoDeTitanio": "",
+            "monolauratoDeGlicerol": ""
+        },
+        "atributosAdicionales": {},
+        "marca": ""
+    },
+    {
+        "id_alimento": {
+            "id": "c81e728d9d4c2f636f067f89cc14862c"
+        },
+        "nombreAlimento": "Requesón",
+        "grupoExportable": "Quesos",
+        "subGrupoExportable": "Quesos bajos en grasa",
+        "clasificacionExp": "",
+        "subGrupoAdecuadaExp": "",
+        "grupoAlimento": "Alimentos de origen animal con muy bajo aporte de grasa",
+        "mensaje": {
+            "nutricional": "",
+            "ambiental": ""
+        },
+        "icono": {
+            "nutricional": "urlIconoNutriconal :)",
+            "ambiental": "urlIconoAmbiental :)"
+        },
+        "opcionesPreparacion": "Solo, Guisos",
+        "cantidadAlimento": {
+            "cantidadSugerida": 3.5,
+            "unidad": "cucharada",
+            "pesoNeto": "42 g"
+        },
+        "caloriasMacronutrientes": {
+            "energia": "76.00 kcal",
+            "proteina": "6.30 g",
+            "lipidos": "5.00 g",
+            "agSaturados": "2.65 g",
+            "agMonoinsaturados": "0.76 g",
+            "agPoliinsatuirados": "0.08 g",
+            "colesterol": "10.50 mg",
+            "omega3": "",
+            "omega6": "",
+            "omega9": "",
+            "hidratosDeCarbono": "1.30 g",
+            "fibra": "0.00 g",
+            "fibraInsoluble": "",
+            "fibraSoluble": "",
+            "azucar": "0.00 g",
+            "etanol": "0.00 g"
+        },
+        "vitaminas": {
+            "tiamina": "0.03 mg",
+            "riboflavin": "0.09 mg",
+            "niacina": "0.08 mg",
+            "acidoPantotenico": " g",
+            "piridoxina": "0.00 mg",
+            "biotina": " g",
+            "cobalamina": "0.21 mg",
+            "acidoAscorbico": "0.00 mg",
+            "acidoFolico": "3.78 µg",
+            "vitaminaA": "149.00 µg",
+            "vitaminaD": " µg",
+            "vitaminaK": " µg",
+            "vitaminaE": " µg"
+        },
+        "minerales": {
+            "calcio": "38.64 mg",
+            "fosforo": "0.00 mg",
+            "hierro": "0.21 mg",
+            "hierroNoHem": "0.00 mg",
+            "hierroTotal": "0.21 mg",
+            "magnesio": "2.52 mg",
+            "sodio": "163.00 mg",
+            "potasio": "22.68 mg",
+            "zing": "0.21 mg",
+            "selenio": "0.00 mg"
+        },
+        "aspectoGlucemico": {
+            "indiceGlicemico": "",
+            "cargaGlicemica": ""
+        },
+        "aspectoMedioambiental": {
+            "factorDeCorreccionParaHuellaHidricaYEGEI": 1,
+            "tipo": "Queso fresco",
+            "lugar": "México",
+            "huellaHidricaTotal": "5724.00 L/kg",
+            "huellaHidricaVerde": "4941.00 L/kg",
+            "huellaHidricaAzul": "418.00 L/kg",
+            "huellaHidricaGris": "365.00 L/kg",
+            "aguaParaLavado": "0 L/kg",
+            "aguaparaCoccion": "0",
+            "lugarEGEI": "",
+            "citaEGEI": "",
+            "EGEI": "",
+            "huellaEcologica": "",
+            "usoDeSuelo": "",
+            "energiaFosil": "",
+            "nitrogeno": "",
+            "fosforo": "",
+            "puntajeEcologico": 0
+        },
+        "aspectoEconomico": {
+            "precio": 50.75,
+            "lugarDeCompra": "",
+            "lugarDeVenta": ""
+        },
+        "componentesBioactivos": {
+            "fitoquímicos": "",
+            "polifenoles": "",
+            "antocianinas": "",
+            "taninos": "",
+            "isoflavonas": "",
+            "resveratrol": "",
+            "isotiocianatos": "",
+            "carotenoides": "",
+            "betacarotenos": "",
+            "licopeno": "",
+            "luteina": "",
+            "alicina": "",
+            "cafeina": "",
+            "UFC": ""
+        },
+        "aditivosAlimentarios": {
+            "benzoatoDeSodio": "",
+            "polisorbato": "",
+            "azulBrillanteFCFoE133": "",
+            "azurrubinaOE122": "",
+            "amarilloOcasoFDFoE110": "",
+            "tartrazinaOE102": "",
+            "verdeSoE142": "",
+            "negroBrillanteBNoE151": "",
+            "sucralosa": "",
+            "estevia": "",
+            "sacarina": "",
+            "aspartame": "",
+            "acesulfameK": "",
+            "carboxymethylcellulose": "",
+            "dioxidoDeTitanio": "",
+            "monolauratoDeGlicerol": ""
+        },
+        "atributosAdicionales": {},
+        "marca": ""
+    },
+    {
+        "id_alimento": {
+            "id": "eccbc87e4b5ce2fe28308fd9f2a7baf3"
+        },
+        "nombreAlimento": "Queso cotagge",
+        "grupoExportable": "Quesos",
+        "subGrupoExportable": "Quesos bajos en grasa",
+        "clasificacionExp": "",
+        "subGrupoAdecuadaExp": "",
+        "grupoAlimento": "Alimentos de origen animal con muy bajo aporte de grasa",
+        "mensaje": {
+            "nutricional": "",
+            "ambiental": ""
+        },
+        "icono": {
+            "nutricional": "urlIconoNutriconal :)",
+            "ambiental": "urlIconoAmbiental :)"
+        },
+        "opcionesPreparacion": "Solo, Con fruta",
+        "cantidadAlimento": {
+            "cantidadSugerida": 3,
+            "unidad": "cucharada",
+            "pesoNeto": "48 g"
+        },
+        "caloriasMacronutrientes": {
+            "energia": "34.56 kcal",
+            "proteina": "5.95 g",
+            "lipidos": "0.49 g",
+            "agSaturados": "0.31 g",
+            "agMonoinsaturados": "0.14 g",
+            "agPoliinsatuirados": "0.01 g",
+            "colesterol": "1.92 mg",
+            "omega3": "",
+            "omega6": "",
+            "omega9": "",
+            "hidratosDeCarbono": "1.31 g",
+            "fibra": "0.00 g",
+            "fibraInsoluble": "",
+            "fibraSoluble": "",
+            "azucar": "0.00 g",
+            "etanol": "0.00 g"
+        },
+        "vitaminas": {
+            "tiamina": "0.00 mg",
+            "riboflavin": "0.10 mg",
+            "niacina": "0.05 mg",
+            "acidoPantotenico": " g",
+            "piridoxina": "0.05 mg",
+            "biotina": " g",
+            "cobalamina": "0.29 mg",
+            "acidoAscorbico": "0.00 mg",
+            "acidoFolico": "0.00 µg",
+            "vitaminaA": "5.28 µg",
+            "vitaminaD": " µg",
+            "vitaminaK": " µg",
+            "vitaminaE": " µg"
+        },
+        "minerales": {
+            "calcio": "29.28 mg",
+            "fosforo": "64.32 mg",
+            "hierro": "0.05 mg",
+            "hierroNoHem": "0.00 mg",
+            "hierroTotal": "0.05 mg",
+            "magnesio": "2.40 mg",
+            "sodio": "194.88 mg",
+            "potasio": "41.28 mg",
+            "zing": "0.19 mg",
+            "selenio": "0.00 mg"
+        },
+        "aspectoGlucemico": {
+            "indiceGlicemico": "",
+            "cargaGlicemica": ""
+        },
+        "aspectoMedioambiental": {
+            "factorDeCorreccionParaHuellaHidricaYEGEI": 1,
+            "tipo": "Queso fresco",
+            "lugar": "México",
+            "huellaHidricaTotal": "5724.00 L/kg",
+            "huellaHidricaVerde": "4941.00 L/kg",
+            "huellaHidricaAzul": "418.00 L/kg",
+            "huellaHidricaGris": "365.00 L/kg",
+            "aguaParaLavado": "0 L/kg",
+            "aguaparaCoccion": "0",
+            "lugarEGEI": "",
+            "citaEGEI": "",
+            "EGEI": "",
+            "huellaEcologica": "",
+            "usoDeSuelo": "",
+            "energiaFosil": "",
+            "nitrogeno": "",
+            "fosforo": "",
+            "puntajeEcologico": 0
+        },
+        "aspectoEconomico": {
+            "precio": 50.75,
+            "lugarDeCompra": "",
+            "lugarDeVenta": ""
+        },
+        "componentesBioactivos": {
+            "fitoquímicos": "",
+            "polifenoles": "",
+            "antocianinas": "",
+            "taninos": "",
+            "isoflavonas": "",
+            "resveratrol": "",
+            "isotiocianatos": "",
+            "carotenoides": "",
+            "betacarotenos": "",
+            "licopeno": "",
+            "luteina": "",
+            "alicina": "",
+            "cafeina": "",
+            "UFC": ""
+        },
+        "aditivosAlimentarios": {
+            "benzoatoDeSodio": "",
+            "polisorbato": "",
+            "azulBrillanteFCFoE133": "",
+            "azurrubinaOE122": "",
+            "amarilloOcasoFDFoE110": "",
+            "tartrazinaOE102": "",
+            "verdeSoE142": "",
+            "negroBrillanteBNoE151": "",
+            "sucralosa": "",
+            "estevia": "",
+            "sacarina": "",
+            "aspartame": "",
+            "acesulfameK": "",
+            "carboxymethylcellulose": "",
+            "dioxidoDeTitanio": "",
+            "monolauratoDeGlicerol": ""
+        },
+        "atributosAdicionales": {},
+        "marca": ""
+    }
+]
