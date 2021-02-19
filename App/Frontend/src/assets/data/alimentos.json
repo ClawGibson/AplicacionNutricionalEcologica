@@ -4,6 +4,7 @@
             "id": "c4ca4238a0b923820dcc509a6f75849b"
         },
         "nombreAlimento": "Leche descremada (light)",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.superama.com.mx%2FContent%2Fimages%2Fproducts%2Fimg_large%2F0750179162192L.jpg&f=1&nofb=1",
         "grupoExportable": "Leches",
         "subGrupoExportable": "Leche sin azúcar",
         "clasificacionExp": "",
@@ -139,6 +140,7 @@
             "id": "c81e728d9d4c2f636f067f89cc14862c"
         },
         "nombreAlimento": "Requesón",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsevilla.abc.es%2Fgurme%2Fwp-content%2Fuploads%2Fsites%2F24%2F2014%2F05%2Frequeson.jpg&f=1&nofb=1",
         "grupoExportable": "Quesos",
         "subGrupoExportable": "Quesos bajos en grasa",
         "clasificacionExp": "",
@@ -274,6 +276,7 @@
             "id": "eccbc87e4b5ce2fe28308fd9f2a7baf3"
         },
         "nombreAlimento": "Queso cotagge",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fonthegas.org%2Fwp-content%2Fuploads%2F2018%2F10%2Fbowl-cottage-cheese-food.jpg&f=1&nofb=1",
         "grupoExportable": "Quesos",
         "subGrupoExportable": "Quesos bajos en grasa",
         "clasificacionExp": "",
