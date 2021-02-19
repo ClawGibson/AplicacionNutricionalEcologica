@@ -32,6 +32,10 @@
   ```sh
   npm install --global expo-cli
   ```
+* yarn
+  ```sh
+  yarn global add expo-cli
+  ```
 
 ### Installation
 
