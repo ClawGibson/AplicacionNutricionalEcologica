@@ -1,6 +1,6 @@
 [
     {
-        "id_alimento": {
+        "_id": {
             "id": "c4ca4238a0b923820dcc509a6f75849b"
         },
         "nombreAlimento": "Leche descremada (light)",
@@ -136,7 +136,7 @@
         "marca": ""
     },
     {
-        "id_alimento": {
+        "_id": {
             "id": "c81e728d9d4c2f636f067f89cc14862c"
         },
         "nombreAlimento": "Requesón",
@@ -272,7 +272,7 @@
         "marca": ""
     },
     {
-        "id_alimento": {
+        "_id": {
             "id": "eccbc87e4b5ce2fe28308fd9f2a7baf3"
         },
         "nombreAlimento": "Queso cotagge",
