@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { View, Image, Text, Button } from 'react-native'
+import { View, Image, Text } from 'react-native'
 import { TouchableOpacity } from 'react-native'
 
 import alimentoCard1 from '../styles/alimentoCard1'

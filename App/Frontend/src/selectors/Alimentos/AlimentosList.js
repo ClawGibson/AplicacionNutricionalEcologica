@@ -1,5 +1,5 @@
 import React from 'react'
-import { ToucheableOpacity, View, Dimensions } from 'react-native'
+import { View } from 'react-native'
 import AlimentoCard from '../../components/AlimentoCard'
 
 const cara = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcreazilla-store.fra1.digitaloceanspaces.com%2Femojis%2F43030%2Fsmiling-face-with-smiling-eyes-emoji-clipart-md.png&f=1&nofb=1';
