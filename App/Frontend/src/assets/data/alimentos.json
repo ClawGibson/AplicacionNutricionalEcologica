@@ -15,8 +15,8 @@
             "ambiental": "La leche descremada tiene una menor huella hídrica y genera menos emisiones de gases de efecto invernadero que la leche entera"
         },
         "icono": {
-            "nutricional": "urlIconoNutriconal :)",
-            "ambiental": "urlIconoAmbiental :)"
+            "iconoNutricional": "urlIconoNutriconal :)",
+            "iconoAmbiental": "urlIconoAmbiental :)"
         },
         "opcionesPreparacion": "Sola, Con cereal, Licuados caseros",
         "cantidadAlimento": {
@@ -151,8 +151,8 @@
             "ambiental": ""
         },
         "icono": {
-            "nutricional": "urlIconoNutriconal :)",
-            "ambiental": "urlIconoAmbiental :)"
+            "iconoNutricional": "urlIconoNutriconal :)",
+            "iconoAmbiental": "urlIconoAmbiental :)"
         },
         "opcionesPreparacion": "Solo, Guisos",
         "cantidadAlimento": {
@@ -287,8 +287,8 @@
             "ambiental": ""
         },
         "icono": {
-            "nutricional": "urlIconoNutriconal :)",
-            "ambiental": "urlIconoAmbiental :)"
+            "iconoNutricional": "urlIconoNutriconal :)",
+            "iconoAmbiental": "urlIconoAmbiental :)"
         },
         "opcionesPreparacion": "Solo, Con fruta",
         "cantidadAlimento": {

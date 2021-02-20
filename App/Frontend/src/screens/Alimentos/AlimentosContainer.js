@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { ScrollView, View, FlatList, Text } from 'react-native'
-import { Container } from 'native-base'
-//import { FlatList } from 'react-native-gesture-handler';
+import { ScrollView, View, FlatList, Text, SafeAreaView } from 'react-native'
+import AlimentosList from '../../selectors/Alimentos/AlimentosList'
 
 // Test data
 const data = require('../../assets/data/alimentos.json');
-
 const AlimentosContainer = (props) => {
 
     const [alimentos, setAlimentos] = useState([]);
 
     useEffect(() => {
         setAlimentos(data);
-
         return () => {
             setAlimentos([]);
         }
@@ -20,13 +17,22 @@ const AlimentosContainer = (props) => {
 
     return (
         <View>
-            <FlatList
-                style={{ marginTop: 50 }}
-                horizontal
-                data={alimentos}
-                renderItem={({ item }) => <Text>{item.nombreAlimento}</Text>}
-                keyExtractor={item => item.nombreAlimento}
-            />
+            {
+                alimentos.length > 0 ? (
+                    <SafeAreaView>
+                        <FlatList
+                            numColumns={2}
+                            data={alimentos}
+                            renderItem={AlimentosList}
+                            keyExtractor={item => item._id.id}
+                        />
+                    </SafeAreaView>
+                ) : (
+                        <View>
+                            <Text>No hay alimentos registrados :c</Text>
+                        </View>
+                    )
+            }
         </View>
     )
 }

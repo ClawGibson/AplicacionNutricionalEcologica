@@ -9,14 +9,15 @@ const auxiliar = '#C1CF3A';
 const optional1 = '#4BB5C3';
 const optional2 = '#8AB832'
 
-const alimentoCard = StyleSheet.create({
+const alimentoCard1 = StyleSheet.create({
     container: {
         width: 143.24,
         height: 175.79,
         padding: 1,
         borderRadius: 30,
-        marginTop: 266.21,
+        marginTop: 50,
         marginLeft: 18,
+        marginBottom: 10,
         alignItems: 'center',
         elevation: 8,
         backgroundColor: '#FFFFFF'
@@ -60,4 +61,4 @@ const alimentoCard = StyleSheet.create({
     }
 })
 
-export default alimentoCard
+export default alimentoCard1
