@@ -15,8 +15,8 @@
             "ambiental": "La leche descremada tiene una menor huella hídrica y genera menos emisiones de gases de efecto invernadero que la leche entera"
         },
         "icono": {
-            "iconoNutricional": "urlIconoNutriconal :)",
-            "iconoAmbiental": "urlIconoAmbiental :)"
+            "iconoNutricional": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcreazilla-store.fra1.digitaloceanspaces.com%2Femojis%2F43030%2Fsmiling-face-with-smiling-eyes-emoji-clipart-md.png&f=1&nofb=1",
+            "iconoAmbiental": "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/42283/beaming-face-with-smiling-eyes-emoji-clipart-md.png"
         },
         "opcionesPreparacion": "Sola, Con cereal, Licuados caseros",
         "cantidadAlimento": {
@@ -151,8 +151,8 @@
             "ambiental": ""
         },
         "icono": {
-            "iconoNutricional": "urlIconoNutriconal :)",
-            "iconoAmbiental": "urlIconoAmbiental :)"
+            "iconoNutricional": "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/44287/astonished-face-emoji-clipart-md.png",
+            "iconoAmbiental": "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/44449/slightly-frowning-face-emoji-clipart-md.png"
         },
         "opcionesPreparacion": "Solo, Guisos",
         "cantidadAlimento": {
@@ -276,7 +276,7 @@
             "id": "eccbc87e4b5ce2fe28308fd9f2a7baf3"
         },
         "nombreAlimento": "Queso cotagge",
-        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fonthegas.org%2Fwp-content%2Fuploads%2F2018%2F10%2Fbowl-cottage-cheese-food.jpg&f=1&nofb=1",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.dairygoodness.ca%2Fvar%2Fezflow_site%2Fstorage%2Fimages%2Fdairy-goodness%2Fhome%2Fcheese%2Fall-you-need-is-cheese%2Frepertoire%2Ffamilies%2Fcottage%2F12498795-3-eng-CA%2Fcottage_large.png&f=1&nofb=1",
         "grupoExportable": "Quesos",
         "subGrupoExportable": "Quesos bajos en grasa",
         "clasificacionExp": "",
@@ -287,8 +287,8 @@
             "ambiental": ""
         },
         "icono": {
-            "iconoNutricional": "urlIconoNutriconal :)",
-            "iconoAmbiental": "urlIconoAmbiental :)"
+            "iconoNutricional": "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/43795/neutral-face-emoji-clipart-md.png",
+            "iconoAmbiental": ""
         },
         "opcionesPreparacion": "Solo, Con fruta",
         "cantidadAlimento": {

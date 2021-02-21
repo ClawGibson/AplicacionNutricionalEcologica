@@ -1,14 +1,6 @@
 import React from 'react'
 import { StyleSheet, Dimensions } from 'react-native'
 
-let { width, height } = Dimensions.get('window');
-
-const primary = '#439776';
-const secondary = '#328AB2';
-const auxiliar = '#C1CF3A';
-const optional1 = '#4BB5C3';
-const optional2 = '#8AB832'
-
 const alimentoCard1 = StyleSheet.create({
     container: {
         width: 143.24,
@@ -25,39 +17,28 @@ const alimentoCard1 = StyleSheet.create({
     image: {
         width: 120,
         height: 106.9,
-        borderRadius: 106.9 / .5,
-        backgroundColor: 'transparent',
-        position: 'absolute',
+        borderRadius: 150,
+        position: 'relative',
         top: -50
-    },
-    card: {
-        marginBottom: 10,
-        height: width / 2 - 20 - 90,
-        backgroundColor: 'transparent',
-        borderRadius: 20,
-        width: width / 2 - 20 - 10
     },
     title: {
         fontWeight: 'bold',
         fontSize: 15,
         textAlign: 'center',
+        top: -30,
         textAlignVertical: 'center'
     },
     face1: {
-        width: 24,
-        height: 24,
-        backgroundColor: 'transparent',
-        position: 'absolute',
-        top: '80%',
-        left: '20%'
+        width: 48,
+        height: 48,
+        position: 'relative',
+        left: '-20%'
     },
     face2: {
-        width: 24,
-        height: 24,
-        backgroundColor: 'transparent',
-        position: 'absolute',
-        top: '80%',
-        left: '66%'
+        width: 48,
+        height: 48,
+        top: -47.5,
+        left: '20%'
     }
 })
 
