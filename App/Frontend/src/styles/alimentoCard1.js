@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Dimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 const alimentoCard1 = StyleSheet.create({
     container: {
@@ -10,6 +10,7 @@ const alimentoCard1 = StyleSheet.create({
         marginTop: 50,
         marginLeft: 18,
         marginBottom: 10,
+        marginRight: 10,
         alignItems: 'center',
         elevation: 8,
         backgroundColor: '#FFFFFF'

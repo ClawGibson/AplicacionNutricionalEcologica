@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { ScrollView, View, FlatList, Text, SafeAreaView } from 'react-native'
 import AlimentosList from '../../selectors/Alimentos/AlimentosList'
+import AddAlimento from '../../components/AddAlimento'
 
 // Test data
 const data = require('../../assets/data/alimentos.json');
+const emptyArray = [{ _id: '' }];
 const AlimentosContainer = (props) => {
 
     const [alimentos, setAlimentos] = useState([]);
@@ -20,12 +22,15 @@ const AlimentosContainer = (props) => {
             {
                 alimentos.length > 0 ? (
                     <SafeAreaView>
-                        <FlatList
-                            numColumns={2}
-                            data={alimentos}
-                            renderItem={AlimentosList}
-                            keyExtractor={item => item._id.id}
-                        />
+                        <ScrollView>
+                            <AddAlimento />
+                            <FlatList
+                                horizontal
+                                data={alimentos != undefined ? alimentos : 'undefined :c'}
+                                renderItem={AlimentosList}
+                                keyExtractor={item => item._id.id}
+                            />
+                        </ScrollView>
                     </SafeAreaView>
                 ) : (
                         <View>
