@@ -1,10 +1,19 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { SafeAreaView, ScrollView } from "react-native";
+import { NavigationContainer } from '@react-navigation/native'
+
+// Components
+import AlimentosContainer from './src/screens/Alimentos/AlimentosContainer'
+import Banner from './src/components/Banner'
+
+// Navigator
+import Main from './src/navigators/Main'
+
 
 export default function App() {
   return (
-    <View>
-      <Text>initial commit</Text>
-    </View>
+    <NavigationContainer>
+      <Main />
+    </NavigationContainer>
   );
 }
