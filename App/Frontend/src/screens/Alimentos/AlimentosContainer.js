@@ -18,19 +18,17 @@ const AlimentosContainer = (props) => {
     }, []);
 
     return (
-        <View>
+        <ScrollView>
             {
                 alimentos.length > 0 ? (
                     <SafeAreaView>
-                        <ScrollView>
-                            <AddAlimento />
-                            <FlatList
-                                horizontal
-                                data={alimentos != undefined ? alimentos : 'undefined :c'}
-                                renderItem={AlimentosList}
-                                keyExtractor={item => item._id.id}
-                            />
-                        </ScrollView>
+                        <AddAlimento />
+                        <FlatList
+                            horizontal
+                            data={alimentos != undefined ? alimentos : 'undefined :c'}
+                            renderItem={AlimentosList}
+                            keyExtractor={item => item._id.id}
+                        />
                     </SafeAreaView>
                 ) : (
                         <View>
@@ -38,7 +36,7 @@ const AlimentosContainer = (props) => {
                         </View>
                     )
             }
-        </View>
+        </ScrollView>
     )
 }
 
