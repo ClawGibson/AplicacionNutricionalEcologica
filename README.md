@@ -17,7 +17,18 @@
   </p>
 </p>
 
-
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#components-examples">Examples of components</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
 ### Built With
 
@@ -58,6 +69,9 @@
    npm start
    ```
 
+### Components examples
+
+<a href="https://github.com/ClawGibson/AplicacionNutricionalEcologica/tree/main/images/Components%20Examples"> Tap here to explore the examples of the components</a>
 
 <!-- CONTRIBUTING -->
 ## Contributing
