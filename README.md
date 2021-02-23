@@ -69,7 +69,7 @@
    npm start
    ```
 
-### Components examples
+## Components examples
 
 <a href="https://github.com/ClawGibson/AplicacionNutricionalEcologica/tree/main/images/Components%20Examples"> Tap here to explore the examples of the components</a>
 
