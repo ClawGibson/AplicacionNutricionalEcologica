@@ -41,7 +41,7 @@
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ClawGibson/Aplicaci-nNutricionalEcol-gica.git
+   git clone https://github.com/ClawGibson/AplicacionNutricionalEcologica.git
    ```
 2. Install NPM packages
    ```sh
