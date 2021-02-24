@@ -4,6 +4,8 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const alimentosRoute = require('./routes/alimentos.routes')
+const grupoAlimentosRoute = require('./routes/grupoAlimentos.routes');
+const subGrupoAlimentosRoute = require('./routes/subGrupoAlimentos.routes');
 
 require('dotenv/config')
 const {
@@ -19,6 +21,8 @@ app.use(morgan('tiny'))
 
 // routes
 app.use(`${API_URL}/alimentos`, alimentosRoute);
+app.use(`${API_URL}/grupoAlimentos`, grupoAlimentosRoute);
+app.use(`${API_URL}/subGrupoAlimentos`, subGrupoAlimentosRoute);
 
 mongoose
     .connect(MONGODB, {
@@ -36,3 +40,4 @@ mongoose
 app.listen(PORT || 4000, () => {
     console.log(`Server running at ${PORT || 4000}`)
 })
+
