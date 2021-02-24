@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
+const alimentosRoute = require('./routes/alimentos.routes')
 
 require('dotenv/config')
 const {
@@ -17,6 +18,7 @@ app.use(bodyParser.json())
 app.use(morgan('tiny'))
 
 // routes
+app.use(`${API_URL}/alimentos`, alimentosRoute);
 
 mongoose
     .connect(MONGODB, {
