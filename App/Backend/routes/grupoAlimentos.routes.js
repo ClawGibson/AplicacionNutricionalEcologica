@@ -12,18 +12,17 @@ router.get('/', async (req, res) => {
 
 });
 
-router.post('/', (req, res) => {
-    const nuevoGrupo = new grupo({
+router.post('/', async (req, res) => {
+    let nuevoGrupo = new grupo({
         grupoDeAlimento: req.body.grupoDeAlimento
     });
 
-    nuevoGrupo.save()
-        .then((grupoCreado => {
-            res.status(201).json(grupoCreado);
-        }))
-        .catch((err) => {
-            res.status(500).json({ error: err, success: false });
-        })
+    nuevoGrupo = await nuevoGrupo.save();
+
+    if (!nuevoGrupo)
+        return res.status(400).send('No se pudo crear el grupo :c')
+
+    res.status(200).send(nuevoGrupo);
 });
 
 module.exports = router;

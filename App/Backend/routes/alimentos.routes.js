@@ -6,9 +6,9 @@ router.get('/', async (req, res) => {
 
     const alimentosLista = await Alimentos.find();
 
-    if (!alimentosLista) {
+    if (!alimentosLista)
         res.status(500).json({ success: false });
-    }
+
     res.send(alimentosLista);
 });
 
@@ -16,17 +16,15 @@ router.get('/:id', async (req, res) => {
 
     const alimento = await Alimentos.findById(req.params.id);
 
-    if (!alimento) {
+    if (!alimento)
         res.status(500).json({ succes: false, message: 'No existe ese alimento :/' });
-    } else {
-        res.send(alimento);
-    }
 
+    res.send(alimento);
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
 
-    const alimento = new Alimentos({
+    let alimento = new Alimentos({
         nombreAlimento: req.body.nombreAlimento,
         imagen: req.body.imagen,
         grupoExportable: req.body.grupoExportable,
@@ -49,13 +47,12 @@ router.post('/', (req, res) => {
         marca: req.body.marca
     });
 
-    alimento.save()
-        .then((alimentoCreado => {
-            res.status(201).json(alimentoCreado);
-        }))
-        .catch((err) => {
-            res.status(500).json({ error: err, success: false })
-        })
+    alimento = await alimento.save();
+
+    if (!alimento)
+        return res.status(400).send('No se pudo crear el alimento :c');
+
+    res.send(alimento);
 });
 
 router.put('/:id', async (req, res) => {
@@ -85,26 +82,20 @@ router.put('/:id', async (req, res) => {
         new: true
     });
 
-    if (!alimentoEditar) {
+    if (!alimentoEditar)
         return res.status(404).send('El producto no se encontró o no se pudo editar :c');
-    } else {
-        res.status(200).send(alimentoEditar);
-    }
 
+    res.status(200).send(alimentoEditar);
 });
 
-router.delete('/:id', (req, res) => {
-    Alimentos.findByIdAndRemove(req.params.id)
-        .then(alimento => {
-            if (alimento) {
-                return res.status(200).json({ success: true, message: 'Alimento eliminado :D' });
-            } else {
-                return res.status(404).json({ success: true, message: 'Alimento no encontrado :/' });
-            }
-        })
-        .catch(err => {
-            return res.status(400).json({ succes: false, error: err });
-        });
+router.delete('/:id', async (req, res) => {
+
+    const alimento = await Alimentos.findByIdAndRemove(req.params.id);
+
+    if (!alimento)
+        return res.status(400).send('No se encontró el alimento a eliminar :c');
+
+    res.status(200).send('Alimento eliminado :D!');
 });
 
 module.exports = router;
