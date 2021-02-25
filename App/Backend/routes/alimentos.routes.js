@@ -1,3 +1,4 @@
+const GrupoAlimento = require('../models/GrupoAlimentos');
 const Alimentos = require('../models/Alimentos')
 const express = require('express')
 const router = express.Router()
@@ -24,7 +25,7 @@ router.get('/:id', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-    const alimento = await Alimentos.find().select('nombreAlimento imagen');
+    const alimento = await Alimentos.find().select('nombreAlimento imagen grupoAlimento');
 
     if (!alimento)
         res.status(500).json({ success: false, message: 'No hay alimentos todavía :c' });
@@ -32,7 +33,23 @@ router.get('/', async (req, res) => {
     res.send(alimento);
 });
 
+router.get('/filter/:grupo', async (req, res) => {
+
+    const grupo = req.params.grupo;
+
+    const alimentoPorGrupoAlimento = await Alimentos.find({ grupoAlimento: grupo });
+
+    if (!alimentoPorGrupoAlimento)
+        res.status(500).json({ success: false });
+
+    res.send(alimentoPorGrupoAlimento);
+});
+
 router.post('/', async (req, res) => {
+
+    const grupoAlimento = await GrupoAlimento.findById(req.body.grupoAlimento);
+    if (!grupoAlimento)
+        return res.status(400).send('Grupo de alimento inválido');
 
     let alimento = new Alimentos({
         nombreAlimento: req.body.nombreAlimento,

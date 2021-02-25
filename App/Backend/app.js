@@ -1,10 +1,9 @@
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const alimentosRoute = require('./routes/alimentos.routes');
 const grupoAlimentosRoute = require('./routes/grupoAlimentos.routes');
+const alimentosRoute = require('./routes/alimentos.routes');
 const subGrupoAlimentosRoute = require('./routes/subGrupoAlimentos.routes');
 const recetasRoute = require('./routes/recetas.routes');
 
@@ -17,7 +16,7 @@ const {
 } = process.env
 
 // middlewares
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(morgan('tiny'))
 
 // routes

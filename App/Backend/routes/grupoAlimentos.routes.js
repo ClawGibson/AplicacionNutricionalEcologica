@@ -13,6 +13,15 @@ router.get('/', async (req, res) => {
 
 });
 
+router.get('/:id', async (req, res) => {
+    const grupoDeAlimento = await grupo.findById(req.params.id);
+
+    if (!grupoDeAlimento)
+        return res.status(500).json({ success: false });
+
+    res.send(grupoDeAlimento)
+});
+
 router.post('/', async (req, res) => {
     let nuevoGrupo = new grupo({
         grupoDeAlimento: req.body.grupoDeAlimento
