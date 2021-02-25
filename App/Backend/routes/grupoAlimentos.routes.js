@@ -1,6 +1,7 @@
 const grupo = require('../models/GrupoAlimentos')
 const express = require('express')
 const router = express.Router();
+const mongoose = require('mongoose');
 
 router.get('/', async (req, res) => {
     const gruposDeAlimentos = await grupo.find();
@@ -25,4 +26,30 @@ router.post('/', async (req, res) => {
     res.status(200).send(nuevoGrupo);
 });
 
+router.put('/:id', async (req, res) => {
+
+    const nuevoGrupo = await grupo.findOneAndUpdate(req.params.id, {
+        grupoDeAlimento: req.body.grupoDeAlimento
+    }, {
+        new: true
+    });
+
+    if (!nuevoGrupo)
+        return res.status(404).send('El grupo no se encontró o no se pudo editar :c');
+
+    res.status(200).send(nuevoGrupo);
+});
+
+router.delete('/:id', async (req, res) => {
+
+    if (!mongoose.isValidObjectId(req.params.id))
+        return res.status(400).send('El ID del sub grupo no es válido.');
+
+    const nuevoGrupo = await nuevoGrupo.findByIdAndRemove(req.params.id);
+
+    if (!nuevoGrupo)
+        return res.status(400).send('No se encontró el grupo a eliminar :c');
+
+    res.status(200).send('Grupo eliminado :D!');
+});
 module.exports = router;

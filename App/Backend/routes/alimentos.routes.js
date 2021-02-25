@@ -1,6 +1,7 @@
 const Alimentos = require('../models/Alimentos')
 const express = require('express')
 const router = express.Router()
+const mongoose = require('mongoose');
 
 router.get('/all/', async (req, res) => {
 
@@ -88,7 +89,7 @@ router.put('/:id', async (req, res) => {
         atributosAdicionales: req.body.atributosAdicionales,
         marca: req.body.marca
     }, {
-        new: true
+        new: true // Return the new product.
     });
 
     if (!alimentoEditar)
@@ -98,6 +99,9 @@ router.put('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
+
+    if (!mongoose.isValidObjectId(req.params.id))
+        return res.status(400).send('El ID del alimento no es válido.');
 
     const alimento = await Alimentos.findByIdAndRemove(req.params.id);
 
