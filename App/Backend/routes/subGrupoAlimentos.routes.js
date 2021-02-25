@@ -5,25 +5,24 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     const subGruposDeAlimentos = await subGrupo.find();
 
-    if (!subGruposDeAlimentos) {
+    if (!subGruposDeAlimentos)
         res.status(500).json({ success: false });
-    }
+
     res.send(subGruposDeAlimentos);
 
 });
 
-router.post('/', (req, res) => {
-    const nuevoSubGrupo = new subGrupo({
+router.post('/', async (req, res) => {
+    let nuevoSubGrupo = new subGrupo({
         subGrupoDeAlimento: req.body.subGrupoDeAlimento
     });
 
-    nuevoSubGrupo.save()
-        .then((subGrupoCreado => {
-            res.status(201).json(subGrupoCreado);
-        }))
-        .catch((err) => {
-            res.status(500).json({ error: err, success: false });
-        })
+    nuevoSubGrupo = await nuevoSubGrupo.save();
+
+    if (!nuevoSubGrupo)
+        return res.status(400).send('No se pudo actualizar el alimento :c');
+
+    res.send(nuevoSubGrupo);
 });
 
 module.exports = router;

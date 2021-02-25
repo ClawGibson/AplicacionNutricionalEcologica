@@ -28,7 +28,8 @@ mongoose
     .connect(MONGODB, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        dbName: DBNAME
+        dbName: DBNAME,
+        useFindAndModify: false
     })
     .then(() => {
         console.log(`Succefully connected to database ${DBNAME}`)
