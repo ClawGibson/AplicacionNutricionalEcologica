@@ -2,7 +2,7 @@ const Alimentos = require('../models/Alimentos')
 const express = require('express')
 const router = express.Router()
 
-router.get('/', async (req, res) => {
+router.get('/all/', async (req, res) => {
 
     const alimentosLista = await Alimentos.find();
 
@@ -18,6 +18,15 @@ router.get('/:id', async (req, res) => {
 
     if (!alimento)
         res.status(500).json({ succes: false, message: 'No existe ese alimento :/' });
+
+    res.send(alimento);
+});
+
+router.get('/', async (req, res) => {
+    const alimento = await Alimentos.find().select('nombreAlimento imagen');
+
+    if (!alimento)
+        res.status(500).json({ success: false, message: 'No hay alimentos todavía :c' });
 
     res.send(alimento);
 });
