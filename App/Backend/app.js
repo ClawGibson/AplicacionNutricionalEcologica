@@ -3,9 +3,10 @@ const app = express()
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const alimentosRoute = require('./routes/alimentos.routes')
+const alimentosRoute = require('./routes/alimentos.routes');
 const grupoAlimentosRoute = require('./routes/grupoAlimentos.routes');
 const subGrupoAlimentosRoute = require('./routes/subGrupoAlimentos.routes');
+const recetasRoute = require('./routes/recetas.routes');
 
 require('dotenv/config')
 const {
@@ -23,6 +24,7 @@ app.use(morgan('tiny'))
 app.use(`${API_URL}/alimentos`, alimentosRoute);
 app.use(`${API_URL}/grupoAlimentos`, grupoAlimentosRoute);
 app.use(`${API_URL}/subGrupoAlimentos`, subGrupoAlimentosRoute);
+app.use(`${API_URL}/recetas`, recetasRoute);
 
 mongoose
     .connect(MONGODB, {
