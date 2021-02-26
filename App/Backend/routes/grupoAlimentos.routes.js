@@ -61,4 +61,5 @@ router.delete('/:id', async (req, res) => {
 
     res.status(200).send('Grupo eliminado :D!');
 });
+
 module.exports = router;

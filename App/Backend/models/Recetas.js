@@ -11,4 +11,12 @@ const recetasSchema = new Schema({
     timestamps: true
 });
 
+recetasSchema.virtual('id').get(function () {
+    return this._id.toHexString();
+});
+
+recetasSchema.set('toJSON', {
+    virtuals: true
+});
+
 module.exports = model('Recetas', recetasSchema);

@@ -6,7 +6,7 @@ const alimentosSchema = new Schema({
     grupoExportable: { type: String, required: false },
     subGrupoExportable: { type: String, required: false },
     clasificacionExportable: { type: String, required: false },
-    grupoAlimento: { type: String },
+    grupoAlimento: { type: String, required: true },
     mensaje: [{
         nutricional: { type: String, required: false },
         ambiental: { type: String, required: false }
@@ -133,6 +133,14 @@ const alimentosSchema = new Schema({
     marca: { type: String, required: false }
 }, {
     timestamps: true
+});
+
+alimentosSchema.virtual('id').get(function () {
+    return this._id.toHexString();
+});
+
+alimentosSchema.set('toJSON', {
+    virtuals: true
 });
 
 module.exports = model('Alimentos', alimentosSchema);

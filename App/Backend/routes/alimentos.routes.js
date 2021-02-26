@@ -33,18 +33,6 @@ router.get('/', async (req, res) => {
     res.send(alimento);
 });
 
-router.get('/filter/:grupo', async (req, res) => {
-
-    const grupo = req.params.grupo;
-
-    const alimentoPorGrupoAlimento = await Alimentos.find({ grupoAlimento: grupo });
-
-    if (!alimentoPorGrupoAlimento)
-        res.status(500).json({ success: false });
-
-    res.send(alimentoPorGrupoAlimento);
-});
-
 router.post('/', async (req, res) => {
 
     const grupoAlimento = await GrupoAlimento.findById(req.body.grupoAlimento);
