@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const alimentosRoute = require('./routes/alimentos.routes')
 const grupoAlimentosRoute = require('./routes/grupoAlimentos.routes');
+const alimentosRoute = require('./routes/alimentos.routes');
 const subGrupoAlimentosRoute = require('./routes/subGrupoAlimentos.routes');
+const recetasRoute = require('./routes/recetas.routes');
+const usuariosRoute = require('./routes/usuarios.routes');
 
 require('dotenv/config')
 const {
@@ -16,13 +17,15 @@ const {
 } = process.env
 
 // middlewares
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(morgan('tiny'))
 
 // routes
 app.use(`${API_URL}/alimentos`, alimentosRoute);
 app.use(`${API_URL}/grupoAlimentos`, grupoAlimentosRoute);
 app.use(`${API_URL}/subGrupoAlimentos`, subGrupoAlimentosRoute);
+app.use(`${API_URL}/recetas`, recetasRoute);
+app.use(`${API_URL}/usuarios`, usuariosRoute);
 
 mongoose
     .connect(MONGODB, {

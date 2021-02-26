@@ -1,8 +1,10 @@
+const GrupoAlimento = require('../models/GrupoAlimentos');
 const Alimentos = require('../models/Alimentos')
 const express = require('express')
 const router = express.Router()
+const mongoose = require('mongoose');
 
-router.get('/', async (req, res) => {
+router.get('/all/', async (req, res) => {
 
     const alimentosLista = await Alimentos.find();
 
@@ -22,7 +24,20 @@ router.get('/:id', async (req, res) => {
     res.send(alimento);
 });
 
+router.get('/', async (req, res) => {
+    const alimento = await Alimentos.find().select('nombreAlimento imagen grupoAlimento');
+
+    if (!alimento)
+        res.status(500).json({ success: false, message: 'No hay alimentos todavía :c' });
+
+    res.send(alimento);
+});
+
 router.post('/', async (req, res) => {
+
+    const grupoAlimento = await GrupoAlimento.findById(req.body.grupoAlimento);
+    if (!grupoAlimento)
+        return res.status(400).send('Grupo de alimento inválido');
 
     let alimento = new Alimentos({
         nombreAlimento: req.body.nombreAlimento,
@@ -79,7 +94,7 @@ router.put('/:id', async (req, res) => {
         atributosAdicionales: req.body.atributosAdicionales,
         marca: req.body.marca
     }, {
-        new: true
+        new: true // Return the new product.
     });
 
     if (!alimentoEditar)
@@ -89,6 +104,9 @@ router.put('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
+
+    if (!mongoose.isValidObjectId(req.params.id))
+        return res.status(400).send('El ID del alimento no es válido.');
 
     const alimento = await Alimentos.findByIdAndRemove(req.params.id);
 
