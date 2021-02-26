@@ -6,6 +6,7 @@ const grupoAlimentosRoute = require('./routes/grupoAlimentos.routes');
 const alimentosRoute = require('./routes/alimentos.routes');
 const subGrupoAlimentosRoute = require('./routes/subGrupoAlimentos.routes');
 const recetasRoute = require('./routes/recetas.routes');
+const usuariosRoute = require('./routes/usuarios.routes');
 
 require('dotenv/config')
 const {
@@ -24,6 +25,7 @@ app.use(`${API_URL}/alimentos`, alimentosRoute);
 app.use(`${API_URL}/grupoAlimentos`, grupoAlimentosRoute);
 app.use(`${API_URL}/subGrupoAlimentos`, subGrupoAlimentosRoute);
 app.use(`${API_URL}/recetas`, recetasRoute);
+app.use(`${API_URL}/usuarios`, usuariosRoute);
 
 mongoose
     .connect(MONGODB, {
