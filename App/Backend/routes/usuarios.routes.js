@@ -6,12 +6,20 @@ const bcrypt = require('bcryptjs');
 
 router.get('/', async (req, res) => {
 
-    const listaUsuarios = await Usuarios.find();
+    const listaUsuarios = await Usuarios.find().select('-contrasena');
 
     if (!listaUsuarios)
         return res.status(500).json({ success: false });
 
     res.send(listaUsuarios);
+});
+
+router.get('/:id', async (req, res) => {
+    const usuario = await Usuarios.findById(req.params.id).select('-contrasena');
+
+    if (!usuario)
+        return res.status(500).json({ success: false, message: 'Usuario no encontrado' });
+    res.send(usuario)
 });
 
 router.post('/', async (req, res) => {
