@@ -2,6 +2,7 @@ const { Usuarios } = require('../models/Usuarios');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 router.get('/', async (req, res) => {
 
@@ -21,7 +22,7 @@ router.post('/', async (req, res) => {
         foto: req.body.foto,
         email: req.body.email,
         fechaDeNacimiento: req.body.fechaDeNacimiento,
-        contrasena: req.body.contrasena,
+        contrasena: bcrypt.hashSync(req.body.contrasena, 10),
         genero: req.body.genero,
         peso: req.body.peso,
         altura: req.body.altura,

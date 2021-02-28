@@ -1,0 +1,43 @@
+[
+  {
+    "_id": {
+      "id": "c4ca4238a0b923820dcc509a6f75849b"
+    },
+    "logros": "",
+    "nombre": "Nombre completo del participante",
+    "foto": "",
+    "email": "falso@falso.com",
+    "fechaDeNacimiento": "02/02/1995",
+    "contrasena": "123456",
+    "genero": "masculino",
+    "peso": [75, 73, 72, 71, 68, 65],
+    "altura": 174,
+    "actividadFisica": "Moderada",
+    "historiaClinica": {
+      "antecedentesPatologicos": ["Hepatitis","Diabetes"],
+      "antecedentesHeredoFamiliares": ["Diabetes", "Hipertensión"],
+      "medicamentos": [""]
+    },
+    "nivelSocioeconomico": {
+      "ingresos": "Medio",
+      "educacion": "",
+      "ocupacion": ""
+    },
+    "comidaFavorita": ["Fresas", "Chocolate", "Almendras"],
+    "comidaNoFavorita": ["Piña", "Cebolla"],
+    "alergiasAlimentarias": ["Piña"],
+    "meta": "Comer más frutas",
+    "esAdmin": false,
+    "extras": [""],
+    "desayuno": [""],
+    "colacion1": [""],
+    "comida": [""],
+    "colacion2": [""],
+    "cena": [""],
+    "desayunoAyer": [""],
+    "colacion1Ayer": [""],
+    "comidaAyer": [""],
+    "colacion2Ayer": [""],
+    "cenaAyer": [""]
+  }
+]
