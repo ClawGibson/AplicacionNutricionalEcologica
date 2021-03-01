@@ -1,3 +1,4 @@
+require('dotenv/config')
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
@@ -7,8 +8,9 @@ const alimentosRoute = require('./routes/alimentos.routes');
 const subGrupoAlimentosRoute = require('./routes/subGrupoAlimentos.routes');
 const recetasRoute = require('./routes/recetas.routes');
 const usuariosRoute = require('./routes/usuarios.routes');
+const authJwt = require('./helpers/jwt');
+const errorHandler = require('./helpers/error-handler');
 
-require('dotenv/config')
 const {
     API_URL,
     PORT,
@@ -19,6 +21,8 @@ const {
 // middlewares
 app.use(express.json())
 app.use(morgan('tiny'))
+app.use(authJwt())
+app.use(errorHandler)
 
 // routes
 app.use(`${API_URL}/alimentos`, alimentosRoute);
