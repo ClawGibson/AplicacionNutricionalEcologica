@@ -76,7 +76,8 @@ router.post('/login', async (req, res) => {
     if (usuario && bcrypt.compareSync(req.body.contrasena, usuario.contrasena)) {
         const token = jwt.sign(
             {
-                userId: usuario.id
+                userId: usuario.id,
+                isAdmin: usuario.esAdmin
             }, SECRET, { expiresIn: '1h' }
         )
         res.status(200).send({ usuario: usuario.email, token: token });
@@ -84,6 +85,47 @@ router.post('/login', async (req, res) => {
         res.status(400).send('Contraseña incorrecta');
     }
 });
+
+router.post('/register', async (req, res) => {
+
+    let registrarUsuario = new Usuarios({
+        logros: req.body.logros,
+        nombre: req.body.nombre,
+        foto: req.body.foto,
+        email: req.body.email,
+        fechaDeNacimiento: req.body.fechaDeNacimiento,
+        contrasena: bcrypt.hashSync(req.body.contrasena, 10),
+        genero: req.body.genero,
+        peso: req.body.peso,
+        altura: req.body.altura,
+        actividadFisica: req.body.actividadFisica,
+        historiaClinica: req.body.historiaClinica,
+        nivelSocioeconomico: req.body.nivelSocioeconomico,
+        comidaFavorita: req.body.comidaFavorita,
+        comidaNoFavorita: req.body.comidaNoFavorita,
+        alergiasAlimentarias: req.body.alergiasAlimentarias,
+        meta: req.body.meta,
+        tipoDeUsuario: req.body.tipoDeUsuario,
+        extras: req.body.extras,
+        desayuno: req.body.desayuno,
+        colacion1: req.body.colacion1,
+        comida: req.body.comida,
+        colacion2: req.body.colacion2,
+        cena: req.body.cena,
+        desayunoAyer: req.body.desayunoAyer,
+        colacion1Ayer: req.body.colacion1Ayer,
+        comidaAyer: req.body.comidaAyer,
+        colacion2Ayer: req.body.colacion2Ayer,
+        cenaAyer: req.body.cenaAyer
+    });
+
+    registrarUsuario = await registrarUsuario.save();
+
+    if (!registrarUsuario)
+        return res.status(400).send('No se pudo crear el usuario :c');
+
+    res.send(registrarUsuario);
+})
 
 router.put('/:id', async (req, res) => {
 
