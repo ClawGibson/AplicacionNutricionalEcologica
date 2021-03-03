@@ -4,13 +4,15 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons'
 import Icon3 from 'react-native-vector-icons/FontAwesome5'
 
-// Screens - Stacks ?
+// Screens
 import AlimentosContainer from '../screens/Alimentos/AlimentosContainer'
 import Perfil from '../screens/Usuarios/Perfil'
 import AprendiendoContainer from '../screens/Aprendiendo/AprendiendoContainer'
 import ComunidadContainer from '../screens/Comunidad/ComunidadContainer'
 import MensajesContainer from '../screens/Mensajes/MensajesContainer'
-import RegistroDietetico from '../screens/Registro/RegistroDietetico'
+
+// Stacks
+import RegistroDieteticoNavigator from '../navigators/RegistroDieteticoNavigator'
 
 const Tab = createBottomTabNavigator();
 const primaryColor = '#439776';
@@ -30,7 +32,7 @@ function Main() {
                         <Icon name='home' style={{ position: 'relative' }} color={color} size={48} />
                     )
                 }} />
-            <Tab.Screen name="Registro" component={RegistroDietetico}
+            <Tab.Screen name="Registro" component={RegistroDieteticoNavigator}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <Icon2 name='silverware-fork-knife' style={{ position: 'relative' }} color={color} size={40} />
@@ -39,7 +41,7 @@ function Main() {
             <Tab.Screen name="Aprendiendo" component={AprendiendoContainer}
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <Icon2 name='book-open-page-variant' style={{ position: 'relative' }} color={color} size={40} />
+                        <Icon2 name='book-open-page-variant' style={{ position: 'relative' }} color={color} size={45} />
                     )
                 }} />
             <Tab.Screen name="Comunidad" component={ComunidadContainer}
@@ -57,7 +59,7 @@ function Main() {
             <Tab.Screen name="Mensajes" component={MensajesContainer}
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <Icon name='comments' style={{ position: 'relative' }} color={color} size={40} />
+                        <Icon name='comments' style={{ position: 'relative' }} color={color} size={45} />
                     )
                 }} />
         </Tab.Navigator>
