@@ -10,6 +10,7 @@ import Perfil from '../screens/Usuarios/Perfil'
 import AprendiendoContainer from '../screens/Aprendiendo/AprendiendoContainer'
 import ComunidadContainer from '../screens/Comunidad/ComunidadContainer'
 import MensajesContainer from '../screens/Mensajes/MensajesContainer'
+import Piramide from '../screens/Alimentos/Piramide'
 
 // Stacks
 import RegistroDieteticoNavigator from '../navigators/RegistroDieteticoNavigator'
@@ -26,7 +27,7 @@ function Main() {
                 activeTintColor: primaryColor
             }}
         >
-            <Tab.Screen name="Principal" component={AlimentosContainer}
+            <Tab.Screen name="Principal" component={Piramide}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <Icon name='home' style={{ position: 'relative' }} color={color} size={48} />
