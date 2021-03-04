@@ -62,7 +62,6 @@ const AlimentosContainer = (props) => {
                             alimentos.map((item) => {
                                 return (
                                     <AlimentosList
-                                        horizontal={true}
                                         navigation={props.navigation}
                                         key={item._id.id}
                                         item={item}
@@ -81,10 +80,10 @@ const AlimentosContainer = (props) => {
                         */}
                     </SafeAreaView>
                 ) : (
-                        <View>
-                            <Text>No hay alimentos registrados :c</Text>
-                        </View>
-                    )
+                    <View>
+                        <Text>No hay alimentos registrados :c</Text>
+                    </View>
+                )
             }
         </ScrollView >
     )

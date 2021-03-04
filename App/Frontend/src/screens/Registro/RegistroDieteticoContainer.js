@@ -6,6 +6,9 @@ import Banner from '../../components/Banner'
 const RegistroDieteticoContainer = (props) => {
     return (
         <ScrollView>
+            <View>
+                <Text>Recetas</Text>
+            </View>
             <Banner />
             <View>
                 <Text>

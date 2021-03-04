@@ -1,17 +1,16 @@
 import React from 'react'
-import { View } from 'react-native'
 import AlimentoCard from '../../components/AlimentoCard'
 import { TouchableOpacity } from 'react-native'
 
 const AlimentosList = (props) => {
 
     const { item } = props;
-    console.log(`Item en list: ${item}`);
+    //console.log(`Item en list: ${item.nombreAlimento}`);
 
     return (
         <TouchableOpacity
             onPress={() =>
-                props.navigation.navigate('AlimentoInd', item)
+                props.navigation.navigate('AlimentoInd', { item })
             }
         >
             <AlimentoCard {...item} />
