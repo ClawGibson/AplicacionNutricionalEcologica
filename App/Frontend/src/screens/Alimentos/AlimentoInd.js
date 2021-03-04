@@ -53,11 +53,11 @@ const AlimentoInd = (props) => {
     ];
 
     function handleItemClick({ index }) {
-        console.log(index);
+        //console.log(index);
     };
 
     function handleInnerItemClick({ innerIndex, item, itemIndex }) {
-        console.log(innerIndex);
+        //console.log(innerIndex);
     };
 
     return (
@@ -91,7 +91,7 @@ const AlimentoInd = (props) => {
                             <Text style={alimentoInd.percentajesText}>Proteinas</Text>
                         </View>
                         <View>
-                            <ProgressCircle style={{ height: 50 }} progress={0.25} progressColor={'#C1CF3A'} />
+                            <ProgressCircle style={{ height: 50 }} progress={0.85} progressColor={'#C1CF3A'} />
                             <Text style={alimentoInd.percentajesText}>Grasas</Text>
                         </View>
                     </View>
