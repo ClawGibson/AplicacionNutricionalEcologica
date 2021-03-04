@@ -1,14 +1,25 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
+import AlimentosContainer from '../Alimentos/AlimentosContainer'
+import Banner from '../../components/Banner'
 
-const RegistroDietetico = () => {
+const RegistroDieteticoContainer = (props) => {
     return (
-        <View style={{ marginTop: 250 }}>
-            <Text style={{ textAlign: 'center' }}>
-                Registro dietético
+        <ScrollView>
+            <View>
+                <Text>Recetas</Text>
+            </View>
+            <Banner />
+            <View>
+                <Text>
+                    Días de la semana
             </Text>
-        </View>
+            </View>
+            <AlimentosContainer
+                navigation={props.navigation}
+            />
+        </ScrollView>
     )
 }
 
-export default RegistroDietetico
+export default RegistroDieteticoContainer

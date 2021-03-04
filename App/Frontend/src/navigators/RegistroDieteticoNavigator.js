@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import RegistroDieteticoContainer from '../screens/Registro/RegistroDieteticoContainer'
-import { HeaderTitle } from 'react-navigation-stack';
+import AlimentoInd from '../screens/Alimentos/AlimentoInd'
 
 const Stack = createStackNavigator();
 
@@ -11,8 +11,12 @@ function MyStack() {
             <Stack.Screen name='Registro' component={RegistroDieteticoContainer}
                 options={{
                     headerTitle: 'Registro Dietético',
-                    headerTitleAlign: 'center',
-                    headerBackTitleVisible: true
+                    headerTitleAlign: 'center'
+                }}
+            />
+            <Stack.Screen name='AlimentoInd' component={AlimentoInd}
+                options={{
+                    headerShown: false
                 }}
                 left />
         </Stack.Navigator>

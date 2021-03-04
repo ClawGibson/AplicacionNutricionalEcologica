@@ -1,6 +1,5 @@
 import React from 'react'
-import { View, Image, Text } from 'react-native'
-import { TouchableOpacity } from 'react-native'
+import { View, Image, Text, TouchableOpacity } from 'react-native'
 
 import alimentoCard1 from '../styles/alimentoCard1'
 
@@ -20,18 +19,14 @@ const AlimentoCard = (props) => {
             <Text style={alimentoCard1.title}>
                 {nombreAlimento}
             </Text>
-            <TouchableOpacity>
-                <Image style={alimentoCard1.face1}
-                    resizeMode='contain'
-                    source={{ uri: icono.iconoNutricional ? icono.iconoNutricional : imageNoAvailable }}
-                />
-            </TouchableOpacity>
-            <TouchableOpacity>
-                <Image style={alimentoCard1.face2}
-                    resizeMode='contain'
-                    source={{ uri: icono.iconoAmbiental ? icono.iconoAmbiental : imageNoAvailable }}
-                />
-            </TouchableOpacity>
+            <Image style={alimentoCard1.face1}
+                resizeMode='contain'
+                source={{ uri: icono.iconoNutricional ? icono.iconoNutricional : imageNoAvailable }}
+            />
+            <Image style={alimentoCard1.face2}
+                resizeMode='contain'
+                source={{ uri: icono.iconoAmbiental ? icono.iconoAmbiental : imageNoAvailable }}
+            />
         </View>
     )
 }
