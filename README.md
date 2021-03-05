@@ -98,3 +98,4 @@ Project Link: Pending
 ## Acknowledgements
 * [Octavio Bautista](https://github.com/OctavioBautista)
 * [Tulio Salazar](https://github.com/TulioA)
+* [Jorge Alfredo](https://github.com/jadelagarza)
