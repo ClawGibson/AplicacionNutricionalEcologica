@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { ScrollView, View, FlatList, Text, SafeAreaView } from 'react-native'
-import AlimentosList from '../../selectors/Alimentos/AlimentosList'
+import { ScrollView, View, FlatList, Text, SafeAreaView, Button } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
+import AlimentosList from './AlimentosList'
 import AddAlimento from '../../components/AddAlimento'
 
 // Test data
@@ -42,6 +43,28 @@ const data2 = [
     }
 ];
 
+class MyBackButton extends React.Component {
+    render() {
+        // Get it from props
+        const { navigation } = this.props;
+        console.log(`Navigation: ${navigation}`);
+    }
+}
+
+function MyBackButton2() {
+    const navigation = useNavigation();
+
+    return (
+        <Button
+            title="Back"
+            onPress={() => {
+                navigation.navigate('AlimentoInd', { item })
+                console.log('Back pressed');
+            }}
+        />
+    );
+}
+
 const AlimentosContainer = (props) => {
 
     const [alimentos, setAlimentos] = useState([]);
@@ -58,26 +81,17 @@ const AlimentosContainer = (props) => {
             {
                 alimentos.length > 0 ? (
                     <SafeAreaView>
-                        {
-                            alimentos.map((item) => {
-                                return (
-                                    <AlimentosList
-                                        navigation={props.navigation}
-                                        key={item._id.id}
-                                        item={item}
-                                    />
-                                )
-                            })
-                        }
-                        {/** 
-                            <FlatList
-                                horizontal
-                                data={alimentos != undefined ? alimentos : 'undefined :c'}
-                                renderItem={AlimentosList}
-                                navigation={props.navigation}
-                                keyExtractor={item => item._id.id}
-                            />
-                        */}
+                        <FlatList data={alimentos}
+                            horizontal
+                            keyExtractor={item => `${item._id.id}`}
+                            renderItem={({ item }) =>
+                                <AlimentosList
+                                    navigation={props.navigation}
+                                    item={item}
+                                />
+                            }
+                        />
+
                     </SafeAreaView>
                 ) : (
                     <View>

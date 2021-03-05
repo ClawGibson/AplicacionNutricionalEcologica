@@ -9,9 +9,9 @@ const AlimentosList = (props) => {
 
     return (
         <TouchableOpacity
-            onPress={() =>
+            onPress={() => {
                 props.navigation.navigate('AlimentoInd', { item })
-            }
+            }}
         >
             <AlimentoCard {...item} />
         </TouchableOpacity>
