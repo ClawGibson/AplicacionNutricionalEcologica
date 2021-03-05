@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Image, Text, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 import alimentoCard1 from '../styles/alimentoCard1'
 
@@ -8,6 +9,7 @@ const imageNoAvailable = 'https://external-content.duckduckgo.com/iu/?u=https%3A
 const AlimentoCard = (props) => {
 
     const { imagen, nombreAlimento, icono } = props;
+    const navigation = useNavigation()
 
     return (
         <View style={alimentoCard1.body} >
