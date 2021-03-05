@@ -3,6 +3,9 @@ import { ScrollView, View, Text, Image } from 'react-native'
 import alimentoInd from '../../styles/alimentoInd'
 import { Grid, ProgressCircle } from 'react-native-svg-charts'
 import { ExpandableListView } from 'react-native-expandable-listview';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs(['VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.']);
 
 const AlimentoInd = (props) => {
 
@@ -21,8 +24,7 @@ const AlimentoInd = (props) => {
                     id: '1',
                     name:
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-                },
-                { id: '2', name: 'Sub Item 2' },
+                }
             ],
         },
         {
@@ -52,14 +54,6 @@ const AlimentoInd = (props) => {
         },
     ];
 
-    function handleItemClick({ index }) {
-        //console.log(index);
-    };
-
-    function handleInnerItemClick({ innerIndex, item, itemIndex }) {
-        //console.log(innerIndex);
-    };
-
     return (
         <>
             <Image
@@ -73,8 +67,7 @@ const AlimentoInd = (props) => {
                     <View style={alimentoInd.textContainer}>
                         <Text style={alimentoInd.titles}>Huella</Text>
                         <Text style={alimentoInd.extraText}>Lorem</Text>
-                        <View style={{ marginTop: 5, marginBottom: -4, borderBottomColor: 'black', borderBottomWidth: 1 }}
-                        />
+                        <View style={{ marginTop: 5, marginBottom: -4, borderBottomColor: 'black', borderBottomWidth: 1 }} />
                         <Text style={alimentoInd.titles}>Consumo</Text>
                         <Text style={alimentoInd.extraText}>Lorem</Text>
                     </View>
@@ -83,23 +76,21 @@ const AlimentoInd = (props) => {
                     <Text style={alimentoInd.titles}>Información nutricional</Text>
                     <View style={alimentoInd.percentajes}>
                         <View>
+                            <ProgressCircle style={{ height: 50 }} progress={0.85} progressColor={'#C1CF3A'} />
+                            <Text style={alimentoInd.percentajesText}>Grasas</Text>
+                        </View>
+                        <View>
                             <ProgressCircle style={{ height: 50 }} progress={0.8} progressColor={'#4BB5C3'} />
                             <Text style={alimentoInd.percentajesText} >Carbohidratos</Text>
                         </View>
+
                         <View>
                             <ProgressCircle style={{ height: 50 }} progress={0.51} progressColor={'#8AB832'} />
                             <Text style={alimentoInd.percentajesText}>Proteinas</Text>
                         </View>
-                        <View>
-                            <ProgressCircle style={{ height: 50 }} progress={0.85} progressColor={'#C1CF3A'} />
-                            <Text style={alimentoInd.percentajesText}>Grasas</Text>
-                        </View>
                     </View>
                     <ExpandableListView
                         data={CONTENT} // required
-                        styles={{ backgroundColor: '#FFFFFF' }}
-                        onInnerItemClick={handleInnerItemClick}
-                        onItemClick={handleItemClick}
                     />
                 </View>
             </ScrollView>

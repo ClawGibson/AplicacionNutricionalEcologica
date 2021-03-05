@@ -10,23 +10,25 @@ const AlimentoCard = (props) => {
     const { imagen, nombreAlimento, icono } = props;
 
     return (
-        <View style={alimentoCard1.container}>
-            <TouchableOpacity>
-                <Image style={alimentoCard1.image}
-                    source={{ uri: imagen ? imagen : imageNoAvailable }}
+        <View style={alimentoCard1.body} >
+            <View style={alimentoCard1.container}>
+                <TouchableOpacity>
+                    <Image style={alimentoCard1.image}
+                        source={{ uri: imagen ? imagen : imageNoAvailable }}
+                    />
+                </TouchableOpacity>
+                <Text style={alimentoCard1.title}>
+                    {nombreAlimento}
+                </Text>
+                <Image style={alimentoCard1.face1}
+                    resizeMode='contain'
+                    source={{ uri: icono.iconoNutricional ? icono.iconoNutricional : imageNoAvailable }}
                 />
-            </TouchableOpacity>
-            <Text style={alimentoCard1.title}>
-                {nombreAlimento}
-            </Text>
-            <Image style={alimentoCard1.face1}
-                resizeMode='contain'
-                source={{ uri: icono.iconoNutricional ? icono.iconoNutricional : imageNoAvailable }}
-            />
-            <Image style={alimentoCard1.face2}
-                resizeMode='contain'
-                source={{ uri: icono.iconoAmbiental ? icono.iconoAmbiental : imageNoAvailable }}
-            />
+                <Image style={alimentoCard1.face2}
+                    resizeMode='contain'
+                    source={{ uri: icono.iconoAmbiental ? icono.iconoAmbiental : imageNoAvailable }}
+                />
+            </View>
         </View>
     )
 }

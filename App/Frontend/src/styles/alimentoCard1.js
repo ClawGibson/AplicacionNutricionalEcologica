@@ -2,6 +2,11 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 
 const alimentoCard1 = StyleSheet.create({
+    body: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-evenly'
+    },
     container: {
         width: 143.24,
         height: 175.79,
