@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { ScrollView, View, Text, Image } from 'react-native'
 import alimentoInd from '../../styles/alimentoInd'
-import { Grid, ProgressCircle } from 'react-native-svg-charts'
+import { ProgressCircle } from 'react-native-svg-charts'
 import { ExpandableListView } from 'react-native-expandable-listview';
 import { LogBox } from 'react-native';
 
@@ -9,7 +9,7 @@ LogBox.ignoreLogs(['VirtualizedLists should never be nested inside plain ScrollV
 
 const AlimentoInd = (props) => {
 
-    const { item } = props;
+    const [item, setItem] = useState(props.route.params.item);
     //console.log(`PROPS EN DETALLES: ${props.nombreAlimento}`);
 
     const manzana = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.FKIhQjkoYYfxW-lpbw7-CwHaFA%26pid%3DApi&f=1';
@@ -59,9 +59,9 @@ const AlimentoInd = (props) => {
             <Image
                 style={alimentoInd.image}
                 resizeMode='stretch'
-                source={{ uri: manzana ? manzana : imageNoAvailable }}
+                source={{ uri: item.imagen ? item.imagen : imageNoAvailable }}
             />
-            <Text style={alimentoInd.title}>Nombre del alimento</Text>
+            <Text style={alimentoInd.title}>{item.nombreAlimento}</Text>
             <ScrollView>
                 <View style={alimentoInd.huellaConsumo}>
                     <View style={alimentoInd.textContainer}>

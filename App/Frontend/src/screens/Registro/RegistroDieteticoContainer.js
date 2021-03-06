@@ -10,11 +10,6 @@ const RegistroDieteticoContainer = (props) => {
                 <Text>Recetas</Text>
             </View>
             <Banner />
-            <View>
-                <Text>
-                    Días de la semana
-            </Text>
-            </View>
             <AlimentosContainer
                 navigation={props.navigation}
             />
