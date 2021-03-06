@@ -5,7 +5,7 @@ const white = '#FFFFFF';
 
 const alimentoInd = StyleSheet.create({
     image: {
-        backgroundColor: '#059895',
+        backgroundColor: gray,
         height: 170
     },
     huellaConsumo: {
@@ -31,7 +31,10 @@ const alimentoInd = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         lineHeight: 29.26,
-        color: white
+        color: white,
+        textShadowColor: '#000000',
+        textShadowOffset: { width: 1, height: 1 },
+        textShadowRadius: 1
     },
     titles: {
         fontSize: 18,
