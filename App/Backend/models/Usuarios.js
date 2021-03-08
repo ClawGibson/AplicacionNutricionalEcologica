@@ -47,5 +47,13 @@ usuariosSchema.method('toJSON', function () {
     return { ...result, id };
 });
 
+usuariosSchema.virtual('id').get(function () {
+    return this._id.toHexString();
+});
+
+usuariosSchema.set('toJSON', {
+    virtuals: true
+});
+
 exports.Usuarios = mongoose.model('Usuarios', usuariosSchema);
 exports.usuariosSchema = usuariosSchema;

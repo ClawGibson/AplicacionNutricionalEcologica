@@ -8,6 +8,7 @@ const alimentosRoute = require('./routes/alimentos.routes');
 const subGrupoAlimentosRoute = require('./routes/subGrupoAlimentos.routes');
 const recetasRoute = require('./routes/recetas.routes');
 const usuariosRoute = require('./routes/usuarios.routes');
+const menusBaseRoute = require('./routes/menusBase.routes');
 const authJwt = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler');
 
@@ -30,6 +31,7 @@ app.use(`${API_URL}/grupoAlimentos`, grupoAlimentosRoute);
 app.use(`${API_URL}/subGrupoAlimentos`, subGrupoAlimentosRoute);
 app.use(`${API_URL}/recetas`, recetasRoute);
 app.use(`${API_URL}/usuarios`, usuariosRoute);
+app.use(`${API_URL}/menusBase`, menusBaseRoute);
 
 mongoose
     .connect(MONGODB, {

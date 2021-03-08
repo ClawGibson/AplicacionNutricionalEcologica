@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ScrollView, View, FlatList, Text, SafeAreaView, Button } from 'react-native'
+import { ScrollView, View, FlatList, Text, SafeAreaView, Image } from 'react-native'
 import AlimentosList from './AlimentosList'
 import DiasFilter from '../../components/DiasFilter'
 
@@ -7,6 +7,9 @@ import DiasFilter from '../../components/DiasFilter'
 const data = require('../../assets/data/alimentos.json');
 const data2 = require('../../assets/data/data2.json');
 const days = require('../../assets/data/dias.json');
+
+const imagen404 = 'https://res.cloudinary.com/dwjv6orjf/image/upload/v1615148039/chems_n0glyv.png';
+const imageNoAvailable = 'https://res.cloudinary.com/dwjv6orjf/image/upload/v1615148366/noAvailable_frihp8.png';
 
 const AlimentosContainer = (props) => {
 
@@ -57,7 +60,22 @@ const AlimentosContainer = (props) => {
                     </SafeAreaView>
                 ) : (
                     <View>
-                        <Text>No hay alimentos registrados :c</Text>
+                        <Image
+                            style={{
+                                flex: 1,
+                                flexDirection: 'row',
+                                width: 143.24,
+                                height: 175.79,
+                                padding: 1,
+                                borderRadius: 30,
+                                marginTop: 50,
+                                marginLeft: 18,
+                                marginBottom: 10,
+                                marginRight: 10,
+                                alignItems: 'center',
+                                alignContent: 'center'
+                            }}
+                            source={{ uri: imagen404 ? imagen404 : imageNoAvailable }} />
                     </View>
                 )
             }
