@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native'
-
-const primary = '#439776';
+import { primary } from './palette'
 
 const diasFilter = StyleSheet.create({
     list: {
