@@ -30,7 +30,7 @@ const Banner = () => {
         <ScrollView>
             <View style={BannerStyles.container}>
                 <View style={BannerStyles.swiper}>
-                    <Swiper style={{ height: width / 3 }} showsButtons={true} autoplay={true}>
+                    <Swiper style={{ height: width / 3 }} autoplay={true}>
                         {
                             BannerData.map((item) => {
                                 return (

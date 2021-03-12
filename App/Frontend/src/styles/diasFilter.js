@@ -7,7 +7,7 @@ const diasFilter = StyleSheet.create({
         borderBottomColor: '#F2F2F2'
     },
     container: {
-        flex: 1,
+        flex: -1,
         flexDirection: 'row',
         justifyContent: 'space-evenly'
     },

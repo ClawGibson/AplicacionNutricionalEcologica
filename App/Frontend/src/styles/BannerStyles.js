@@ -1,11 +1,13 @@
 import { StyleSheet, Dimensions } from 'react-native'
+import { colorFrutas } from './palette'
 
 const { width } = Dimensions.get('screen');
 
 const BannerStyles = StyleSheet.create({
     container: {
-        flex: 1,
-        paddingBottom: 20
+        flex: 5,
+        marginBottom: 10,
+        borderRadius: 20,
     },
     swiper: {
         width: width,
@@ -13,9 +15,10 @@ const BannerStyles = StyleSheet.create({
         marginTop: 20
     },
     imageBanner: {
-        width: width - 40,
+        width: width - 20,
         height: width / 2.5,
-        marginHorizontal: 20
+        marginHorizontal: 10,
+        borderRadius: 20
     }
 })
 

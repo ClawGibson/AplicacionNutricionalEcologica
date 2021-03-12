@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ScrollView, View, FlatList, Text, SafeAreaView, Image } from 'react-native'
+import { ScrollView, View, FlatList, Text, SafeAreaView, Image, StyleSheet } from 'react-native'
 import AlimentosList from './AlimentosList'
 import DiasFilter from '../../components/DiasFilter'
 
@@ -8,7 +8,7 @@ const data = require('../../assets/data/alimentos.json');
 const data2 = require('../../assets/data/data2.json');
 const days = require('../../assets/data/dias.json');
 
-const imagen404 = 'https://res.cloudinary.com/dwjv6orjf/image/upload/v1615148039/chems_n0glyv.png';
+const imagen404 = 'https://res.cloudinary.com/dwjv6orjf/image/upload/v1615570044/404_not_found_short_obkarx.png';
 const imageNoAvailable = 'https://res.cloudinary.com/dwjv6orjf/image/upload/v1615148366/noAvailable_frihp8.png';
 
 const AlimentosContainer = (props) => {
@@ -47,6 +47,51 @@ const AlimentosContainer = (props) => {
                             active={active}
                             setActive={setActive}
                         />
+                        <Text style={styles.title} >Desayuno - 9:30</Text>
+                        <FlatList data={alimentos}
+                            horizontal
+                            keyExtractor={item => `${item._id.id}`}
+                            renderItem={({ item }) =>
+                                <AlimentosList
+                                    navigation={props.navigation}
+                                    item={item}
+                                />
+                            }
+                        />
+                        <Text style={styles.title} >Colación - 11:30</Text>
+                        <FlatList data={alimentos}
+                            horizontal
+                            keyExtractor={item => `${item._id.id}`}
+                            renderItem={({ item }) =>
+                                <AlimentosList
+                                    navigation={props.navigation}
+                                    item={item}
+                                />
+                            }
+                        />
+                        <Text style={styles.title} >Comida - 4:30</Text>
+                        <FlatList data={alimentos}
+                            horizontal
+                            keyExtractor={item => `${item._id.id}`}
+                            renderItem={({ item }) =>
+                                <AlimentosList
+                                    navigation={props.navigation}
+                                    item={item}
+                                />
+                            }
+                        />
+                        <Text style={styles.title} >Colación - 7:30</Text>
+                        <FlatList data={alimentos}
+                            horizontal
+                            keyExtractor={item => `${item._id.id}`}
+                            renderItem={({ item }) =>
+                                <AlimentosList
+                                    navigation={props.navigation}
+                                    item={item}
+                                />
+                            }
+                        />
+                        <Text style={styles.title} >Cena - 10:30</Text>
                         <FlatList data={alimentos}
                             horizontal
                             keyExtractor={item => `${item._id.id}`}
@@ -62,18 +107,9 @@ const AlimentosContainer = (props) => {
                     <View>
                         <Image
                             style={{
-                                flex: 1,
-                                flexDirection: 'row',
-                                width: 143.24,
-                                height: 175.79,
-                                padding: 1,
-                                borderRadius: 30,
-                                marginTop: 50,
-                                marginLeft: 18,
-                                marginBottom: 10,
-                                marginRight: 10,
-                                alignItems: 'center',
-                                alignContent: 'center'
+                                width: '110%',
+                                height: 513,
+                                marginLeft: '-4%'
                             }}
                             source={{ uri: imagen404 ? imagen404 : imageNoAvailable }} />
                     </View>
@@ -84,3 +120,14 @@ const AlimentosContainer = (props) => {
 }
 
 export default AlimentosContainer
+
+
+const styles = StyleSheet.create({
+    title: {
+        flex: 1,
+        alignItems: 'center',
+        fontSize: 24,
+        fontWeight: '500',
+        marginLeft: '3%'
+    }
+})
