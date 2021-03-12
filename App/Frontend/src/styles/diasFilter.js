@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native'
-
-const primary = '#439776';
+import { primary } from './palette'
 
 const diasFilter = StyleSheet.create({
     list: {
@@ -8,7 +7,7 @@ const diasFilter = StyleSheet.create({
         borderBottomColor: '#F2F2F2'
     },
     container: {
-        flex: 1,
+        flex: -1,
         flexDirection: 'row',
         justifyContent: 'space-evenly'
     },
