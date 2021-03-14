@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text } from "react-native";
-import ColorCard from '../../components/ColorCard'
 
 const Piramide = () => {
     return (
@@ -8,7 +7,6 @@ const Piramide = () => {
             <Text style={{ textAlign: 'center' }}>
                 Pirámide
             </Text>
-            <ColorCard />
         </View>
     )
 }

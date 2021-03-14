@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, ScrollView, StyleSheet, Image } from 'react-native'
+import { View, Text, ScrollView, StyleSheet } from 'react-native'
 import AlimentosContainer from '../Alimentos/AlimentosContainer'
 import SegmentedControlTab from "react-native-segmented-control-tab"
 import Banner from '../../components/Banner'
 import { secondary } from '../../styles/palette'
-
-const imagen = 'https://res.cloudinary.com/dwjv6orjf/image/upload/v1615148039/chems_n0glyv.png';
-const imageNoAvailable = 'https://res.cloudinary.com/dwjv6orjf/image/upload/v1615148366/noAvailable_frihp8.png';
+import RegistroContainer from '../Alimentos/RegistroContainer'
 
 const RegistroDieteticoContainer = (props) => {
 
@@ -37,13 +35,7 @@ const RegistroDieteticoContainer = (props) => {
                     <AlimentosContainer
                         navigation={props.navigation}
                     /> :
-                    <Image
-                        style={{
-                            width: '110%',
-                            height: 513,
-                            marginLeft: '-4%'
-                        }}
-                        source={{ uri: imagen ? imagen : imageNoAvailable }} />
+                    <RegistroContainer />
             }
         </ScrollView>
     )

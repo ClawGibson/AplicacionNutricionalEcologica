@@ -58,50 +58,6 @@ const AlimentosContainer = (props) => {
                                 />
                             }
                         />
-                        <Text style={styles.title} >Colación - 11:30</Text>
-                        <FlatList data={alimentos}
-                            horizontal
-                            keyExtractor={item => `${item._id.id}`}
-                            renderItem={({ item }) =>
-                                <AlimentosList
-                                    navigation={props.navigation}
-                                    item={item}
-                                />
-                            }
-                        />
-                        <Text style={styles.title} >Comida - 4:30</Text>
-                        <FlatList data={alimentos}
-                            horizontal
-                            keyExtractor={item => `${item._id.id}`}
-                            renderItem={({ item }) =>
-                                <AlimentosList
-                                    navigation={props.navigation}
-                                    item={item}
-                                />
-                            }
-                        />
-                        <Text style={styles.title} >Colación - 7:30</Text>
-                        <FlatList data={alimentos}
-                            horizontal
-                            keyExtractor={item => `${item._id.id}`}
-                            renderItem={({ item }) =>
-                                <AlimentosList
-                                    navigation={props.navigation}
-                                    item={item}
-                                />
-                            }
-                        />
-                        <Text style={styles.title} >Cena - 10:30</Text>
-                        <FlatList data={alimentos}
-                            horizontal
-                            keyExtractor={item => `${item._id.id}`}
-                            renderItem={({ item }) =>
-                                <AlimentosList
-                                    navigation={props.navigation}
-                                    item={item}
-                                />
-                            }
-                        />
                     </SafeAreaView>
                 ) : (
                     <View>
