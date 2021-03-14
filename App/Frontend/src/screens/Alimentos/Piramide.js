@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from "react-native";
-import Boton from '../../components/Boton'
+import ColorCard from '../../components/ColorCard'
 
 const Piramide = () => {
     return (
@@ -8,7 +8,7 @@ const Piramide = () => {
             <Text style={{ textAlign: 'center' }}>
                 Pirámide
             </Text>
-            <Boton name={'ENTRAR'} />
+            <ColorCard />
         </View>
     )
 }
