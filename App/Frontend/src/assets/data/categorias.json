@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "cat": "Abdomen"
+    },
+    {
+        "id": "2",
+        "cat": "Pierna"
+    },
+    {
+        "id": "3",
+        "cat": "Brazo"
+    },
+    {
+        "id": "4",
+        "cat": "Gluteos"
+    }
+]

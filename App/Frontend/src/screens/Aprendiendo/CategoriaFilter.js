@@ -1,40 +1,38 @@
 import React from 'react'
 import { TouchableOpacity, ScrollView } from 'react-native'
 import { ListItem, Badge, Text, View } from 'native-base'
-import diasFilter from '../styles/diasFilter'
+import diasFilter from '../../styles/diasFilter'
 
-
-const DiasFilter = (props) => {
+const CategoriaFilter = (props) => {
 
     return (
         <ScrollView horizontal style={{ flex: -1 }}>
             <ListItem style={diasFilter.list}>
-                <View style={diasFilter.container} >
+                <View style={diasFilter.container}>
                     <TouchableOpacity
                         key={1}
                         onPress={() => {
-                            props.daySelected('Lunes'), props.setActive(-1)
+                            console.log('Todos')
                         }}
                     >
-                        <Badge style={[diasFilter.active, props.active == -1 ? diasFilter.active : diasFilter.inactive]} >
-                            <Text>Lunes</Text>
+                        <Badge style={[diasFilter.active, props.active == -1 ? diasFilter.active : diasFilter.inactive]}>
+                            <Text>Todos</Text>
                         </Badge>
                     </TouchableOpacity>
                     {
-                        props.day.map((item) => (
+                        props.categories.map((item) => {
                             <TouchableOpacity
                                 key={item.id}
                                 onPress={() => {
-                                    props.daySelected(item),
-                                        props.setActive(props.day.indexOf(item))
+                                    props.catSelected(item),
+                                        props.setActive(props.categories.indexOf(item))
                                 }}
                             >
-                                <Badge style={props.active == props.day.indexOf(item) ? diasFilter.active : diasFilter.inactive}>
-                                    <Text style={diasFilter.text} >{item.name}</Text>
+                                <Badge style={props.active == props.categories.indexOf(item) ? diasFilter.active : diasFilter.inactive}>
+                                    <Text style={diasFilter.text}>{item.cat}</Text>
                                 </Badge>
                             </TouchableOpacity>
-                        )
-                        )
+                        })
                     }
                 </View>
             </ListItem>
@@ -42,4 +40,4 @@ const DiasFilter = (props) => {
     )
 }
 
-export default DiasFilter
+export default CategoriaFilter
