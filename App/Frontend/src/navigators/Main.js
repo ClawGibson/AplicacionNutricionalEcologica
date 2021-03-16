@@ -13,10 +13,10 @@ import MensajesContainer from '../screens/Mensajes/MensajesContainer'
 import Piramide from '../screens/Alimentos/Piramide'
 
 // Stacks
-import RegistroDieteticoNavigator from '../navigators/RegistroDieteticoNavigator'
+import StackNavigation from '../navigators/StackNavigation'
 
 const Tab = createBottomTabNavigator();
-const primaryColor = '#439776';
+import { primary } from '../styles/palette'
 
 function Main() {
     return (
@@ -24,7 +24,7 @@ function Main() {
             initialRouteName="Principal"
             tabBarOptions={{
                 showLabel: false,
-                activeTintColor: primaryColor
+                activeTintColor: primary
             }}
         >
             <Tab.Screen name="Principal" component={Piramide}
@@ -33,7 +33,7 @@ function Main() {
                         <Icon name='home' style={{ position: 'relative' }} color={color} size={48} />
                     )
                 }} />
-            <Tab.Screen name="Registro" component={RegistroDieteticoNavigator}
+            <Tab.Screen name="Registro" component={StackNavigation}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <Icon2 name='silverware-fork-knife' style={{ position: 'relative' }} color={color} size={40} />
