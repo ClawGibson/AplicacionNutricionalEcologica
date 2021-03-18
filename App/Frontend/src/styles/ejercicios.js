@@ -4,19 +4,20 @@ import { StyleSheet } from 'react-native'
 const ejercicios = StyleSheet.create({
     body: {
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'space-evenly'
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
     },
     container: {
+        position: 'relative',
         width: 143,
         height: 176,
         borderRadius: 30,
         marginTop: 50,
-        marginLeft: 18,
+        marginLeft: '3%',
+        marginRight: '6%',
         marginBottom: 10,
-        marginRight: 10,
         backgroundColor: '#FFF',
-        elevation: 2
+        elevation: 1
     },
     image: {
         width: 120,
