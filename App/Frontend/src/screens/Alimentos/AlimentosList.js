@@ -5,7 +5,6 @@ import { TouchableOpacity } from 'react-native'
 const AlimentosList = (props) => {
 
     const { item } = props;
-    //console.log(`Item en list: ${item.nombreAlimento}`);
 
     return (
         <TouchableOpacity

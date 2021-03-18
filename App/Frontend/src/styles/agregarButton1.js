@@ -1,42 +1,40 @@
 import { StyleSheet } from 'react-native'
+import { primary } from './palette'
 
 const agregarButton1 = StyleSheet.create({
+    body: {
+        flex: 2,
+        flexDirection: 'column',
+        justifyContent: 'space-evenly'
+    },
     container: {
-        width: 143.24,
-        height: 175.79,
+        width: 84,
+        height: 119,
         padding: 1,
-        marginTop: 20,
-        marginLeft: 15,
-        marginBottom: 20,
-        marginRight: 10,
-        borderRadius: 30,
-        alignContent: 'center',
-        alignItems: 'center',
-        elevation: 5,
-        backgroundColor: '#FFFFFF'
+        marginLeft: 10,
+        borderRadius: 15,
+        backgroundColor: '#FFF',
+        justifyContent: 'center',
+        elevation: 1
+    },
+    icon: {
+        position: 'relative',
+        alignSelf: 'center'
     },
     containerButton: {
-        position: 'absolute',
-        width: 143.24 * .5,
-        height: 20,
-        padding: 1,
-        borderRadius: 5,
-        top: 145,
-        alignItems: 'center',
-        elevation: 1,
-        backgroundColor: '#8AB832'
+        position: 'relative',
+        backgroundColor: primary,
+        borderRadius: 15,
+        alignSelf: 'center',
+        width: '80%',
+        height: 15,
+        marginTop: '33%'
     },
     title: {
-        position: 'absolute',
-        fontWeight: 'bold',
-        fontSize: 14,
-        color: '#FFFFFF'
-    },
-    add: {
+        fontSize: 12,
         position: 'relative',
-        width: 40,
-        height: 40,
-        top: -92
+        color: '#FFF',
+        textAlign: 'center'
     }
 })
 

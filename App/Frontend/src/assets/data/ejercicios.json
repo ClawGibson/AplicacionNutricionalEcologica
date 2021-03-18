@@ -1,0 +1,68 @@
+[
+    {
+        "id": "1",
+        "name": "Ejercicio1",
+        "cat": "Abdomen",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.explicit.bing.net%2Fth%3Fid%3DOIP.NbYM1Xi2qn1JTmeNvX7K1QHaEK%26pid%3DApi&f=1"
+    },
+    {
+        "id": "2",
+        "name": "Ejercicio2",
+        "cat": "Abdomen",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.b7OAiowzljfRguImFUcjjwHaEK%26pid%3DApi&f=1"
+    },
+    {
+        "id": "3",
+        "name": "Ejercicio3",
+        "cat": "Pierna",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.CB6C5eZWvYIjFhtsDcvuaQHaHH%26pid%3DApi&f=1"
+    },
+    {
+        "id": "4",
+        "name": "Ejercicio4",
+        "cat": "Pierna",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.tpBuntihlfvmfxYwEwGCPQHaE8%26pid%3DApi&f=1"
+    },
+    {
+        "id": "5",
+        "name": "Ejercicio5",
+        "cat": "Brazo",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.wpdJ4rL5u4aE8__quLwkRAHaET%26pid%3DApi&f=1"
+    },
+    {
+        "id": "6",
+        "name": "Ejercicio6",
+        "cat": "Brazo",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.EgHqp_bOe5l4weX4kASG2AHaEd%26pid%3DApi&f=1"
+    },
+    {
+        "id": "7",
+        "name": "Ejercicio7",
+        "cat": "Brazo",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.XjVJKl9lTSoMhGbrbXTs8AHaEU%26pid%3DApi&f=1"
+    },
+    {
+        "id": "8",
+        "name": "Ejercicio8",
+        "cat": "Gluteos",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP._j2gQaViQ0ghxHZn7f5nJQHaEv%26pid%3DApi&f=1"
+    },
+    {
+        "id": "9",
+        "name": "Ejercicio9",
+        "cat": "Gluteos",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.t1WSg6XxKBKImUToyEyrvwHaEU%26pid%3DApi&f=1"
+    },
+    {
+        "id": "10",
+        "name": "Ejercicio10",
+        "cat": "Gluteos",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.SoEXaT-VpwVnQJfHMRQi2QHaEo%26pid%3DApi&f=1"
+    },
+    {
+        "id": "11",
+        "name": "Ejercicio11",
+        "cat": "Pierna",
+        "imagen": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.SoEXaT-VpwVnQJfHMRQi2QHaEo%26pid%3DApi&f=1"
+    }
+]

@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableOpacity, ScrollView, Button } from 'react-native'
+import { TouchableOpacity, ScrollView } from 'react-native'
 import { ListItem, Badge, Text, View } from 'native-base'
 import diasFilter from '../styles/diasFilter'
 

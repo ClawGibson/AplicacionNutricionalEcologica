@@ -1,14 +1,14 @@
 import React from 'react'
-import { View, Text } from "react-native";
+import { View, Text } from 'react-native'
 
-const Piramide = () => {
+const Agua = () => {
     return (
         <View style={{ marginTop: 250 }}>
             <Text style={{ textAlign: 'center' }}>
-                Pirámide
+                Agua c:
             </Text>
         </View>
     )
 }
 
-export default Piramide
+export default Agua
