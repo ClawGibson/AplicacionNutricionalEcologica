@@ -8,20 +8,28 @@ const categorias = require('../../assets/data/categorias.json');
 
 const Ejercicios = () => {
 
+    const [data, setData] = useState([]);
     const [active, setActive] = useState([]);
     const [category, setCategory] = useState([]);
+    const [initialState, setInitialState] = useState([]);
 
     useEffect(() => {
+        setData(examples);
         setActive(-1);
         setCategory(categorias);
+        setInitialState(examples);
         return () => {
+            setData([]);
             setActive([]);
             setCategory([]);
+            setInitialState([]);
         }
     }, [])
 
     const chageCat = (ctg) => {
-        ctg === 'Todos' ? console.log('Todos') : console.log(ctg)
+        ctg === 'Todos' ?
+            [setData(initialState)] :
+            [setData(initialState.filter((item) => item.cat === ctg.cat), setActive(true))]
     }
 
     return (
@@ -33,7 +41,7 @@ const Ejercicios = () => {
                 setActive={setActive}
             />
             <FlatList
-                data={examples}
+                data={data}
                 numColumns={2}
                 keyExtractor={item => `${item.id}`}
                 renderItem={({ item }) =>

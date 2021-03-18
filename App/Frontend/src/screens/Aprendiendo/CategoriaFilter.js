@@ -12,7 +12,7 @@ const CategoriaFilter = (props) => {
                     <TouchableOpacity
                         key={1}
                         onPress={() => {
-                            console.log('Todos')
+                            props.catSelected('Todos'), props.setActive(-1)
                         }}
                     >
                         <Badge style={[diasFilter.active, props.active == -1 ? diasFilter.active : diasFilter.inactive]}>
@@ -21,17 +21,19 @@ const CategoriaFilter = (props) => {
                     </TouchableOpacity>
                     {
                         props.categories.map((item) => {
-                            <TouchableOpacity
-                                key={item.id}
-                                onPress={() => {
-                                    props.catSelected(item),
-                                        props.setActive(props.categories.indexOf(item))
-                                }}
-                            >
-                                <Badge style={props.active == props.categories.indexOf(item) ? diasFilter.active : diasFilter.inactive}>
-                                    <Text style={diasFilter.text}>{item.cat}</Text>
-                                </Badge>
-                            </TouchableOpacity>
+                            return (
+                                <TouchableOpacity
+                                    key={item.id}
+                                    onPress={() => {
+                                        props.catSelected(item),
+                                            props.setActive(props.categories.indexOf(item))
+                                    }}
+                                >
+                                    <Badge style={props.active == props.categories.indexOf(item) ? diasFilter.active : diasFilter.inactive}>
+                                        <Text style={diasFilter.text}>{item.cat}</Text>
+                                    </Badge>
+                                </TouchableOpacity>
+                            )
                         })
                     }
                 </View>
