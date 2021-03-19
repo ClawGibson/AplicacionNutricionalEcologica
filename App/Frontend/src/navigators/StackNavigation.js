@@ -11,12 +11,7 @@ const Stack = createStackNavigator();
 function MyStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name='Registro' component={RegistroDieteticoContainer}
-                options={{
-                    headerTitle: 'Registro Dietético',
-                    headerTitleAlign: 'center'
-                }}
-            />
+            <Stack.Screen name='Registro' component={RegistroDieteticoContainer} options={{ headerTitle: 'Registro', headerTitleAlign: 'center' }} />
             <Stack.Screen name='AlimentoInd' component={AlimentoInd} options={{ headerShown: false }} left />
             <Stack.Screen name='Ejercicios' component={Ejercicios} options={{ headerTitleAlign: 'center' }} />
             <Stack.Screen name='Agua' component={Agua} options={{ headerTitleAlign: 'center' }} />

@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import ejercicioInd from '../../styles/ejercicioInd'
 import Add from 'react-native-vector-icons/Ionicons'
 import Minus from 'react-native-vector-icons/Feather'
+import { primary } from '../../styles/palette'
+import { useDispatch } from 'react-redux'
+import { addTime } from '../../Redux/actions/time'
 
 const EjercicioInd = ({ route }) => {
 
+    const navigation = useNavigation();
+    const dispatch = useDispatch();
     const { imagen, name } = route.params.data;
     const [time, setTime] = useState(5);
 
@@ -33,15 +39,20 @@ const EjercicioInd = ({ route }) => {
                 <Text style={ejercicioInd.title}>{name ? name : 'No data'}</Text>
                 <View style={ejercicioInd.button}>
                     <TouchableOpacity onPress={minus} style={{ position: 'absolute', marginTop: 11, marginLeft: '5%', width: 30, alignItems: 'center' }}>
-                        <Minus name='minus' size={30} color={'#FFF'} />
+                        <Minus name='minus' size={30} color={primary} />
                     </TouchableOpacity>
                     <Text style={ejercicioInd.text}>{`${time} min`}</Text>
                     <TouchableOpacity onPress={add} style={{ position: 'absolute', marginTop: -29, marginLeft: '80%', width: 30, alignItems: 'center' }}>
-                        <Add name='add' size={30} color={'#FFF'} />
+                        <Add name='add' size={30} color={primary} />
                     </TouchableOpacity>
                 </View>
             </View>
-            <TouchableOpacity style={ejercicioInd.register}>
+            <TouchableOpacity
+                style={ejercicioInd.register}
+                onPress={() => {
+                    navigation.navigate('Registro'),
+                        dispatch(addTime(time))
+                }}>
                 <Text style={ejercicioInd.registerText}>Registrar</Text>
             </TouchableOpacity>
         </View>

@@ -17,7 +17,7 @@ const data = [
 ]
 const dias = require('../../assets/data/dias.json');
 
-const RegistroContainer = () => {
+const RegistroContainer = (props) => {
 
     const [cards, setCards] = useState([]);
     const [days, setDays] = useState([]);

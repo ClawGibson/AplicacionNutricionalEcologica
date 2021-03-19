@@ -15,24 +15,30 @@ const ejercicioInd = StyleSheet.create({
         height: 350,
         borderRadius: 30,
         backgroundColor: '#FFF',
-        alignSelf: 'center'
+        alignSelf: 'center',
+        elevation: 1
     },
     button: {
         position: 'relative',
         width: (width * .8) * .8,
         height: 45,
         borderRadius: 18,
-        backgroundColor: secondary,
+        backgroundColor: '#fff',
+        borderWidth: 1,
+        borderColor: primary,
         alignSelf: 'center',
         justifyContent: 'center',
         marginTop: 100
     },
     title: {
+        position: 'relative',
         fontSize: 34,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: 40,
+        marginBottom: -40
     },
     text: {
-        color: '#FFF',
+        color: primary,
         alignSelf: 'center'
     },
     image: {
@@ -53,7 +59,10 @@ const ejercicioInd = StyleSheet.create({
         alignSelf: 'center',
         borderRadius: 30,
         bottom: '5%',
-        alignItems: 'center'
+        alignItems: 'center',
+        elevation: 1,
+        borderWidth: 1,
+        borderColor: '#FFF'
     },
     registerText: {
         color: '#FFF',
