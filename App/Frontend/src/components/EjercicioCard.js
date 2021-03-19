@@ -4,9 +4,8 @@ import aguaCard from '../styles/aguaCard'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector } from 'react-redux'
 
-const EjercicioCard = (props) => {
+const EjercicioCard = () => {
 
-    const { time, timeItem } = props;
     const tiempo = useSelector(state => state.timeReducer)
 
     const navigation = useNavigation()
