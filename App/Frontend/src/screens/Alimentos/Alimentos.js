@@ -4,27 +4,35 @@ import { Header, Item, Input } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 import AlimentosList from './AlimentosList'
 import BuscandoAlimento from './BuscandoAlimento'
+import CategoriasAlimentos from './CategoriasAlimentos'
 import Search from 'react-native-vector-icons/AntDesign'
 import Scan from 'react-native-vector-icons/MaterialCommunityIcons'
 import alimentos from '../../styles/alimentos'
 
 const data = require('../../assets/data/data2.json');
+const categories = require('../../assets/data/categoriasAlimentos.json');
 
 const Alimentos = () => {
 
     const navigation = useNavigation();
     const [food, setFood] = useState([]);
     const [searchs, setSearchs] = useState([]);
+    const [category, setCategory] = useState([]);
     const [focus, setFocus] = useState();
+    const [active, setActive] = useState([]);
 
     useEffect(() => {
         setFood(data)
         setSearchs(data)
         setFocus(false)
+        setCategory(categories)
+        setActive(-1)
         return () => {
             setFood([])
             setSearchs([])
             setFocus()
+            setCategory([])
+            setActive([])
         }
     }, [])
 
@@ -38,6 +46,14 @@ const Alimentos = () => {
 
     const closeList = () => {
         setFocus(false)
+    }
+
+    const changeCat = (ctg) => {
+        {
+            ctg === 'Todos'
+                ? console.log('Todos')
+                : console.log(ctg.cat)
+        }
     }
 
     return (
@@ -64,7 +80,12 @@ const Alimentos = () => {
                 )
                     : (<View>
                         <View>
-                            <Text>Filtro de categorias</Text>
+                            <CategoriasAlimentos
+                                cat={category}
+                                catSelected={changeCat}
+                                active={active}
+                                setActive={setActive}
+                            />
                         </View>
                         <FlatList
                             data={food}

@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "cat": "Frutas"
+    },
+    {
+        "id": "2",
+        "cat": "Verduras"
+    },
+    {
+        "id": "3",
+        "cat": "Lácteos"
+    },
+    {
+        "id": "4",
+        "cat": "Cereales"
+    },
+    {
+        "id": "5",
+        "cat": "Carne"
+    },
+    {
+        "id": "6",
+        "cat": "Leguminosas"
+    }
+]
