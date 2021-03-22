@@ -53,7 +53,6 @@ const AlimentosContainer = (props) => {
                             keyExtractor={item => `${item._id.id}`}
                             renderItem={({ item }) =>
                                 <AlimentosList
-                                    navigation={props.navigation}
                                     item={item}
                                 />
                             }
