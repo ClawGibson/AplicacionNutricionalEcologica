@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Image } from 'react-native'
 import { FlatList, View, Text, SafeAreaView } from 'react-native'
-import ColorCardList from './ColorCardList'
 import DiasFilter from '../../components/DiasFilter'
 import AguaCard from '../../components/AguaCard'
 import EjercicioCard from '../../components/EjercicioCard'
 import AddAlimento from '../../components/AddAlimento'
-
-const imagen = 'https://res.cloudinary.com/dwjv6orjf/image/upload/v1615148039/chems_n0glyv.png';
-const imageNoAvailable = 'https://res.cloudinary.com/dwjv6orjf/image/upload/v1615148366/noAvailable_frihp8.png';
 
 const data = [
     { 'id': '1', "categoria": 'desayuno', "alimentos": { "categoriaDelAlimento": 'fruit', 'alimento': 'naranja', "cantidad": 5 } },
@@ -61,18 +56,6 @@ const RegistroContainer = () => {
                             <EjercicioCard />
                             <AddAlimento />
                         </View>
-                        {/**
-                            <FlatList
-                                data={cards}
-                                horizontal
-                                keyExtractor={item => `${item.id}`}
-                                renderItem={({ item }) =>
-                                    <ColorCardList
-                                        item={item}
-                                    />
-                                }
-                            />
-                         */}
                     </SafeAreaView>
                 ) : (
                     <View>
