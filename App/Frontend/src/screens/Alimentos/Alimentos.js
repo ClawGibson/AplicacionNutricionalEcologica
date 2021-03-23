@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, FlatList, SafeAreaView, ScrollView } from 'react-native'
+import { View, Text, FlatList, ScrollView } from 'react-native'
 import { Header, Item, Input } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 import AlimentosListAdd from './AlimentosListAdd'

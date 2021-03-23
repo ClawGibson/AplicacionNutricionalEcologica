@@ -59,7 +59,6 @@ const alimentoIndAdd = StyleSheet.create({
         marginLeft: 6,
         marginRight: 6,
         marginTop: 10,
-        marginBottom: -5,
         borderRadius: 10,
         backgroundColor: white
     },
@@ -75,7 +74,7 @@ const alimentoIndAdd = StyleSheet.create({
     },
     buttonContainer: {
         position: 'relative',
-        marginTop: -6,
+        marginTop: -20,
         marginLeft: 6,
         marginRight: 6,
         marginBottom: 6,
