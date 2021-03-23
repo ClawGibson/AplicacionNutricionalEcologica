@@ -57,7 +57,7 @@ const Alimentos = () => {
     }
 
     return (
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
             <Header searchBar rounded transparent style={{ position: 'relative', marginTop: -15 }}>
                 <Item>
                     <Search name='search1' size={24} color='#000' style={{ position: 'relative', left: 5 }} />

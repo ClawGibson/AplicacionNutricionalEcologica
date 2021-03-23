@@ -63,13 +63,10 @@ const AlimentoIndAdd = (props) => {
                 source={{ uri: item.imagen ? item.imagen : imageNotFound }}
             />
             <Text style={alimentoIndAdd.title}>{item.nombreAlimento}</Text>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false} >
                 <View style={alimentoIndAdd.huellaConsumo}>
                     <View style={alimentoIndAdd.textContainer}>
-                        <Text style={alimentoIndAdd.titles}>Huella</Text>
-                        <Text style={alimentoIndAdd.extraText}>Lorem</Text>
-                        <View style={{ marginTop: 5, marginBottom: -4, borderBottomColor: 'black', borderBottomWidth: 1 }} />
-                        <Text style={alimentoIndAdd.titles}>Consumo</Text>
+                        <Text style={alimentoIndAdd.titles}>Porción</Text>
                         <Text style={alimentoIndAdd.extraText}>Lorem</Text>
                     </View>
                 </View>
@@ -93,16 +90,19 @@ const AlimentoIndAdd = (props) => {
                     <ExpandableListView
                         data={CONTENT} // required
                     />
-                    <TouchableOpacity
-                        style={alimentoIndAdd.button}
-                        onPress={() => {
-                            navigation.navigate('Registro');
-                        }}
-                    >
-                        <Text style={alimentoIndAdd.buttonText}>Agregar</Text>
-                    </TouchableOpacity>
+
                 </View>
             </ScrollView>
+            <View style={alimentoIndAdd.buttonContainer}>
+                <TouchableOpacity
+                    style={alimentoIndAdd.button}
+                    onPress={() => {
+                        navigation.navigate('Registro');
+                    }}
+                >
+                    <Text style={alimentoIndAdd.buttonText}>Agregar</Text>
+                </TouchableOpacity>
+            </View>
         </>
     )
 }

@@ -1,11 +1,14 @@
 import { StyleSheet, Dimensions } from 'react-native'
-import { primary } from './palette'
+import { primary, secondary } from './palette'
 
 const gray = '#969696';
 const white = '#FFFFFF';
 const { width } = Dimensions.get('window')
 
 const alimentoIndAdd = StyleSheet.create({
+    body: {
+        width: width
+    },
     image: {
         backgroundColor: gray,
         height: 170
@@ -56,7 +59,7 @@ const alimentoIndAdd = StyleSheet.create({
         marginLeft: 6,
         marginRight: 6,
         marginTop: 10,
-        marginBottom: 5,
+        marginBottom: -5,
         borderRadius: 10,
         backgroundColor: white
     },
@@ -70,9 +73,18 @@ const alimentoIndAdd = StyleSheet.create({
     percentajesText: {
         textAlign: 'center'
     },
+    buttonContainer: {
+        position: 'relative',
+        marginTop: -6,
+        marginLeft: 6,
+        marginRight: 6,
+        marginBottom: 6,
+        borderRadius: 10,
+        backgroundColor: white
+    },
     button: {
         position: 'relative',
-        backgroundColor: primary,
+        backgroundColor: secondary,
         width: width * .8,
         height: 40,
         justifyContent: 'center',
