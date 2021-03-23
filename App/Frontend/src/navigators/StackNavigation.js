@@ -6,6 +6,7 @@ import Alimentos from '../screens/Alimentos/Alimentos'
 import Ejercicios from '../screens/Aprendiendo/Ejercicios'
 import EjercicioInd from '../screens/Aprendiendo/EjercicioInd'
 import Agua from '../screens/Aprendiendo/Agua'
+import AlimentoIndAdd from '../screens/Alimentos/AlimentoIndAdd'
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ function MyStack() {
             <Stack.Screen name='Agua' component={Agua} options={{ headerTitleAlign: 'center' }} />
             <Stack.Screen name='EjercicioInd' component={EjercicioInd} options={{ headerShown: false }} />
             <Stack.Screen name='Alimentos' component={Alimentos} options={{ headerShown: true, headerTitleAlign: 'center' }} />
+            <Stack.Screen name='AlimentoIndAdd' component={AlimentoIndAdd} options={{ headerShown: false }} />
         </Stack.Navigator>
     )
 }

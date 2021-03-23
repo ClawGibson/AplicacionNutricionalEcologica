@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { View, Text, FlatList, SafeAreaView, ScrollView } from 'react-native'
 import { Header, Item, Input } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
-import AlimentosList from './AlimentosList'
+import AlimentosListAdd from './AlimentosListAdd'
 import BuscandoAlimento from './BuscandoAlimento'
 import CategoriasAlimentos from './CategoriasAlimentos'
 import Search from 'react-native-vector-icons/AntDesign'
@@ -92,7 +92,7 @@ const Alimentos = () => {
                             numColumns={2}
                             keyExtractor={item => `${item._id.id}`}
                             renderItem={({ item }) =>
-                                <AlimentosList
+                                <AlimentosListAdd
                                     item={item}
                                 />
                             }
