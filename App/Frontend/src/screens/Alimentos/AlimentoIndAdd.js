@@ -21,6 +21,7 @@ const AlimentoIndAdd = (props) => {
     const navigation = useNavigation();
 
     const [selectedIndex, setSelectedIntex] = useState(0)
+    const [selectedPortion, setSelectedPortion] = useState('');
 
     useEffect(() => {
         setSelectedIntex(0);
@@ -50,7 +51,7 @@ const AlimentoIndAdd = (props) => {
                 <View style={alimentoIndAdd.huellaConsumo}>
                     <View style={alimentoIndAdd.textContainer}>
                         {
-                            selectedIndex == 1
+                            selectedIndex == 0
                                 ?
                                 <View>
                                     <Text style={alimentoIndAdd.portion}>Porción</Text>
@@ -109,7 +110,6 @@ const AlimentoIndAdd = (props) => {
                     <ExpandableListView
                         data={CONTENT}
                     />
-
                 </View>
             </ScrollView>
             <View style={alimentoIndAdd.buttonContainer}>
