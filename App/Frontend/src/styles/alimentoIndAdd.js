@@ -23,6 +23,29 @@ const alimentoIndAdd = StyleSheet.create({
         elevation: 2,
         alignItems: 'center'
     },
+    huella: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        marginTop: 10,
+        marginLeft: 6,
+        marginRight: 6,
+        borderRadius: 10,
+        backgroundColor: white,
+        height: 100,
+        elevation: 2,
+        alignItems: 'center'
+    },
+    icon1: {
+        width: 48,
+        height: 48,
+        alignSelf: 'center'
+    },
+    icon2: {
+        width: 48,
+        height: 48,
+        alignSelf: 'center'
+    },
     textContainer: {
         position: 'absolute',
         marginRight: 6,
@@ -43,6 +66,7 @@ const alimentoIndAdd = StyleSheet.create({
     },
     titles: {
         fontSize: 18,
+        marginLeft: 6,
         marginTop: 7,
         fontWeight: 'bold'
     },
