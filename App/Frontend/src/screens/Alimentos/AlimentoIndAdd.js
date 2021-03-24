@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ScrollView, View, Text, Image } from 'react-native'
+import { Item, Input } from 'native-base'
 import alimentoIndAdd from '../../styles/alimentoIndAdd'
 import { ProgressCircle } from 'react-native-svg-charts'
 import { ExpandableListView } from 'react-native-expandable-listview';
@@ -66,8 +67,15 @@ const AlimentoIndAdd = (props) => {
             <ScrollView showsVerticalScrollIndicator={false} >
                 <View style={alimentoIndAdd.huellaConsumo}>
                     <View style={alimentoIndAdd.textContainer}>
-                        <Text style={alimentoIndAdd.titles}>Porción</Text>
-                        <Text style={alimentoIndAdd.extraText}>Lorem</Text>
+                        <Text style={alimentoIndAdd.portion}>Porción</Text>
+                        <Item>
+                            <Input
+                                placeholder='Ingresa tu porción'
+                                textAlign={'center'}
+                                placeholderTextColor={'#969696'}
+                            />
+                        </Item>
+                        <Text style={alimentoIndAdd.extraText}></Text>
                     </View>
                 </View>
                 <View style={alimentoIndAdd.details}>

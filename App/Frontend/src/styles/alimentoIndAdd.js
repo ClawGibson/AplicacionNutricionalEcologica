@@ -46,6 +46,12 @@ const alimentoIndAdd = StyleSheet.create({
         marginTop: 7,
         fontWeight: 'bold'
     },
+    portion: {
+        fontSize: 18,
+        marginTop: 7,
+        fontWeight: 'bold',
+        alignSelf: 'center'
+    },
     extraText: {
         position: 'relative',
         alignItems: 'center',
