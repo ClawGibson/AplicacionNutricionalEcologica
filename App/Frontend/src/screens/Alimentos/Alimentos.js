@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, FlatList, SafeAreaView, ScrollView } from 'react-native'
+import { View, Text, FlatList, ScrollView } from 'react-native'
 import { Header, Item, Input } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
-import AlimentosList from './AlimentosList'
+import AlimentosListAdd from './AlimentosListAdd'
 import BuscandoAlimento from './BuscandoAlimento'
 import CategoriasAlimentos from './CategoriasAlimentos'
 import Search from 'react-native-vector-icons/AntDesign'
@@ -57,7 +57,7 @@ const Alimentos = () => {
     }
 
     return (
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
             <Header searchBar rounded transparent style={{ position: 'relative', marginTop: -15 }}>
                 <Item>
                     <Search name='search1' size={24} color='#000' style={{ position: 'relative', left: 5 }} />
@@ -92,7 +92,7 @@ const Alimentos = () => {
                             numColumns={2}
                             keyExtractor={item => `${item._id.id}`}
                             renderItem={({ item }) =>
-                                <AlimentosList
+                                <AlimentosListAdd
                                     item={item}
                                 />
                             }

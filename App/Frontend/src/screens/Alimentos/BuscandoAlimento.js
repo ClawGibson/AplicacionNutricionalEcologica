@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, Dimensions } from 'react-native'
+import { View, Dimensions, Image } from 'react-native'
 import { Content, ListItem, Thumbnail, Text, Left, Body } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
+import { notFound } from "../../assets/data/cloud";
 
 const { width } = Dimensions.get('screen')
 
@@ -18,7 +19,7 @@ const BuscandoAlimento = (props) => {
                         return (
                             <ListItem
                                 onPress={() => {
-                                    navigation.navigate('AlimentoInd', { item: item })
+                                    navigation.navigate('AlimentoIndAdd', { item: item })
                                 }}
                                 key={item._id.id}
                                 avatar
@@ -35,9 +36,11 @@ const BuscandoAlimento = (props) => {
                         )
                     })
                     : <View>
-                        <Text style={{ alignSelf: 'center', justifyContent: 'center' }}>
-                            No se encontraron resultados válidos para tu búsqueda :c
-                        </Text>
+                        <Image
+                            style={{ height: width / 2, width: width / 2, alignSelf: 'center' }}
+                            resizeMode='stretch'
+                            source={{ uri: notFound ? notFound : null }}
+                        />
                     </View>
             }
         </Content>
