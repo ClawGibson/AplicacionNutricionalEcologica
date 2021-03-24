@@ -13,6 +13,7 @@ import SegmentedControlTab from "react-native-segmented-control-tab"
 LogBox.ignoreLogs(['VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.']);
 
 const { imageNotFound } = require('../../assets/data/cloud');
+const CONTENT = require('../../assets/data/desplegable.json');
 
 const AlimentoIndAdd = (props) => {
 
@@ -27,45 +28,6 @@ const AlimentoIndAdd = (props) => {
             setSelectedIntex(0)
         }
     }, []);
-
-    const CONTENT = [
-        {
-            id: '42',
-            categoryName: 'Vitaminas',
-            subCategory: [
-                {
-                    id: '1',
-                    name:
-                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-                }
-            ],
-        },
-        {
-            id: '95',
-            categoryName: 'Minerales',
-            subCategory: [{ id: '1', name: 'Sub Item 1' }],
-        },
-        {
-            id: '94',
-            categoryName: 'Item 3',
-            subCategory: [{ id: '1', name: 'Sub Item 1' }],
-        },
-        {
-            id: '93',
-            categoryName: 'Item 4',
-            subCategory: [{ id: '1', name: 'Sub Item 1' }],
-        },
-        {
-            id: '92',
-            categoryName: 'Item 5',
-            subCategory: [{ id: '1', name: 'Sub Item 1' }],
-        },
-        {
-            id: '96',
-            categoryName: 'Item 6',
-            subCategory: [{ id: '1', name: 'Sub Item 1' }],
-        },
-    ];
 
     return (
         <>
@@ -145,7 +107,7 @@ const AlimentoIndAdd = (props) => {
                         </View>
                     </View>
                     <ExpandableListView
-                        data={CONTENT} // required
+                        data={CONTENT}
                     />
 
                 </View>
