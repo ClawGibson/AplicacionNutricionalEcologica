@@ -31,10 +31,11 @@ const RegistroDieteticoContainer = (props) => {
                 onTabPress={(index) => setSelectedIntex(index)}
             />
             {
-                selectedIndex == 0 ?
-                    <AlimentosContainer
+                selectedIndex == 0
+                    ? <AlimentosContainer
                         navigation={props.navigation}
-                    /> :
+                    />
+                    :
                     <RegistroContainer />
             }
         </ScrollView>

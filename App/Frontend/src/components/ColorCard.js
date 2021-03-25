@@ -7,15 +7,13 @@ import Delete from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const ColorCard = (props) => {
 
-    const card = props;
-
+    const { alimentos } = props;
+    const cat = [alimentos.categoriaDelAlimento];
     const [cant, setCant] = useState(0);
-    const [category, setCategory] = useState('');
-
     useEffect(() => {
-        setCategory(selectCategory(card.alimentos.categoriaDelAlimento));
+        setCant(alimentos.cantidad)
         return () => {
-            setCategory('');
+            setCant(0);
         }
     }, [])
 
@@ -24,21 +22,32 @@ const ColorCard = (props) => {
     }
 
     const minus = () => {
-        cant > 0 ? setCant(cant - 1) : null
+        cant > 1 ? setCant(cant - 1) : null
     }
 
-    const selectCategory = (cat) => {
-        return `${cat}Container`
+    const setBackground = (category) => {
+        if (category == 'fruit')
+            return '#FF7A00'
+        if (category == 'vegetable')
+            return '#00A24F'
+        if (category == 'meat')
+            return '#E01400'
+        if (category == 'cereal')
+            return '#CD8D00'
+        if (category == 'dairy')
+            return '#00A2FB'
+        if (category == 'legumes')
+            return '#FF2088'
     }
 
     return (
         <View style={colorCard.body}>
-            <View style={colorCard.category}>
+            <View style={[colorCard.container, { backgroundColor: setBackground(alimentos.categoriaDelAlimento) }]}>
                 <TouchableOpacity style={colorCard.deleteButton}>
                     <Delete name='delete-empty' style={{ position: 'relative', alignSelf: 'center' }} color={'#FF0000'} size={18} />
                 </TouchableOpacity>
-                <Text style={colorCard.number}>{card.alimentos.cantidad}</Text>
-                <Text style={colorCard.title}>{card.alimentos.alimento}</Text>
+                <Text style={colorCard.number}>{cant}</Text>
+                <Text style={colorCard.title}>{alimentos.alimento}</Text>
                 <View style={colorCard.bottomContainer}>
                     <TouchableOpacity style={colorCard.minusButton} onPress={minus}>
                         <Minus name='minus' style={{ position: 'relative', alignSelf: 'center' }} color={'#000'} size={18} />
