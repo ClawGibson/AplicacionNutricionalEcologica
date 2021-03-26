@@ -18,7 +18,7 @@ const RegistroDieteticoContainer = (props) => {
     }, []);
 
     return (
-        <ScrollView>
+        <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
             <View>
                 <Text style={styles.title}>Recetas</Text>
             </View>

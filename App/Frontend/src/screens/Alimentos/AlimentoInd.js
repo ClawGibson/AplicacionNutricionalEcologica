@@ -62,7 +62,7 @@ const AlimentoInd = (props) => {
                 source={{ uri: item.imagen ? item.imagen : imageNoAvailable }}
             />
             <Text style={alimentoInd.title}>{item.nombreAlimento}</Text>
-            <ScrollView>
+            <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
                 <View style={alimentoInd.huellaConsumo}>
                     <View style={alimentoInd.textContainer}>
                         <Text style={alimentoInd.titles}>Huella</Text>

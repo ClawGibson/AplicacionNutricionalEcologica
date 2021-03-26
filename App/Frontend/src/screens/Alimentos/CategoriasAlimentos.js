@@ -5,7 +5,7 @@ import diasFilter from '../../styles/diasFilter'
 
 const CategoriasAlimentos = (props) => {
     return (
-        <ScrollView horizontal style={{ flex: -1 }} showsVerticalScrollIndicator={false}>
+        <ScrollView horizontal style={{ flex: -1 }} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
             <ListItem style={diasFilter.list}>
                 <View style={diasFilter.container} >
                     <TouchableOpacity

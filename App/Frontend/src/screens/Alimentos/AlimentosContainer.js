@@ -37,7 +37,7 @@ const AlimentosContainer = (props) => {
     }
 
     return (
-        < ScrollView showsVerticalScrollIndicator={false}>
+        < ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
             {
                 alimentos.length > 0 ? (
                     <SafeAreaView>

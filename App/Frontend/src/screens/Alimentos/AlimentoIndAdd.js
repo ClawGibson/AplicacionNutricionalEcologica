@@ -38,7 +38,7 @@ const AlimentoIndAdd = (props) => {
                 source={{ uri: item.imagen ? item.imagen : imageNotFound }}
             />
             <Text style={alimentoIndAdd.title}>{item.nombreAlimento}</Text>
-            <ScrollView showsVerticalScrollIndicator={false} >
+            <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} >
                 <SegmentedControlTab
                     activeTabStyle={{ backgroundColor: '#FFF' }}
                     activeTabTextStyle={{ color: secondary }}

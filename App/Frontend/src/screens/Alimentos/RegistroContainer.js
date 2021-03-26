@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { FlatList, View, Text, SafeAreaView, ScrollView } from 'react-native'
+import { FlatList, View, Text, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
 
 import DiasFilter from '../../components/DiasFilter'
 import AguaCard from '../../components/AguaCard'
 import EjercicioCard from '../../components/EjercicioCard'
 import AddAlimento from '../../components/AddAlimento'
 import ColorCardList from './ColorCardList'
+import styles from '../../styles/registroContainer'
 
 const data = [
     { 'id': '1', "categoria": 'desayuno', "alimentos": { "categoriaDelAlimento": 'fruit', 'alimento': 'naranja', "cantidad": 5 } },
@@ -19,18 +20,32 @@ const RegistroContainer = () => {
     const [days, setDays] = useState([]);
     const [active, setActive] = useState([]);
     const [cart, setCart] = useState([]);
+    const [time, setTime] = useState('');
+    const [time2, setTime2] = useState('am');
 
     useEffect(() => {
 
+        let hours = new Date().getHours();
+        let min = new Date().getMinutes();
         setDays(dias);
         setActive(-1);
         setCart(data);
+        hours.toString().length > 1 && hours > 12
+            ? (min.toString().length < 2
+                ? setTime(`${hours}:0${min}`)
+                : setTime(`${hours - 12}:${min}`))
+            : (min.toString().length < 2
+                ? setTime(`${hours}:0${min}`)
+                : setTime(`${hours}:${min}`))
+        setTime2('am');
 
         return () => {
 
             setDays([]);
             setActive([]);
             setCart([]);
+            setTime('');
+            setTime2('am');
         }
     }, [])
 
@@ -42,6 +57,12 @@ const RegistroContainer = () => {
         }
     }
 
+    const handleTime = (value) => {
+        value == 'am'
+            ? setTime2('pm')
+            : setTime2('am')
+    }
+
     return (
         < View >
             <SafeAreaView>
@@ -51,8 +72,21 @@ const RegistroContainer = () => {
                     active={active}
                     setActive={setActive}
                 />
-                <Text>Desayuno</Text>
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ flex: 1, flexDirection: 'row' }}>
+                <View style={styles.container}>
+                    <Text style={styles.title}>Desayuno</Text>
+                    <View style={styles.inputTime}>
+                        <Text style={styles.timeFormat}>{time}</Text>
+                    </View>
+                    <TouchableOpacity onPress={() => { handleTime(time2) }}>
+                        <View style={styles.handleTime}>
+                            <Text style={styles.time2Format}>{time2}</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <ScrollView
+                    showsHorizontalScrollIndicator={false}
+                    showsVerticalScrollIndicator={false}
+                    style={{ flex: 1, flexDirection: 'row' }}>
                     <AguaCard />
                     <EjercicioCard />
                     {
