@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { FlatList, View, Text, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
+import { FlatList, View, Text, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native'
+import { useSelector } from 'react-redux'
 
 import DiasFilter from '../../components/DiasFilter'
 import AguaCard from '../../components/AguaCard'
@@ -17,6 +18,10 @@ const dias = require('../../assets/data/dias.json');
 
 const RegistroContainer = () => {
 
+    const test = useSelector(state => state.cart);
+    console.log(data);
+    console.log('==========================');
+    console.log(test);
     const [days, setDays] = useState([]);
     const [active, setActive] = useState([]);
     const [cart, setCart] = useState([]);
@@ -52,8 +57,8 @@ const RegistroContainer = () => {
     const changeDay = (day) => {
         {
             day === 'Lunes'
-                ? console.log('Lunes')//[setDias(days[0]), setActive(true)]
-                : console.log(day.name)//[setDias(dias.filter((i) => i.name == day)), setActive(true)]
+                ? console.log('Lunes')
+                : console.log(day.name)
         }
     }
 
@@ -86,6 +91,7 @@ const RegistroContainer = () => {
                 <ScrollView
                     showsHorizontalScrollIndicator={false}
                     showsVerticalScrollIndicator={false}
+                    horizontal
                     style={{ flex: 1, flexDirection: 'row' }}>
                     <AguaCard />
                     <EjercicioCard />
@@ -103,13 +109,7 @@ const RegistroContainer = () => {
                                     }
                                 />
                             )
-                            : (
-                                <View>
-                                    <Text>
-                                        naranjas
-                                            </Text>
-                                </View>
-                            )
+                            : (null)
                     }
                     <AddAlimento />
                 </ScrollView>

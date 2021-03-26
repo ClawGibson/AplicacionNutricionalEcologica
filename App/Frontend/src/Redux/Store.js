@@ -1,11 +1,11 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import regItems from './reducers/regItems'
+import cart from './reducers/cart'
 import timeReducer from './reducers/timeReducer'
 
 const reducers = combineReducers({
-    regitems: regItems,
+    cart: cart,
     timeReducer: timeReducer
 })
 

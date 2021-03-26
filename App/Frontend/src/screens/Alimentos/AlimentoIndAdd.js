@@ -8,6 +8,8 @@ import { LogBox } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 import { secondary } from "../../styles/palette";
+import { useDispatch } from 'react-redux'
+import { addToBreakfast } from '../../Redux/actions/cart'
 import SegmentedControlTab from "react-native-segmented-control-tab"
 
 LogBox.ignoreLogs(['VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.']);
@@ -19,14 +21,17 @@ const AlimentoIndAdd = (props) => {
 
     const [item, setItem] = useState(props.route.params.item);
     const navigation = useNavigation();
-
+    const dispatch = useDispatch();
     const [selectedIndex, setSelectedIntex] = useState(0)
     const [selectedPortion, setSelectedPortion] = useState('');
+    const [toCart, setToCart] = useState([]);
 
     useEffect(() => {
-        setSelectedIntex(0);
+        setSelectedIntex(0)
+        setToCart([]);
         return () => {
             setSelectedIntex(0)
+            setToCart([])
         }
     }, []);
 
@@ -116,7 +121,8 @@ const AlimentoIndAdd = (props) => {
                 <TouchableOpacity
                     style={alimentoIndAdd.button}
                     onPress={() => {
-                        navigation.navigate('Registro');
+                        navigation.navigate('Registro'),
+                            dispatch(addToBreakfast(item))
                     }}
                 >
                     <Text style={alimentoIndAdd.buttonText}>Agregar</Text>
