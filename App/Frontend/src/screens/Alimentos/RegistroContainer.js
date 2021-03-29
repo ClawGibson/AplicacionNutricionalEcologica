@@ -94,7 +94,7 @@ const RegistroContainer = () => {
                                 <FlatList
                                     data={cart}
                                     horizontal
-                                    keyExtractor={item => `${item.nombreAlimento}`}
+                                    keyExtractor={item => `${item.nombre}`}
                                     renderItem={item =>
                                         <ColorCardList
                                             item={item}
