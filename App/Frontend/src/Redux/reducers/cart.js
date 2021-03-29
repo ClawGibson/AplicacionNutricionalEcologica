@@ -16,7 +16,7 @@ const cart = (state = initialState, action) => {
         case ADD_TO_BREAKFAST:
             return {
                 ...state,
-                data: [...state.data, action.payload]
+                data: [...state?.data, action.payload]
             }
 
         case INCREASE_COUNT:
@@ -24,7 +24,7 @@ const cart = (state = initialState, action) => {
             console.log(state);
             return update(state, {
                 data: {
-                    cantidad: { $set: state.cantidad + 1 }
+                    cantidad: { $set: state?.cantidad + 1 }
                 }
             });
 
@@ -37,7 +37,10 @@ const cart = (state = initialState, action) => {
             }
 
         case REMOVE_FROM_BREAKFAST:
-            return state.data.filter(item => item != action.payload)
+            console.log("action.payload:", action.payload);
+            const aiuda = state?.data?.filter(item => item.filter(i => console.log(i != action.payload)));
+            console.log("aiuda:", aiuda);
+            return aiuda
 
         default:
             return state

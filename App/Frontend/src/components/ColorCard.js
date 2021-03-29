@@ -4,11 +4,13 @@ import colorCard from '../styles/colorCard'
 import Plus from 'react-native-vector-icons/Foundation'
 import Minus from 'react-native-vector-icons/Foundation'
 import Delete from 'react-native-vector-icons/MaterialCommunityIcons'
+import { useNavigation } from '@react-navigation/native'
 import { useDispatch } from 'react-redux'
 import { removeFromBreakfast, increaseCount, decreaseCount } from '../Redux/actions/cart'
 
 const ColorCard = (props) => {
 
+    const navigation = useNavigation();
     const dispatch = useDispatch();
     const { item } = props;
     const [cant, setCant] = useState(0);
@@ -48,7 +50,7 @@ const ColorCard = (props) => {
                 <TouchableOpacity
                     style={colorCard.deleteButton}
                     onPress={() => {
-                        dispatch(removeFromBreakfast(item))
+                        dispatch(removeFromBreakfast(item)), navigation.navigate('Registro')
                     }}
                 >
                     <Delete name='delete-empty' style={{ position: 'relative', alignSelf: 'center' }} color={'#FF0000'} size={18} />
