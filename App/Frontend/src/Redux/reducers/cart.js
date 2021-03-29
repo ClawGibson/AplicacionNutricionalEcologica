@@ -1,17 +1,48 @@
+import update from 'immutability-helper';
 import {
     ADD_TO_BREAKFAST,
-    REMOVE_FROM_BREAKFAST
+    REMOVE_FROM_BREAKFAST,
+    INCREASE_COUNT,
+    DECREASE_COUNT
 } from '../Constants'
 
-const cart = (initialState = [], action) => {
+const initialState = {
+    data: []
+}
+
+const cart = (state = initialState, action) => {
     switch (action.type) {
+
         case ADD_TO_BREAKFAST:
-            return [...initialState, action.payload]
+            return {
+                ...state,
+                data: [...state.data, action.payload]
+            }
+
+        case INCREASE_COUNT:
+            console.log(action);
+            console.log(state);
+            return update(state, {
+                data: {
+                    cantidad: { $set: state.cantidad + 1 }
+                }
+            });
+
+        case DECREASE_COUNT:
+            return {
+                ...state,
+                data: {
+                    cantidad: cantidad - 1
+                }
+            }
 
         case REMOVE_FROM_BREAKFAST:
-            return initialState.filter(item => item != action.payload)
+            return state.data.filter(item => item != action.payload)
+
+        default:
+            return state
     }
-    return initialState
+    return state
 }
 
 export default cart

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FlatList, View, Text, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native'
 import { useSelector } from 'react-redux'
+import { useIsFocused } from '@react-navigation/native'
 
 import DiasFilter from '../../components/DiasFilter'
 import AguaCard from '../../components/AguaCard'
@@ -9,19 +10,13 @@ import AddAlimento from '../../components/AddAlimento'
 import ColorCardList from './ColorCardList'
 import styles from '../../styles/registroContainer'
 
-const data = [
-    { 'id': '1', "categoria": 'desayuno', "alimentos": { "categoriaDelAlimento": 'fruit', 'alimento': 'naranja', "cantidad": 5 } },
-    { 'id': '2', "categoria": 'desayuno', "alimentos": { "categoriaDelAlimento": 'vegetable', 'alimento': 'zanahoria', "cantidad": 2 } },
-    { 'id': '3', "categoria": 'desayuno', "alimentos": { "categoriaDelAlimento": 'meat', 'alimento': 'bictec', "cantidad": 1 } }
-]
 const dias = require('../../assets/data/dias.json');
 
 const RegistroContainer = () => {
 
-    const test = useSelector(state => state.cart);
-    console.log(data);
-    console.log('==========================');
-    console.log(test);
+    const isFocused = useIsFocused()
+    const data = useSelector(state => state.cart.data);
+    const test = data.flat();
     const [days, setDays] = useState([]);
     const [active, setActive] = useState([]);
     const [cart, setCart] = useState([]);
@@ -29,12 +24,12 @@ const RegistroContainer = () => {
     const [time2, setTime2] = useState('am');
 
     useEffect(() => {
-
         let hours = new Date().getHours();
         let min = new Date().getMinutes();
         setDays(dias);
         setActive(-1);
-        setCart(data);
+        setCart(test);
+        setTime2('am');
         hours.toString().length > 1 && hours > 12
             ? (min.toString().length < 2
                 ? setTime(`${hours}:0${min}`)
@@ -42,17 +37,15 @@ const RegistroContainer = () => {
             : (min.toString().length < 2
                 ? setTime(`${hours}:0${min}`)
                 : setTime(`${hours}:${min}`))
-        setTime2('am');
 
         return () => {
-
             setDays([]);
             setActive([]);
             setCart([]);
             setTime('');
             setTime2('am');
         }
-    }, [])
+    }, [isFocused])
 
     const changeDay = (day) => {
         {
@@ -69,7 +62,7 @@ const RegistroContainer = () => {
     }
 
     return (
-        < View >
+        <View>
             <SafeAreaView>
                 <DiasFilter
                     day={days}
@@ -96,20 +89,20 @@ const RegistroContainer = () => {
                     <AguaCard />
                     <EjercicioCard />
                     {
-                        cart.length > 0
+                        cart
                             ? (
                                 <FlatList
                                     data={cart}
                                     horizontal
-                                    keyExtractor={item => `${item.id}`}
-                                    renderItem={({ item }) =>
+                                    keyExtractor={item => `${item.nombreAlimento}`}
+                                    renderItem={item =>
                                         <ColorCardList
                                             item={item}
                                         />
                                     }
                                 />
                             )
-                            : (null)
+                            : (<Text>Naranjas</Text>)
                     }
                     <AddAlimento />
                 </ScrollView>

@@ -126,6 +126,11 @@ const alimentoIndAdd = StyleSheet.create({
         borderWidth: 1,
         borderColor: white
     },
+    buttonBack: {
+        backgroundColor: '#FFF',
+        borderColor: secondary,
+        borderWidth: 1
+    },
     buttonText: {
         color: white,
         fontSize: 24

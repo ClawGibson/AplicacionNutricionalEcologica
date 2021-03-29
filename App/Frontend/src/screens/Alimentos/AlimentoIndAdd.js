@@ -23,26 +23,52 @@ const AlimentoIndAdd = (props) => {
     const navigation = useNavigation();
     const dispatch = useDispatch();
     const [selectedIndex, setSelectedIntex] = useState(0)
-    const [selectedPortion, setSelectedPortion] = useState('');
-    const [toCart, setToCart] = useState([]);
+    const [data, setData] = useState([]);
+    const [selectedPortion, setSelectedPortion] = useState(0);
+    const [button, setButton] = useState(true);
 
     useEffect(() => {
         setSelectedIntex(0)
-        setToCart([]);
+        setSelectedPortion(0)
         return () => {
             setSelectedIntex(0)
-            setToCart([])
+            setSelectedPortion(0)
+            setData([])
         }
     }, []);
+
+    const handleButton = () => {
+        setButton(!button)
+    }
+
+    const handleData = (name, count, category) => {
+
+        let datos = {
+            nombre: name,
+            cantidad: count,
+            categoria: category
+        }
+
+        data.length <= 0
+            ? (
+                handleButton(),
+                setData([...data, datos])
+            )
+            : (
+                handleButton(),
+                dispatch(addToBreakfast(data)),
+                navigation.navigate('Registro')
+            )
+    }
 
     return (
         <>
             <Image
                 style={alimentoIndAdd.image}
                 resizeMode='stretch'
-                source={{ uri: item.imagen ? item.imagen : imageNotFound }}
+                source={{ uri: item?.imagen ? item?.imagen : imageNotFound }}
             />
-            <Text style={alimentoIndAdd.title}>{item.nombreAlimento}</Text>
+            <Text style={alimentoIndAdd.title}>{item?.nombreAlimento}</Text>
             <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} >
                 <SegmentedControlTab
                     activeTabStyle={{ backgroundColor: '#FFF' }}
@@ -56,21 +82,22 @@ const AlimentoIndAdd = (props) => {
                 <View style={alimentoIndAdd.huellaConsumo}>
                     <View style={alimentoIndAdd.textContainer}>
                         {
-                            selectedIndex == 0
+                            selectedIndex == 1
                                 ?
                                 <View>
-                                    <Text style={alimentoIndAdd.portion}>Porción</Text>
                                     <Item>
                                         <Input
                                             placeholder='Ingresa la cantidad que comiste'
                                             textAlign={'center'}
                                             placeholderTextColor={'#969696'}
+                                            onChangeText={text => { setSelectedPortion({ value: text }) }}
                                         />
                                     </Item>
                                     <Text style={alimentoIndAdd.extraText}></Text>
                                 </View>
                                 :
-                                <Text>Holis</Text>
+                                <Text style={alimentoIndAdd.portion}>Porción</Text>
+
                         }
                     </View>
                 </View>
@@ -82,7 +109,7 @@ const AlimentoIndAdd = (props) => {
                         </Text>
                         <Image style={alimentoIndAdd.icon1}
                             resizeMode='contain'
-                            source={{ uri: item.icono.iconoNutricional ? item.icono.iconoNutricional : imageNotFound }}
+                            source={{ uri: item?.icono.iconoNutricional ? item?.icono.iconoNutricional : imageNotFound }}
                         />
                     </View>
                     <View>
@@ -91,7 +118,7 @@ const AlimentoIndAdd = (props) => {
                         </Text>
                         <Image style={alimentoIndAdd.icon2}
                             resizeMode='contain'
-                            source={{ uri: item.icono.iconoAmbiental ? item.icono.iconoAmbiental : imageNotFound }}
+                            source={{ uri: item?.icono.iconoAmbiental ? item?.icono.iconoAmbiental : imageNotFound }}
                         />
                     </View>
                 </View>
@@ -118,15 +145,19 @@ const AlimentoIndAdd = (props) => {
                 </View>
             </ScrollView>
             <View style={alimentoIndAdd.buttonContainer}>
-                <TouchableOpacity
-                    style={alimentoIndAdd.button}
-                    onPress={() => {
-                        navigation.navigate('Registro'),
-                            dispatch(addToBreakfast(item))
-                    }}
-                >
-                    <Text style={alimentoIndAdd.buttonText}>Agregar</Text>
-                </TouchableOpacity>
+                {
+                    button
+                        ? (
+                            <TouchableOpacity style={alimentoIndAdd.button} onPress={() => handleData(item.nombreAlimento, 1, 'fruit')}>
+                                <Text style={alimentoIndAdd.buttonText}>Agregar</Text>
+                            </TouchableOpacity>
+                        )
+                        : (
+                            <TouchableOpacity style={[alimentoIndAdd.button, alimentoIndAdd.buttonBack]} onPress={() => handleData(item.nombreAlimento, 1, 'fruit')}>
+                                <Text style={[alimentoIndAdd.buttonText, { color: '#328AB2' }]}>Ver mi lista</Text>
+                            </TouchableOpacity>
+                        )
+                }
             </View>
         </>
     )

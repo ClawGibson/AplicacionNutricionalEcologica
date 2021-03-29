@@ -12,9 +12,6 @@ const RegistroDieteticoContainer = (props) => {
 
     useEffect(() => {
         setSelectedIntex(0);
-        return () => {
-            setSelectedIntex(0)
-        }
     }, []);
 
     return (

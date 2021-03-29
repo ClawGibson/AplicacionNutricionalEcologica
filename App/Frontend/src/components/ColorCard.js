@@ -4,14 +4,16 @@ import colorCard from '../styles/colorCard'
 import Plus from 'react-native-vector-icons/Foundation'
 import Minus from 'react-native-vector-icons/Foundation'
 import Delete from 'react-native-vector-icons/MaterialCommunityIcons'
+import { useDispatch } from 'react-redux'
+import { removeFromBreakfast, increaseCount, decreaseCount } from '../Redux/actions/cart'
 
 const ColorCard = (props) => {
 
-    const { alimentos } = props;
-    const cat = [alimentos.categoriaDelAlimento];
+    const dispatch = useDispatch();
+    const { item } = props;
     const [cant, setCant] = useState(0);
     useEffect(() => {
-        setCant(alimentos.cantidad)
+        setCant(item.cantidad)
         return () => {
             setCant(0);
         }
@@ -42,17 +44,22 @@ const ColorCard = (props) => {
 
     return (
         <View style={colorCard.body}>
-            <View style={[colorCard.container, { backgroundColor: setBackground(alimentos.categoriaDelAlimento) }]}>
-                <TouchableOpacity style={colorCard.deleteButton}>
+            <View style={[colorCard.container, { backgroundColor: setBackground(item.categoria) }]}>
+                <TouchableOpacity
+                    style={colorCard.deleteButton}
+                    onPress={() => {
+                        dispatch(removeFromBreakfast(item))
+                    }}
+                >
                     <Delete name='delete-empty' style={{ position: 'relative', alignSelf: 'center' }} color={'#FF0000'} size={18} />
                 </TouchableOpacity>
                 <Text style={colorCard.number}>{cant}</Text>
-                <Text style={colorCard.title}>{alimentos.alimento}</Text>
+                <Text style={colorCard.title}>{item.nombre}</Text>
                 <View style={colorCard.bottomContainer}>
-                    <TouchableOpacity style={colorCard.minusButton} onPress={minus}>
+                    <TouchableOpacity style={colorCard.minusButton} onPress={() => dispatch(decreaseCount(item))}>
                         <Minus name='minus' style={{ position: 'relative', alignSelf: 'center' }} color={'#000'} size={18} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={colorCard.plusButton} onPress={add}>
+                    <TouchableOpacity style={colorCard.plusButton} onPress={() => dispatch(increaseCount(item))}>
                         <Plus name='plus' style={{ position: 'relative', alignSelf: 'center' }} color={'#000'} size={18} />
                     </TouchableOpacity>
                 </View>
