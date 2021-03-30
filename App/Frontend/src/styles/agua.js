@@ -11,11 +11,17 @@ const agua = StyleSheet.create({
     container: {
         position: 'relative',
         backgroundColor: '#FFF',
-        flexDirection: 'row',
+        flexDirection: 'column',
         width: width * .8,
         height: width,
-        borderRadius: 30,
-        elevation: 1
+        borderRadius: 30
+    },
+    items: {
+        position: 'absolute',
+        flex: 2,
+        flexDirection: 'row',
+        marginTop: '245%',
+        marginLeft: 10
     },
     instructions: {
         flex: 1,

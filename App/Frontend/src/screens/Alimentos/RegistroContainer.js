@@ -17,6 +17,7 @@ const RegistroContainer = () => {
     const isFocused = useIsFocused()
     const data = useSelector(state => state.cart.data);
     const test = data?.flat();
+    console.log('test: ', test);
     const [days, setDays] = useState([]);
     const [active, setActive] = useState([]);
     const [cart, setCart] = useState([]);
@@ -29,7 +30,6 @@ const RegistroContainer = () => {
         setDays(dias);
         setActive(-1);
         setCart(test);
-        console.log(test);
         setTime2('am');
         hours.toString().length > 1 && hours > 12
             ? (min.toString().length < 2
