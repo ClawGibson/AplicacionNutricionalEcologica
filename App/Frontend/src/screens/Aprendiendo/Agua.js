@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
-import { View, Text, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList, TextInput, Dimensions } from 'react-native'
 import agua from '../../styles/agua'
 import Water from 'react-native-vector-icons/Ionicons'
-import { secondary } from '../../styles/palette'
+import { primary, secondary } from '../../styles/palette'
+
+const { width } = Dimensions.get('screen')
 
 const Agua = () => {
+
+    const [number, onChangeNumber] = useState(null);
 
     let data = [
         { id: 1, flag: false }, { id: 2, flag: false }, { id: 3, flag: false }, { id: 4, flag: false }, { id: 5, flag: false }, { id: 6, flag: false },
@@ -13,23 +17,22 @@ const Agua = () => {
     ]
 
     const backup = [...data];
-    //console.log(backup);
-
     const [water, setWater] = useState(data);
 
     const renderItem = (item) => {
-        //console.log('Item to render: ', item);
-        if (item.flag == false)
+        if (item.flag == false) {
             return (
                 <TouchableOpacity onPress={() => handleOnPress(item.id)}>
-                    <Water name='water-outline' size={34} color={secondary} style={agua.water} />
+                    <Water name='water-outline' size={34} color={secondary} />
                 </TouchableOpacity>
             )
-        return (
-            <TouchableOpacity onPress={() => handleOnPress(id)}>
-                <Water name='water' size={34} color={secondary} style={agua.water} />
-            </TouchableOpacity>
-        )
+        } else {
+            return (
+                <TouchableOpacity onPress={() => clearSelection()}>
+                    <Water name='water' size={34} color={secondary} />
+                </TouchableOpacity>
+            )
+        }
     }
 
     const handleOnPress = (id) => {
@@ -50,9 +53,9 @@ const Agua = () => {
     return (
         <View style={agua.body}>
             <View style={agua.instructions}>
-                <Text>Una</Text>
+                <Text style={agua.instructionsText}>Una</Text>
                 <Water name='water' size={34} color={secondary} />
-                <Text>equivale a 100 ml de agua consumida</Text>
+                <Text style={agua.instructionsText}>equivale a 100 ml de agua consumida</Text>
             </View>
             <View style={agua.container}>
                 <FlatList
@@ -61,10 +64,28 @@ const Agua = () => {
                     keyExtractor={item => item.id}
                     renderItem={(item) => renderItem(item.item)}
                 />
-                <TouchableOpacity onPress={() => clearSelection()}>
-                    <Text>Limpiar selección</Text>
+                <TouchableOpacity
+                    onPress={() => clearSelection()}
+                    style={agua.clearButton}
+                >
+                    <Text style={agua.clearButtonText} >Limpiar selección</Text>
                 </TouchableOpacity>
             </View>
+            <View style={{ alignContent: 'center', alignItems: 'center' }}>
+                <Text style={[agua.instructionsText, { marginVertical: 15 }]}>Entrada libre</Text>
+                <TextInput
+                    style={{ height: 40, width: width * 0.6, borderBottomColor: primary, borderBottomWidth: 2 }}
+                    onChangeText={onChangeNumber}
+                    value={number}
+                    placeholder="1 es igual a 1 litro consumido"
+                    keyboardType="numeric"
+                />
+            </View>
+            <TouchableOpacity
+                style={agua.register}
+            >
+                <Text style={agua.registerText}>Registrar</Text>
+            </TouchableOpacity>
         </View>
     )
 }
