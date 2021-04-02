@@ -7,7 +7,7 @@ const initialState = 0
 const waterReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_WATER:
-            return state + action.payload
+            return Number(Number(state) + Number(action.payload))
         default:
             return state
     }

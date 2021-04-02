@@ -7,8 +7,8 @@ import { useSelector } from 'react-redux'
 const AguaCard = () => {
 
     const navigation = useNavigation()
-    const data = useSelector(state => state.water);
-    const water = data.toFixed(1);
+    const data = Number(useSelector(state => state.water));
+    const water = data?.toFixed(1);
     return (
         <TouchableOpacity style={aguaCard.aguaContainer} onPress={() => {
             navigation?.navigate('Agua')

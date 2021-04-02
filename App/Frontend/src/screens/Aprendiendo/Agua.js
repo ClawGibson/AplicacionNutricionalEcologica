@@ -19,10 +19,10 @@ const Agua = () => {
 
     const navigation = useNavigation();
     const dispatch = useDispatch();
-    const [number, onChangeNumber] = useState(null);
-    const [water, setWater] = useState(data);
-    const [len, setLen] = useState(0);
     const backup = [...data];
+    const [number, onChangeNumber] = useState(null);
+    const [water, setWater] = useState(backup);
+    const [len, setLen] = useState(0);
 
     const renderItem = (item) => {
         if (item.flag == false) {
@@ -64,6 +64,16 @@ const Agua = () => {
         setWater(backup);
     }
 
+    const register = () => {
+        navigation.navigate('Registro')
+
+        number
+            ? dispatch(addWater(number))
+            : dispatch(addWater(len * 0.100))
+    }
+
+    console.log(number?.length);
+
     return (
         <View style={agua.body}>
             <View style={agua.instructions}>
@@ -95,13 +105,7 @@ const Agua = () => {
                     keyboardType="numeric"
                 />
             </View>
-            <TouchableOpacity
-                style={agua.register}
-                onPress={() => {
-                    navigation.navigate('Registro'),
-                        dispatch(addWater(len * 0.100))
-                }}
-            >
+            <TouchableOpacity style={agua.register} onPress={() => register()}>
                 <Text style={agua.registerText}>Registrar</Text>
             </TouchableOpacity>
         </View>
