@@ -3,3 +3,4 @@ export const INCREASE_COUNT = 'INCREASE_COUNT';
 export const DECREASE_COUNT = 'DECREASE_COUNT';
 export const REMOVE_FROM_BREAKFAST = 'REMOVE_FROM_BREAKFAST'
 export const ADD_TIME = 'ADD_TIME'
+export const ADD_WATER = 'ADD_WATER'

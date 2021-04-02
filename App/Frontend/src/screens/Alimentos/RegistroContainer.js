@@ -17,7 +17,7 @@ const RegistroContainer = () => {
     const isFocused = useIsFocused()
     const data = useSelector(state => state.cart.data);
     const test = data?.flat();
-    console.log('test: ', test);
+    //console.log('test: ', test);
     const [days, setDays] = useState([]);
     const [active, setActive] = useState([]);
     const [cart, setCart] = useState([]);

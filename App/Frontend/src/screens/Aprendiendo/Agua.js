@@ -2,22 +2,27 @@ import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, FlatList, TextInput, Dimensions } from 'react-native'
 import agua from '../../styles/agua'
 import Water from 'react-native-vector-icons/Ionicons'
+import { useNavigation } from '@react-navigation/native'
 import { primary, secondary } from '../../styles/palette'
+import { useDispatch } from 'react-redux'
+import { addWater } from '../../Redux/actions/water'
 
 const { width } = Dimensions.get('screen')
 
+let data = [
+    { id: 1, flag: false }, { id: 2, flag: false }, { id: 3, flag: false }, { id: 4, flag: false }, { id: 5, flag: false }, { id: 6, flag: false },
+    { id: 7, flag: false }, { id: 8, flag: false }, { id: 9, flag: false }, { id: 10, flag: false }, { id: 11, flag: false }, { id: 12, flag: false },
+    { id: 13, flag: false }, { id: 14, flag: false }, { id: 15, flag: false }, { id: 16, flag: false }, { id: 17, flag: false }, { id: 18, flag: false }
+]
+
 const Agua = () => {
 
+    const navigation = useNavigation();
+    const dispatch = useDispatch();
     const [number, onChangeNumber] = useState(null);
-
-    let data = [
-        { id: 1, flag: false }, { id: 2, flag: false }, { id: 3, flag: false }, { id: 4, flag: false }, { id: 5, flag: false }, { id: 6, flag: false },
-        { id: 7, flag: false }, { id: 8, flag: false }, { id: 9, flag: false }, { id: 10, flag: false }, { id: 11, flag: false }, { id: 12, flag: false },
-        { id: 13, flag: false }, { id: 14, flag: false }, { id: 15, flag: false }, { id: 16, flag: false }, { id: 17, flag: false }, { id: 18, flag: false }
-    ]
-
-    const backup = [...data];
     const [water, setWater] = useState(data);
+    const [len, setLen] = useState(0);
+    const backup = [...data];
 
     const renderItem = (item) => {
         if (item.flag == false) {
@@ -28,7 +33,7 @@ const Agua = () => {
             )
         } else {
             return (
-                <TouchableOpacity onPress={() => clearSelection()}>
+                <TouchableOpacity onPress={() => { clearSelection(), setToFalse() }}>
                     <Water name='water' size={34} color={secondary} />
                 </TouchableOpacity>
             )
@@ -44,6 +49,15 @@ const Agua = () => {
             data[i].flag = true
         }
         setWater(data);
+        setLen(water.filter((item) => item.flag == true).length);
+    }
+
+    const setToFalse = () => {
+        data = [...water]
+        for (let i = 0; i < data.length; i++) {
+            data[i].flag = false
+        }
+        setLen(water.filter((item) => item.flag == true).length);
     }
 
     const clearSelection = () => {
@@ -65,7 +79,7 @@ const Agua = () => {
                     renderItem={(item) => renderItem(item.item)}
                 />
                 <TouchableOpacity
-                    onPress={() => clearSelection()}
+                    onPress={() => { clearSelection(), setToFalse() }}
                     style={agua.clearButton}
                 >
                     <Text style={agua.clearButtonText} >Limpiar selección</Text>
@@ -83,6 +97,10 @@ const Agua = () => {
             </View>
             <TouchableOpacity
                 style={agua.register}
+                onPress={() => {
+                    navigation.navigate('Registro'),
+                        dispatch(addWater(len * 0.100))
+                }}
             >
                 <Text style={agua.registerText}>Registrar</Text>
             </TouchableOpacity>
