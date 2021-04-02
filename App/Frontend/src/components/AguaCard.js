@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { TouchableOpacity, Text, View } from 'react-native'
 import aguaCard from '../styles/aguaCard'
 import { useNavigation } from '@react-navigation/native'

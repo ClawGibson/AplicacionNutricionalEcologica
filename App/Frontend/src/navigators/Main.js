@@ -5,7 +5,6 @@ import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons'
 import Icon3 from 'react-native-vector-icons/FontAwesome5'
 
 // Screens
-import AlimentosContainer from '../screens/Alimentos/AlimentosContainer'
 import Perfil from '../screens/Usuarios/Perfil'
 import AprendiendoContainer from '../screens/Aprendiendo/AprendiendoContainer'
 import ComunidadContainer from '../screens/Comunidad/ComunidadContainer'
