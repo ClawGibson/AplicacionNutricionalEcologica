@@ -11,7 +11,26 @@ const AddAlimento = (props) => {
     const evaluateNavigation = (tipo) => {
         switch (tipo) {
             case 'desayunoAyer':
-                return 'desauynoAyer'
+                return 'AlimentosAyer'
+            case 'intermedio1':
+                return 'AlimentosAyer'
+            case 'comidaAyer':
+                return 'AlimentosAyer'
+            case 'intermedio2':
+                return 'AlimentosAyer'
+            case 'cenaAyer':
+                return 'AlimentosAyer'
+            default:
+                return 'Alimentos'
+        }
+    }
+
+    const navigateTo = evaluateNavigation(props.tipo);
+
+    const evaluateType = (tipo) => {
+        switch (tipo) {
+            case 'desayunoAyer':
+                return 'desayunoAyer'
             case 'intermedio1':
                 return 'intermedio1'
             case 'comidaAyer':
@@ -25,10 +44,11 @@ const AddAlimento = (props) => {
         }
     }
 
+
     return (
         <View style={agregarButton1.body}>
             <View style={agregarButton1.container}>
-                <TouchableOpacity onPress={() => console.log(evaluateNavigation(props.tipo))}>
+                <TouchableOpacity onPress={() => navigation.navigate(navigateTo, evaluateType(props.tipo))}>
                     <View style={agregarButton1.icon}>
                         <Add name="add-circle-outline" size={50} color={'#000'} />
                     </View>

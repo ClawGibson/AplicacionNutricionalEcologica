@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Text, FlatList, ScrollView, TouchableOpacity } from 'react-native'
+import ColorCardList from '../Alimentos/ColorCardList'
 import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux'
 import ayer from '../../styles/ayer'
 
 import AddAlimento from '../../components/AddAlimento'
@@ -8,7 +10,9 @@ import AddAlimento from '../../components/AddAlimento'
 const Yesterday = () => {
 
     const navigation = useNavigation();
-    const desayuno = [];
+    const state = useSelector(state => state.cartYesterday)
+    const stateFlat = state.flat();
+    const desayuno = stateFlat ? stateFlat : [];
     const intermedio1 = [];
     const comida = [];
     const intermedio2 = [];
@@ -23,24 +27,36 @@ const Yesterday = () => {
                 <View style={ayer.itemContainer}>
                     <Text style={ayer.titles}>
                         Desayuno
-                </Text>
+                    </Text>
                     <View style={ayer.separator}>
-                        {
-                            desayuno
-                                ? <FlatList
-
-                                />
-                                : null
-                        }
-                        <AddAlimento
-                            tipo='desayunoAyer'
-                        />
+                        <ScrollView
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            style={ayer.alignerContainer}>
+                            {
+                                desayuno
+                                    ? <FlatList
+                                        data={stateFlat}
+                                        horizontal
+                                        keyExtractor={(item) => `${item.nombreAlimento}`}
+                                        renderItem={item =>
+                                            <ColorCardList
+                                                item={item}
+                                            />
+                                        }
+                                    />
+                                    : null
+                            }
+                            <AddAlimento
+                                tipo='desayunoAyer'
+                            />
+                        </ScrollView>
                     </View>
                 </View>
                 <View style={ayer.itemContainer}>
                     <Text style={ayer.titles}>
                         Intermedio
-                </Text>
+                    </Text>
                     <View style={ayer.separator}>
                         {
                             intermedio1
@@ -57,7 +73,7 @@ const Yesterday = () => {
                 <View style={ayer.itemContainer}>
                     <Text style={ayer.titles}>
                         Comida
-                </Text>
+                    </Text>
                     <View style={ayer.separator}>
                         {
                             comida
@@ -74,7 +90,7 @@ const Yesterday = () => {
                 <View style={ayer.itemContainer}>
                     <Text style={ayer.titles}>
                         Intermedio
-                </Text>
+                    </Text>
                     <View style={ayer.separator}>
                         {
                             intermedio2
@@ -91,7 +107,7 @@ const Yesterday = () => {
                 <View style={ayer.itemContainer}>
                     <Text style={ayer.titles}>
                         Cena
-                </Text>
+                    </Text>
                     <View style={ayer.separator}>
                         {
                             cena

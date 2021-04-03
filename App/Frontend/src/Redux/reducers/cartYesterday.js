@@ -12,7 +12,6 @@ const cartYesterday = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_TO_BREAKFAST_YESTERDAY:
-            console.log('state:', state, " |  action.payload:", action.payload)
             return [...state, action.payload]
         case ADD_TO_COLLATION1_YESTERDAY:
             break;

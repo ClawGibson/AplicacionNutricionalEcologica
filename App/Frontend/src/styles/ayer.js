@@ -25,6 +25,10 @@ const ayer = StyleSheet.create({
     separator: {
         marginTop: '2%'
     },
+    alignerContainer: {
+        flex: 1,
+        flexDirection: 'row'
+    },
     buttonContainer: {
         backgroundColor: secondary,
         borderColor: secondary,

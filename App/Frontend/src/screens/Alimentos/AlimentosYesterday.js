@@ -10,13 +10,14 @@ import Scan from 'react-native-vector-icons/MaterialCommunityIcons'
 const data = require('../../assets/data/data2.json');
 const categories = require('../../assets/data/categoriasAlimentos.json');
 
-const AlimentosYesterday = () => {
+const AlimentosYesterday = (props) => {
 
     const [food, setFood] = useState([]);
     const [searchs, setSearchs] = useState([]);
     const [category, setCategory] = useState([]);
     const [focus, setFocus] = useState();
     const [active, setActive] = useState([]);
+    const tipo = props.route.params;
 
     useEffect(() => {
         setFood(data)
@@ -91,6 +92,8 @@ const AlimentosYesterday = () => {
                             renderItem={({ item }) =>
                                 <AlimentosListAdd
                                     item={item}
+                                    ayer={true}
+                                    tipo={tipo}
                                 />
                             }
                         />
