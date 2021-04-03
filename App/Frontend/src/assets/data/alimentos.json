@@ -15,8 +15,8 @@
             "ambiental": "La leche descremada tiene una menor huella hídrica y genera menos emisiones de gases de efecto invernadero que la leche entera"
         },
         "icono": {
-            "iconoNutricional": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcreazilla-store.fra1.digitaloceanspaces.com%2Femojis%2F43030%2Fsmiling-face-with-smiling-eyes-emoji-clipart-md.png&f=1&nofb=1",
-            "iconoAmbiental": "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/42283/beaming-face-with-smiling-eyes-emoji-clipart-md.png"
+            "iconoNutricional": "https://res.cloudinary.com/dwjv6orjf/image/upload/v1616609956/tristeHoja_kpanfo.png",
+            "iconoAmbiental": "https://res.cloudinary.com/dwjv6orjf/image/upload/v1616609956/tristeGota_wqsbao.png"
         },
         "opcionesPreparacion": "Sola, Con cereal, Licuados caseros",
         "cantidadAlimento": {
@@ -151,8 +151,8 @@
             "ambiental": ""
         },
         "icono": {
-            "iconoNutricional": "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/44287/astonished-face-emoji-clipart-md.png",
-            "iconoAmbiental": "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/44449/slightly-frowning-face-emoji-clipart-md.png"
+            "iconoNutricional": "https://res.cloudinary.com/dwjv6orjf/image/upload/v1616609956/felizHoja_h86wj3.png",
+            "iconoAmbiental": "https://res.cloudinary.com/dwjv6orjf/image/upload/v1616609956/tristeGota_wqsbao.png"
         },
         "opcionesPreparacion": "Solo, Guisos",
         "cantidadAlimento": {
@@ -287,8 +287,8 @@
             "ambiental": ""
         },
         "icono": {
-            "iconoNutricional": "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/43795/neutral-face-emoji-clipart-md.png",
-            "iconoAmbiental": ""
+            "iconoNutricional": "https://res.cloudinary.com/dwjv6orjf/image/upload/v1616609956/felizHoja_h86wj3.png",
+            "iconoAmbiental": "https://res.cloudinary.com/dwjv6orjf/image/upload/v1616609956/felizGota_mxwgyr.png"
         },
         "opcionesPreparacion": "Solo, Con fruta",
         "cantidadAlimento": {

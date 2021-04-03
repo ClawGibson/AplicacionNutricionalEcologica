@@ -12,13 +12,10 @@ const RegistroDieteticoContainer = (props) => {
 
     useEffect(() => {
         setSelectedIntex(0);
-        return () => {
-            setSelectedIntex(0)
-        }
     }, []);
 
     return (
-        <ScrollView>
+        <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
             <View>
                 <Text style={styles.title}>Recetas</Text>
             </View>
@@ -31,10 +28,11 @@ const RegistroDieteticoContainer = (props) => {
                 onTabPress={(index) => setSelectedIntex(index)}
             />
             {
-                selectedIndex == 0 ?
-                    <AlimentosContainer
+                selectedIndex == 0
+                    ? <AlimentosContainer
                         navigation={props.navigation}
-                    /> :
+                    />
+                    :
                     <RegistroContainer />
             }
         </ScrollView>

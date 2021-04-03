@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, FlatList, ScrollView } from 'react-native'
 import { Header, Item, Input } from 'native-base'
-import { useNavigation } from '@react-navigation/native'
 import AlimentosListAdd from './AlimentosListAdd'
 import BuscandoAlimento from './BuscandoAlimento'
 import CategoriasAlimentos from './CategoriasAlimentos'
 import Search from 'react-native-vector-icons/AntDesign'
 import Scan from 'react-native-vector-icons/MaterialCommunityIcons'
-import alimentos from '../../styles/alimentos'
 
 const data = require('../../assets/data/data2.json');
 const categories = require('../../assets/data/categoriasAlimentos.json');
 
-const Alimentos = () => {
+const AlimentosYesterday = (props) => {
 
-    const navigation = useNavigation();
     const [food, setFood] = useState([]);
     const [searchs, setSearchs] = useState([]);
     const [category, setCategory] = useState([]);
     const [focus, setFocus] = useState();
     const [active, setActive] = useState([]);
+    const tipo = props.route.params;
 
     useEffect(() => {
         setFood(data)
@@ -94,6 +92,8 @@ const Alimentos = () => {
                             renderItem={({ item }) =>
                                 <AlimentosListAdd
                                     item={item}
+                                    ayer={true}
+                                    tipo={tipo}
                                 />
                             }
                         />
@@ -103,4 +103,4 @@ const Alimentos = () => {
     )
 }
 
-export default Alimentos
+export default AlimentosYesterday

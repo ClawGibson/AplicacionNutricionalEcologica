@@ -1,12 +1,4 @@
 import { StyleSheet } from 'react-native'
-import {
-    colorFrutas,
-    colorVerduras,
-    colorCarne,
-    colorLacteos,
-    colorLeguminosas,
-    colorCereales
-} from './palette'
 
 const colorCard = StyleSheet.create({
     body: {
@@ -14,58 +6,12 @@ const colorCard = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-evenly'
     },
-    fruitContainer: {
+    container: {
         width: 84,
         height: 119,
         padding: 1,
         marginLeft: 10,
         borderRadius: 15,
-        backgroundColor: colorFrutas,
-        justifyContent: 'center'
-    },
-    vegetableContainer: {
-        width: 84,
-        height: 119,
-        padding: 1,
-        marginLeft: 10,
-        borderRadius: 15,
-        backgroundColor: colorVerduras,
-        justifyContent: 'center'
-    },
-    meatContainer: {
-        width: 84,
-        height: 119,
-        padding: 1,
-        marginLeft: 10,
-        borderRadius: 15,
-        backgroundColor: colorCarne,
-        justifyContent: 'center'
-    },
-    cerealContainer: {
-        width: 84,
-        height: 119,
-        padding: 1,
-        marginLeft: 10,
-        borderRadius: 15,
-        backgroundColor: colorCereales,
-        justifyContent: 'center'
-    },
-    dairyContainer: {
-        width: 84,
-        height: 119,
-        padding: 1,
-        marginLeft: 10,
-        borderRadius: 15,
-        backgroundColor: colorLacteos,
-        justifyContent: 'center'
-    },
-    legumesContainer: {
-        width: 84,
-        height: 119,
-        padding: 1,
-        marginLeft: 10,
-        borderRadius: 15,
-        backgroundColor: colorLeguminosas,
         justifyContent: 'center'
     },
     number: {

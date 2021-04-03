@@ -9,7 +9,13 @@ import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 import { secondary } from "../../styles/palette";
 import { useDispatch } from 'react-redux'
-import { addToBreakfast } from '../../Redux/actions/cart'
+import {
+    addToBreakfastYesterday,
+    addToCollation1Yesterday,
+    addToCollation2Yesterday,
+    addToDinnerYesterday,
+    addToLunchYesterday
+} from '../../Redux/actions/yesterday'
 import SegmentedControlTab from "react-native-segmented-control-tab"
 
 LogBox.ignoreLogs(['VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.']);
@@ -17,7 +23,7 @@ LogBox.ignoreLogs(['VirtualizedLists should never be nested inside plain ScrollV
 const { imageNotFound } = require('../../assets/data/cloud');
 const CONTENT = require('../../assets/data/desplegable.json');
 
-const AlimentoIndAdd = (props) => {
+const AlimentoIndAdd2 = (props) => {
 
     const [item, setItem] = useState(props.route.params.item);
     const navigation = useNavigation();
@@ -26,6 +32,7 @@ const AlimentoIndAdd = (props) => {
     const [data, setData] = useState([]);
     const [selectedPortion, setSelectedPortion] = useState(0);
     const [button, setButton] = useState(true);
+    const operation = props.route.params.tipo;
 
     useEffect(() => {
         setSelectedIntex(0)
@@ -56,9 +63,37 @@ const AlimentoIndAdd = (props) => {
             )
             : (
                 handleButton(),
-                dispatch(addToBreakfast(data)),
-                navigation.navigate('Registro')
+                evaluateOperation(operation),
+                navigation.navigate('Ayer')
             )
+    }
+
+    const evaluateOperation = (op) => {
+        switch (op) {
+            case 'desayunoAyer':
+                dispatch(addToBreakfastYesterday(data)),
+                    navigation.navigate('Ayer')
+                break;
+            case 'intermedio1':
+                dispatch(addToCollation1Yesterday(data)),
+                    navigation.navigate('Ayer')
+                break;
+            case 'comidaAyer':
+                dispatch(addToLunchYesterday(data)),
+                    navigation.navigate('Ayer')
+                break;
+            case 'intermedio2':
+                dispatch(addToCollation2Yesterday(data)),
+                    navigation.navigate('Ayer')
+                break;
+            case 'cenaAyer':
+                dispatch(addToDinnerYesterday(data)),
+                    navigation.navigate('Ayer')
+                break;
+            default:
+                console.log('Hubo un problema y no sé por qué :c')
+                navigation.navigate('Ayer')
+        }
     }
 
     return (
@@ -96,7 +131,7 @@ const AlimentoIndAdd = (props) => {
                                     <Text style={alimentoIndAdd.extraText}></Text>
                                 </View>
                                 :
-                                <Text style={alimentoIndAdd.portion}>Porción</Text>
+                                <Text style={alimentoIndAdd.portion}>1 Porción</Text>
 
                         }
                     </View>
@@ -163,4 +198,4 @@ const AlimentoIndAdd = (props) => {
     )
 }
 
-export default AlimentoIndAdd
+export default AlimentoIndAdd2

@@ -5,17 +5,41 @@ import { useNavigation } from '@react-navigation/native'
 
 const AlimentosListAdd = (props) => {
 
-    const { item } = props;
+    const { item, ayer, tipo } = props;
     const navigation = useNavigation();
 
+    const evaluateNavigation = (ayer) => {
+        if (ayer)
+            return 'AlimentoIndAdd2'
+        return 'AlimentoIndAdd'
+    }
+
+    const data = evaluateNavigation(ayer);
+
     return (
-        <TouchableOpacity
-            onPress={() => {
-                navigation.navigate('AlimentoIndAdd', { item: item })
-            }}
-        >
-            <AlimentoCard {...item} />
-        </TouchableOpacity>
+        <>
+            {
+                tipo == 'Alimentos'
+                    ?
+                    (
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation.navigate(evaluateNavigation(data), { item: item })
+                            }}
+                        >
+                            <AlimentoCard {...item} />
+                        </TouchableOpacity>
+                    )
+                    :
+                    (<TouchableOpacity
+                        onPress={() => {
+                            navigation.navigate(evaluateNavigation(data), { item: item, tipo: tipo })
+                        }}
+                    >
+                        <AlimentoCard {...item} />
+                    </TouchableOpacity>)
+            }
+        </>
     )
 }
 

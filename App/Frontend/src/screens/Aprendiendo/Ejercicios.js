@@ -33,7 +33,7 @@ const Ejercicios = () => {
     }
 
     return (
-        <ScrollView>
+        <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
             <CategoriaFilter
                 categories={category}
                 catSelected={chageCat}

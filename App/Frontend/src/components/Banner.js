@@ -27,7 +27,7 @@ const Banner = () => {
     }, [])
 
     return (
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
             <View style={BannerStyles.container}>
                 <View style={BannerStyles.swiper}>
                     <Swiper style={{ height: width / 3 }} autoplay={true}>
