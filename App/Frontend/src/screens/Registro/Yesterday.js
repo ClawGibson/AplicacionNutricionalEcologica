@@ -1,68 +1,121 @@
 import React from 'react'
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, ScrollView, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
+import ayer from '../../styles/ayer'
 
 import AddAlimento from '../../components/AddAlimento'
 
 const Yesterday = () => {
+
+    const navigation = useNavigation();
+    const desayuno = [];
+    const intermedio1 = [];
+    const comida = [];
+    const intermedio2 = [];
+    const cena = [];
+
     return (
-        <View>
-            <Text style={{ marginTop: '20%', fontSize: 24, textAlign: 'center' }}>Una última cosa, ingresa los alimentos que consumiste el día de ayer</Text>
-            <View style={{ marginBottom: '15%', marginTop: '5%' }}>
-                <Text>
-                    Desayuno
+        <ScrollView>
+            <Text style={ayer.instructions}>
+                Ingresa los alimentos que consumiste el día de ayer
+            </Text>
+            <View style={ayer.body} >
+                <View style={ayer.itemContainer}>
+                    <Text style={ayer.titles}>
+                        Desayuno
                 </Text>
-                <View style={{ marginTop: '20%' }}>
-                    <FlatList
+                    <View style={ayer.separator}>
+                        {
+                            desayuno
+                                ? <FlatList
 
-                    />
-                    <AddAlimento />
+                                />
+                                : null
+                        }
+                        <AddAlimento
+                            tipo='desayunoAyer'
+                        />
+                    </View>
+                </View>
+                <View style={ayer.itemContainer}>
+                    <Text style={ayer.titles}>
+                        Intermedio
+                </Text>
+                    <View style={ayer.separator}>
+                        {
+                            intermedio1
+                                ? <FlatList
+
+                                />
+                                : null
+                        }
+                        <AddAlimento
+                            tipo='intermedio1'
+                        />
+                    </View>
+                </View>
+                <View style={ayer.itemContainer}>
+                    <Text style={ayer.titles}>
+                        Comida
+                </Text>
+                    <View style={ayer.separator}>
+                        {
+                            comida
+                                ? <FlatList
+
+                                />
+                                : null
+                        }
+                        <AddAlimento
+                            tipo='comidaAyer'
+                        />
+                    </View>
+                </View>
+                <View style={ayer.itemContainer}>
+                    <Text style={ayer.titles}>
+                        Intermedio
+                </Text>
+                    <View style={ayer.separator}>
+                        {
+                            intermedio2
+                                ? <FlatList
+
+                                />
+                                : null
+                        }
+                        <AddAlimento
+                            tipo='intermedio2'
+                        />
+                    </View>
+                </View>
+                <View style={ayer.itemContainer}>
+                    <Text style={ayer.titles}>
+                        Cena
+                </Text>
+                    <View style={ayer.separator}>
+                        {
+                            cena
+                                ? <FlatList
+
+                                />
+                                : null
+                        }
+                        <AddAlimento
+                            tipo='cenaAyer'
+                        />
+                    </View>
                 </View>
             </View>
-            <View style={{ marginBottom: '15%', marginTop: '5%' }}>
-                <Text>
-                    Intermedio
+            <TouchableOpacity
+                style={ayer.buttonContainer}
+                onPress={() => navigation.navigate('Principal')}
+            // Registrar los datos aquí
+            >
+                <Text style={ayer.buttonText} >
+                    Terminé
                 </Text>
-                <View style={{ marginTop: '20%' }}>
-                    <FlatList
-
-                    />
-                    <AddAlimento />
-                </View>
-            </View>
-            <View style={{ marginBottom: '15%', marginTop: '5%' }}>
-                <Text>
-                    Comida
-                </Text>
-                <View style={{ marginTop: '20%' }}>
-                    <FlatList
-
-                    />
-                    <AddAlimento />
-                </View>
-            </View>
-            <View style={{ marginBottom: '15%', marginTop: '5%' }}>
-                <Text>
-                    Intermedio
-                </Text>
-                <View style={{ marginTop: '20%' }}>
-                    <FlatList
-
-                    />
-                    <AddAlimento />
-                </View>
-            </View>
-            <View style={{ marginBottom: '15%', marginTop: '5%' }}>
-                <Text>
-                    Cena
-                </Text>
-                <View style={{ marginTop: '20%' }}>
-                    <FlatList
-
-                    />
-                    <AddAlimento />
-                </View>
-            </View>
-        </View>
+            </TouchableOpacity>
+        </ScrollView>
     )
 }
 
