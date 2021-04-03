@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import RegistroDieteticoContainer from '../screens/Registro/RegistroDieteticoContainer'
 import AlimentoInd from '../screens/Alimentos/AlimentoInd'
 import Alimentos from '../screens/Alimentos/Alimentos'
+import AlimentosAyer from '../screens/Alimentos/AlimentosYesterday'
 import Ejercicios from '../screens/Aprendiendo/Ejercicios'
 import EjercicioInd from '../screens/Aprendiendo/EjercicioInd'
 import Agua from '../screens/Aprendiendo/Agua'
@@ -22,6 +23,7 @@ function MyStack() {
             <Stack.Screen name='Alimentos' component={Alimentos} options={{ headerShown: true, headerTitleAlign: 'center' }} />
             <Stack.Screen name='AlimentoIndAdd' component={AlimentoIndAdd} options={{ headerShown: false }} />
             <Stack.Screen name='Ayer' component={Yesterday} options={{ tabBarVisible: false, headerShown: false }} />
+            <Stack.Screen name='AlimentosAyer' component={AlimentosAyer} />
         </Stack.Navigator>
     )
 }
