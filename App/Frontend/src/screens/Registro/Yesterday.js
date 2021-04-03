@@ -12,6 +12,7 @@ const Yesterday = () => {
     const navigation = useNavigation();
     const state = useSelector(state => state.cartYesterday)
     const stateFlat = state.flat();
+    console.log(stateFlat);
     const desayuno = stateFlat ? stateFlat : [];
     const intermedio1 = [];
     const comida = [];
@@ -38,7 +39,7 @@ const Yesterday = () => {
                                     ? <FlatList
                                         data={stateFlat}
                                         horizontal
-                                        keyExtractor={(item) => `${item.nombreAlimento}`}
+                                        keyExtractor={(item) => `${item.nombre}`}
                                         renderItem={item =>
                                             <ColorCardList
                                                 item={item}
