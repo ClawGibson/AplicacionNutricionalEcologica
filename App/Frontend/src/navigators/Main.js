@@ -21,8 +21,10 @@ function Main() {
     return (
         <Tab.Navigator
             initialRouteName="Principal"
+            swipeEnabled
+            animationEnabled
             tabBarOptions={{
-                showLabel: false,
+                showLabel: true,
                 activeTintColor: primary
             }}
         >

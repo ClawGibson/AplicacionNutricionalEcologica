@@ -91,7 +91,7 @@ const AlimentoIndAdd2 = (props) => {
                     navigation.navigate('Ayer')
                 break;
             default:
-                console.log('Hubo un problema y no sé por qué :c')
+                console.log('Algo pasó y no sé por qué :c')
                 navigation.navigate('Ayer')
         }
     }
