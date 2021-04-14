@@ -105,35 +105,9 @@ const AlimentoIndAdd2 = (props) => {
             />
             <Text style={alimentoIndAdd.title}>{item?.nombreAlimento}</Text>
             <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} >
-                <SegmentedControlTab
-                    activeTabStyle={{ backgroundColor: '#FFF' }}
-                    activeTabTextStyle={{ color: secondary }}
-                    tabTextStyle={{ color: '#969696' }}
-                    tabStyle={{ borderColor: secondary, marginTop: 6, marginBottom: -4 }}
-                    values={["Registro por porciones", "Registro libre"]}
-                    selectedIndex={selectedIndex}
-                    onTabPress={(index) => setSelectedIntex(index)}
-                />
                 <View style={alimentoIndAdd.huellaConsumo}>
                     <View style={alimentoIndAdd.textContainer}>
-                        {
-                            selectedIndex == 1
-                                ?
-                                <View>
-                                    <Item>
-                                        <Input
-                                            placeholder='Ingresa la cantidad que comiste'
-                                            textAlign={'center'}
-                                            placeholderTextColor={'#969696'}
-                                            onChangeText={text => { setSelectedPortion({ value: text }) }}
-                                        />
-                                    </Item>
-                                    <Text style={alimentoIndAdd.extraText}></Text>
-                                </View>
-                                :
-                                <Text style={alimentoIndAdd.portion}>1 Porción</Text>
-
-                        }
+                        <Text style={alimentoIndAdd.portion}>1 Porción</Text>
                     </View>
                 </View>
                 <Text style={alimentoIndAdd.titles}>Información ecológica</Text>

@@ -8,36 +8,29 @@ const AlimentosListAdd = (props) => {
     const { item, ayer, tipo } = props;
     const navigation = useNavigation();
 
-    const evaluateNavigation = (ayer) => {
-        if (ayer)
-            return 'AlimentoIndAdd2'
-        return 'AlimentoIndAdd'
-    }
-
-    const data = evaluateNavigation(ayer);
-
     return (
         <>
             {
-                tipo == 'Alimentos'
+                tipo == 'Alimentos' || tipo == undefined
                     ?
                     (
                         <TouchableOpacity
                             onPress={() => {
-                                navigation.navigate(evaluateNavigation(data), { item: item })
+                                navigation.navigate('AlimentoIndAdd', { item: item })
                             }}
                         >
                             <AlimentoCard {...item} />
                         </TouchableOpacity>
                     )
                     :
-                    (<TouchableOpacity
-                        onPress={() => {
-                            navigation.navigate(evaluateNavigation(data), { item: item, tipo: tipo })
-                        }}
-                    >
-                        <AlimentoCard {...item} />
-                    </TouchableOpacity>)
+                    (
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation.navigate('AlimentoIndAdd2', { item: item, tipo: tipo })
+                            }}
+                        >
+                            <AlimentoCard {...item} />
+                        </TouchableOpacity>)
             }
         </>
     )
