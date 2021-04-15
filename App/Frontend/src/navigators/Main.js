@@ -22,7 +22,7 @@ function Main() {
         <Tab.Navigator
             initialRouteName="Principal"
             tabBarOptions={{
-                showLabel: false,
+                showLabel: true,
                 activeTintColor: primary
             }}
         >
