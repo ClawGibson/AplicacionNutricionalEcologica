@@ -17,9 +17,7 @@ const styles = StyleSheet.create({
     },
     seeMore: {
         fontSize: 20,
-        fontWeight: '500',
-        borderBottomColor: '#328AB2',
-        borderBottomWidth: 3
+        fontWeight: '500'
     },
     alignCards: {
         alignItems: 'center'
