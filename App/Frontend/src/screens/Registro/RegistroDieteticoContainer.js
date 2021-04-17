@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, ScrollView, StyleSheet } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native'
 import AlimentosContainer from '../Alimentos/AlimentosContainer'
 import SegmentedControlTab from "react-native-segmented-control-tab"
 import Banner from '../../components/Banner'
 import { secondary } from '../../styles/palette'
 import RegistroContainer from '../Alimentos/RegistroContainer'
+import { useNavigation } from '@react-navigation/native'
 
 const RegistroDieteticoContainer = (props) => {
 
+    const navigation = useNavigation();
     const [selectedIndex, setSelectedIntex] = useState(0)
 
     useEffect(() => {
@@ -19,7 +21,11 @@ const RegistroDieteticoContainer = (props) => {
             <View>
                 <Text style={styles.title}>Recetas</Text>
             </View>
-            <Banner />
+            <TouchableOpacity
+                onPress={() => navigation.navigate('Recetas')}
+            >
+                <Banner />
+            </TouchableOpacity>
             <SegmentedControlTab
                 activeTabStyle={{ backgroundColor: secondary }}
                 tabStyle={{ borderColor: '#F2F2F2', marginBottom: 5 }}
