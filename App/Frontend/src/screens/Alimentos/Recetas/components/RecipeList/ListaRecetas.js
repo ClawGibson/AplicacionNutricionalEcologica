@@ -3,11 +3,21 @@ import { View, Text, FlatList } from 'react-native'
 import styles from '../RecipeList/styles'
 import Video from '../../../../../components/Video'
 
-const videoData = { 'id': 1, 'link': 'TUC_2nPScxo' }
+const videoData = [
+    { 'id': 1, 'link': 'TUC_2nPScxo' },
+    { 'id': 2, 'link': 'mFwgP03plgY' },
+    { 'id': 3, 'link': 'cei3JhG72bg' },
+    { 'id': 4, 'link': 'bHy2DoIA6ik' },
+    { 'id': 5, 'link': '-LvP0yjaa7o' },
+    { 'id': 6, 'link': 'hWYhJHD4UzE' },
+    { 'id': 7, 'link': 'BQSwJtoejA8' },
+    { 'id': 8, 'link': 'm4zsltMouXM' },
+    { 'id': 9, 'link': 'ktxZ9810G7g' }
+]
 
 const ListaRecetas = ({ route }) => {
 
-
+    console.log(videoData)
 
     return (
         <View>
@@ -16,7 +26,7 @@ const ListaRecetas = ({ route }) => {
                 <FlatList
                     data={videoData}
                     keyExtractor={item => `${item.id}`}
-                    renderItem={item =>
+                    renderItem={({ item }) =>
                         <Video
                             data={item}
                         />

@@ -5,7 +5,6 @@ import { getYoutubeMeta } from 'react-native-youtube-iframe';
 
 const Video = (props) => {
 
-    console.log(props);
     const data = props?.data?.link;
     const [playing, setPlaying] = useState(false);
     const [title, setTitle] = useState('');
