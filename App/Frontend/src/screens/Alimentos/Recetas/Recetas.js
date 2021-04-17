@@ -3,7 +3,7 @@ import { View, Text, Dimensions, ScrollView, TouchableOpacity } from 'react-nati
 import WavyHeader from '../../../components/WavyHeader'
 import recetasStyles from '../recetasStyles'
 import Video from '../../../components/Video'
-import Section from './components/Section'
+import Section from './components/Section/Section'
 
 const desayuno = { 'link': 'TUC_2nPScxo' }
 const colacion1 = { 'link': 'mFwgP03plgY' }

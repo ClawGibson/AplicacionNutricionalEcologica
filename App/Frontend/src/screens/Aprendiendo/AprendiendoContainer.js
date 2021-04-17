@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
-import { View, Text, Dimensions, ScrollView } from 'react-native'
+import { View, Text, Dimensions, ScrollView, FlatList, TouchableOpacity } from 'react-native'
 import { Header, Item, Input } from 'native-base'
 import WavyHeader from '../../components/WavyHeader'
 import Search from 'react-native-vector-icons/AntDesign'
-import BuscandoVideo from './BuscandoVideo'
+import aprendiendoContainer from '../../styles/aprendiendoContainer'
+import Video from '../../components/Video'
+
+const test = { 'id': 1, 'link': 'TUC_2nPScxo' }
+
 
 const AprendiendoContainer = () => {
 
@@ -11,28 +15,58 @@ const AprendiendoContainer = () => {
 
     return (
         <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
-            <View style={{ position: 'relative', backgroundColor: '#439776', height: 100, width: Dimensions.get('screen').width }} >
-                <Text>hola</Text>
+            <View style={aprendiendoContainer.topBackground} >
             </View>
-            <View style={{ position: 'relative', marginTop: '-30%' }}>
+            <View style={aprendiendoContainer.wave}>
                 <WavyHeader
                     customWidth={Dimensions.get('screen').width}
                     customHeight={Dimensions.get('screen').height * 0.2}
                 />
             </View>
-            <Header searchBar rounded transparent style={{ position: 'relative', marginTop: '-30%' }}>
+            <Header searchBar rounded transparent style={aprendiendoContainer.wave}>
                 <Item>
                     <Search name='search1' size={24} color='#000' style={{ position: 'relative', left: 5 }} />
-                    <Input placeholder='Buscar alimento'
+                    <Input placeholder='Buscar alguna receta'
 
                     />
                 </Item>
             </Header>
-            <View>
-                <Text>
-                    Desayuno
-                </Text>
-            </View>
+            <ScrollView>
+                <View style={aprendiendoContainer.separator} >
+                    <View style={aprendiendoContainer.rowContainer}>
+                        <Text style={aprendiendoContainer.title}>
+                            Desayuno
+                    </Text>
+                        <TouchableOpacity>
+                            <Text>Ver todos</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={aprendiendoContainer.alignCards}>
+                        {
+                            test
+                                ?
+                                <>
+                                    {/**
+                                        <FlatList
+                                            data={videoData}
+                                            keyExtractor={item => `${item.id}`}
+                                            renderItem={item =>
+                                                <CardList
+                                                    item={item}
+                                                />
+                                            }
+                                        />
+                                     */}
+                                    <Video data={test} />
+                                </>
+                                :
+                                <View style={{ marginTop: '50%' }}>
+                                    <Text>Ocurrió algún error y no se pudo encontrar la información :(</Text>
+                                </View>
+                        }
+                    </View>
+                </View>
+            </ScrollView>
         </ScrollView>
     )
 }

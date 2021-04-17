@@ -1,10 +1,13 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import Next from 'react-native-vector-icons/MaterialIcons'
-import Video from '../../../../components/Video'
+import Video from '../../../../../components/Video'
 import styles from './styles'
 
 const Section = (props) => {
+
+    const navigation = useNavigation();
 
     return (
         <View style={styles.separator} >
@@ -12,7 +15,10 @@ const Section = (props) => {
                 <Text style={styles.title}>
                     {props.name}
                 </Text>
-                <TouchableOpacity style={{ flexDirection: 'row' }} >
+                <TouchableOpacity
+                    style={{ flexDirection: 'row' }}
+                    onPress={() => navigation.navigate('ListaRecetas', { name: props.name })}
+                >
                     <Text style={styles.seeMore}>Ver todos</Text>
                     <Next name='navigate-next' size={24} color='#000' />
                 </TouchableOpacity>
