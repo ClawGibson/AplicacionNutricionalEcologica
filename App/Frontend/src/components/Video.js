@@ -29,6 +29,7 @@ const Video = (props) => {
                 videoId={data ? data : props.link}
                 onChangeState={onStateChange}
             />
+            <View style={{ marginTop: 50, height: 15, width: 300 }}></View>
         </View>
     );
 }

@@ -17,23 +17,27 @@ const videoData = [
 
 const ListaRecetas = ({ route }) => {
 
-    console.log(videoData)
-
     return (
         <View>
             <Text style={styles.title} >{route.params.name}</Text>
-            <View>
-                <FlatList
-                    data={videoData}
-                    keyExtractor={item => `${item.id}`}
-                    renderItem={({ item }) =>
-                        <Video
-                            data={item}
+            {
+                videoData.length > 0
+                    ? <>
+                        <FlatList
+                            data={videoData}
+                            keyExtractor={item => `${item.id}`}
+                            renderItem={({ item }) =>
+                                <Video
+                                    data={item}
+                                />
+                            }
                         />
-                    }
-                />
-            </View>
-
+                        <View></View>
+                    </>
+                    : <View style={{ marginTop: '50%', alignItems: 'center' }}>
+                        <Text>Aún no hay videos de recetas, intente más tarde.</Text>
+                    </View>
+            }
         </View>
     )
 }
