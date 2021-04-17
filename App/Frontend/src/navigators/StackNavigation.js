@@ -10,7 +10,7 @@ import Agua from '../screens/Aprendiendo/Agua'
 import AlimentoIndAdd from '../screens/Alimentos/AlimentoIndAdd'
 import AlimentoIndAdd2 from '../screens/Alimentos/AlimentoIndAdd2'
 import Yesterday from '../screens/Registro/Yesterday'
-import Recetas from '../screens/Alimentos/Recetas'
+import Recetas from '../screens/Alimentos/Recetas/Recetas'
 
 const Stack = createStackNavigator();
 

@@ -23,7 +23,6 @@ const Video = (props) => {
         <View>
             <Text style={styles.title}>{title}</Text>
             <YoutubePlayer
-                pointerEvents="none"
                 height={205}
                 width={Dimensions.get('screen').width}
                 play={playing}
