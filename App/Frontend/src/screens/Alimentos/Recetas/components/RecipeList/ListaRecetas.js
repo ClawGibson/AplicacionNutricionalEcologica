@@ -22,15 +22,18 @@ const ListaRecetas = ({ route }) => {
             <Text style={styles.title} >{route.params.name}</Text>
             {
                 videoData.length > 0
-                    ? <FlatList
-                        data={videoData}
-                        keyExtractor={item => `${item.id}`}
-                        renderItem={({ item }) =>
-                            <Video
-                                data={item}
-                            />
-                        }
-                    />
+                    ? <>
+                        <FlatList
+                            data={videoData}
+                            keyExtractor={item => `${item.id}`}
+                            renderItem={({ item }) =>
+                                <Video
+                                    data={item}
+                                />
+                            }
+                        />
+                        <View></View>
+                    </>
                     : <View style={{ marginTop: '50%', alignItems: 'center' }}>
                         <Text>Aún no hay videos de recetas, intente más tarde.</Text>
                     </View>
