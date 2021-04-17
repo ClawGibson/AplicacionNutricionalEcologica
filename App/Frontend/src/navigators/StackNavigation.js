@@ -10,6 +10,8 @@ import Agua from '../screens/Aprendiendo/Agua'
 import AlimentoIndAdd from '../screens/Alimentos/AlimentoIndAdd'
 import AlimentoIndAdd2 from '../screens/Alimentos/AlimentoIndAdd2'
 import Yesterday from '../screens/Registro/Yesterday'
+import Recetas from '../screens/Alimentos/Recetas/Recetas'
+import ListaRecetas from '../screens/Alimentos/Recetas/components/RecipeList/ListaRecetas'
 
 const Stack = createStackNavigator();
 
@@ -26,6 +28,8 @@ function MyStack() {
             <Stack.Screen name='Ayer' component={Yesterday} options={{ tabBarVisible: false, headerShown: false }} />
             <Stack.Screen name='AlimentosAyer' component={AlimentosAyer} options={{ title: 'Selección de alimentos' }} />
             <Stack.Screen name='AlimentoIndAdd2' component={AlimentoIndAdd2} options={{ title: 'Alimento individual' }} />
+            <Stack.Screen name='Recetas' component={Recetas} options={{ title: 'Recetas', headerTitleAlign: 'center' }} />
+            <Stack.Screen name='ListaRecetas' component={ListaRecetas} options={{ headerShown: false }} />
         </Stack.Navigator>
     )
 }
