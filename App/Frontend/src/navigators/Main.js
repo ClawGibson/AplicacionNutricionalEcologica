@@ -12,7 +12,8 @@ import MensajesContainer from '../screens/Mensajes/MensajesContainer'
 import Piramide from '../screens/Alimentos/Piramide'
 
 // Stacks
-import StackNavigation from '../navigators/StackNavigation'
+import StackNavigation from './StackNavigation'
+import AdminNavigation from './AdminStack'
 
 const Tab = createBottomTabNavigator();
 import { primary } from '../styles/palette'
@@ -50,7 +51,7 @@ function Main() {
                         <Icon3 name='users' style={{ position: 'relative' }} color={color} size={40} />
                     )
                 }} />
-            <Tab.Screen name="Perfil" component={Perfil}
+            <Tab.Screen name="Perfiles" component={AdminNavigation}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <Icon name='user-circle' style={{ position: 'relative' }} color={color} size={40} />

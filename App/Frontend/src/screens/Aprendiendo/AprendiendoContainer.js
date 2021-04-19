@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { View, Text, Dimensions, ScrollView, FlatList, TouchableOpacity } from 'react-native'
 import { Header, Item, Input } from 'native-base'
-import WavyHeader from '../../components/WavyHeader'
 import Search from 'react-native-vector-icons/AntDesign'
 import aprendiendoContainer from '../../styles/aprendiendoContainer'
-import Video from '../../components/Video'
 
 const test = { 'id': 1, 'link': 'TUC_2nPScxo' }
 
@@ -18,10 +16,7 @@ const AprendiendoContainer = () => {
             <View style={aprendiendoContainer.topBackground} >
             </View>
             <View style={aprendiendoContainer.wave}>
-                <WavyHeader
-                    customWidth={Dimensions.get('screen').width}
-                    customHeight={Dimensions.get('screen').height * 0.2}
-                />
+
             </View>
             <Header searchBar rounded transparent style={aprendiendoContainer.wave}>
                 <Item>
@@ -57,7 +52,6 @@ const AprendiendoContainer = () => {
                                             }
                                         />
                                      */}
-                                    <Video data={test} />
                                 </>
                                 :
                                 <View style={{ marginTop: '50%' }}>
