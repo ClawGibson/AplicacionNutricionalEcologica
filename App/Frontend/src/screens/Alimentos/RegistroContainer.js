@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { FlatList, View, Text, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native'
 import { useSelector } from 'react-redux'
 import { useIsFocused } from '@react-navigation/native'
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 import DiasFilter from '../../components/DiasFilter'
 import AguaCard from '../../components/AguaCard'
@@ -21,32 +22,36 @@ const RegistroContainer = () => {
     const [days, setDays] = useState([]);
     const [active, setActive] = useState([]);
     const [cart, setCart] = useState([]);
-    const [time, setTime] = useState('');
-    const [time2, setTime2] = useState('am');
+    const [breakfastTime, setbreakfastTime] = useState('');
+    const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
 
     useEffect(() => {
-        let hours = new Date().getHours();
-        let min = new Date().getMinutes();
         setDays(dias);
         setActive(-1);
         setCart(test);
-        setTime2('am');
-        hours.toString().length > 1 && hours > 12
-            ? (min.toString().length < 2
-                ? setTime(`${hours}:0${min}`)
-                : setTime(`${hours - 12}:${min}`))
-            : (min.toString().length < 2
-                ? setTime(`${hours}:0${min}`)
-                : setTime(`${hours}:${min}`))
-
         return () => {
             setDays([]);
             setActive([]);
             setCart([]);
-            setTime('');
-            setTime2('am');
         }
     }, [isFocused])
+
+    const showDatePicker = () => {
+        setDatePickerVisibility(true);
+    };
+
+    const hideDatePicker = () => {
+        setDatePickerVisibility(false);
+    };
+
+    const handleConfirm = (date) => {
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        hours > 12
+            ? setbreakfastTime(`${hours}:${minutes} pm`)
+            : setbreakfastTime(`${hours}:${minutes} am`)
+        hideDatePicker();
+    };
 
     const changeDay = (day) => {
         {
@@ -54,12 +59,6 @@ const RegistroContainer = () => {
                 ? console.log('Lunes')
                 : console.log(day.name)
         }
-    }
-
-    const handleTime = (value) => {
-        value == 'am'
-            ? setTime2('pm')
-            : setTime2('am')
     }
 
     return (
@@ -73,13 +72,17 @@ const RegistroContainer = () => {
                 />
                 <View style={styles.container}>
                     <Text style={styles.title}>Desayuno</Text>
-                    <View style={styles.inputTime}>
-                        <Text style={styles.timeFormat}>{time}</Text>
-                    </View>
-                    <TouchableOpacity onPress={() => { handleTime(time2) }}>
-                        <View style={styles.handleTime}>
-                            <Text style={styles.time2Format}>{time2}</Text>
-                        </View>
+                    <TouchableOpacity style={styles.inputTime} onPress={showDatePicker}>
+                        <Text style={styles.timeFormat}>{breakfastTime ? breakfastTime : 'Horario'}</Text>
+                        <DateTimePickerModal
+                            isVisible={isDatePickerVisible}
+                            mode="time"
+                            locale="en_GB"
+                            is24Hour={false}
+                            display='spinner'
+                            onConfirm={handleConfirm}
+                            onCancel={hideDatePicker}
+                        />
                     </TouchableOpacity>
                 </View>
                 <ScrollView
