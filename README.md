@@ -11,7 +11,7 @@
   <p align="center">
     A nutritional and ecological application with react native.
     <br />
-    <a href="https://www.figma.com/proto/gRJRtkQBGebLt9kRrsC6SV/Mobile-design?node-id=1%3A3&viewport=308%2C200%2C0.141961008310318&scaling=scale-down"><strong>Explore the prototype »</strong></a>
+    <a href="https://www.figma.com/proto/gRJRtkQBGebLt9kRrsC6SV/Mobile-design?page-id=0%3A1&node-id=1%3A3&viewport=283%2C83%2C0.07182593643665314&scaling=scale-down"><strong>Explore the prototype »</strong></a>
     <br />
     <br />
   </p>
