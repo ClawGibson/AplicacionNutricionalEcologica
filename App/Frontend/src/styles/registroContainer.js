@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     inputTime: {
         height: 24,
         width: 120,
-        marginRight: '-15%',
+        marginRight: '15%',
         borderRadius: 15,
         backgroundColor: 'transparent',
         borderColor: '#000',
@@ -42,6 +42,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         alignSelf: 'center',
         color: '#FFF'
+    },
+    separator: {
+        marginTop: 10
     }
 });
 
