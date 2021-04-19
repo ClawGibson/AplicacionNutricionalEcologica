@@ -42,6 +42,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         alignSelf: 'center',
         color: '#FFF'
+    },
+    separator: {
+        marginTop: 10
     }
 });
 

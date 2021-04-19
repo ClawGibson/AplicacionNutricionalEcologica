@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { FlatList, View, Text, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native'
 import { useSelector } from 'react-redux'
 import { useIsFocused } from '@react-navigation/native'
-import DateTimePickerModal from "react-native-modal-datetime-picker";
+import SelectorHorario from './SelectorHorario'
 
 import DiasFilter from '../../components/DiasFilter'
 import AguaCard from '../../components/AguaCard'
@@ -22,8 +22,6 @@ const RegistroContainer = () => {
     const [days, setDays] = useState([]);
     const [active, setActive] = useState([]);
     const [cart, setCart] = useState([]);
-    const [breakfastTime, setbreakfastTime] = useState('');
-    const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
 
     useEffect(() => {
         setDays(dias);
@@ -35,23 +33,6 @@ const RegistroContainer = () => {
             setCart([]);
         }
     }, [isFocused])
-
-    const showDatePicker = () => {
-        setDatePickerVisibility(true);
-    };
-
-    const hideDatePicker = () => {
-        setDatePickerVisibility(false);
-    };
-
-    const handleConfirm = (date) => {
-        const hours = date.getHours();
-        const minutes = date.getMinutes();
-        hours > 12
-            ? setbreakfastTime(`${hours}:${minutes} pm`)
-            : setbreakfastTime(`${hours}:${minutes} am`)
-        hideDatePicker();
-    };
 
     const changeDay = (day) => {
         {
@@ -70,46 +51,146 @@ const RegistroContainer = () => {
                     active={active}
                     setActive={setActive}
                 />
-                <View style={styles.container}>
-                    <Text style={styles.title}>Desayuno</Text>
-                    <TouchableOpacity style={styles.inputTime} onPress={showDatePicker}>
-                        <Text style={styles.timeFormat}>{breakfastTime ? breakfastTime : 'Horario'}</Text>
-                        <DateTimePickerModal
-                            isVisible={isDatePickerVisible}
-                            mode="time"
-                            locale="en_GB"
-                            is24Hour={false}
-                            display='spinner'
-                            onConfirm={handleConfirm}
-                            onCancel={hideDatePicker}
-                        />
-                    </TouchableOpacity>
+                <View style={styles.separator}>
+                    <SelectorHorario name='Desayuno' />
+                    <ScrollView
+                        showsHorizontalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
+                        horizontal
+                        style={{ flex: 1, flexDirection: 'row' }}>
+                        <AguaCard />
+                        <EjercicioCard />
+                        {
+                            cart
+                                ? (
+                                    <FlatList
+                                        data={cart}
+                                        horizontal
+                                        keyExtractor={item => `${item.nombre}`}
+                                        renderItem={item =>
+                                            <ColorCardList
+                                                item={item}
+                                            />
+                                        }
+                                    />
+                                )
+                                : (null)
+                        }
+                        <AddAlimento />
+                    </ScrollView>
                 </View>
-                <ScrollView
-                    showsHorizontalScrollIndicator={false}
-                    showsVerticalScrollIndicator={false}
-                    horizontal
-                    style={{ flex: 1, flexDirection: 'row' }}>
-                    <AguaCard />
-                    <EjercicioCard />
-                    {
-                        cart
-                            ? (
-                                <FlatList
-                                    data={cart}
-                                    horizontal
-                                    keyExtractor={item => `${item.nombre}`}
-                                    renderItem={item =>
-                                        <ColorCardList
-                                            item={item}
-                                        />
-                                    }
-                                />
-                            )
-                            : (null)
-                    }
-                    <AddAlimento />
-                </ScrollView>
+                <View style={styles.separator}>
+                    <SelectorHorario name='Colación 1' />
+                    <ScrollView
+                        showsHorizontalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
+                        horizontal
+                        style={{ flex: 1, flexDirection: 'row' }}>
+                        <AguaCard />
+                        <EjercicioCard />
+                        {
+                            cart
+                                ? (
+                                    <FlatList
+                                        data={cart}
+                                        horizontal
+                                        keyExtractor={item => `${item.nombre}`}
+                                        renderItem={item =>
+                                            <ColorCardList
+                                                item={item}
+                                            />
+                                        }
+                                    />
+                                )
+                                : (null)
+                        }
+                        <AddAlimento />
+                    </ScrollView>
+                </View>
+                <View style={styles.separator}>
+                    <SelectorHorario name='Comida' />
+                    <ScrollView
+                        showsHorizontalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
+                        horizontal
+                        style={{ flex: 1, flexDirection: 'row' }}>
+                        <AguaCard />
+                        <EjercicioCard />
+                        {
+                            cart
+                                ? (
+                                    <FlatList
+                                        data={cart}
+                                        horizontal
+                                        keyExtractor={item => `${item.nombre}`}
+                                        renderItem={item =>
+                                            <ColorCardList
+                                                item={item}
+                                            />
+                                        }
+                                    />
+                                )
+                                : (null)
+                        }
+                        <AddAlimento />
+                    </ScrollView>
+                </View>
+                <View style={styles.separator}>
+                    <SelectorHorario name='Colación 2' />
+                    <ScrollView
+                        showsHorizontalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
+                        horizontal
+                        style={{ flex: 1, flexDirection: 'row' }}>
+                        <AguaCard />
+                        <EjercicioCard />
+                        {
+                            cart
+                                ? (
+                                    <FlatList
+                                        data={cart}
+                                        horizontal
+                                        keyExtractor={item => `${item.nombre}`}
+                                        renderItem={item =>
+                                            <ColorCardList
+                                                item={item}
+                                            />
+                                        }
+                                    />
+                                )
+                                : (null)
+                        }
+                        <AddAlimento />
+                    </ScrollView>
+                </View>
+                <View style={styles.separator}>
+                    <SelectorHorario name='Cena' />
+                    <ScrollView
+                        showsHorizontalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
+                        horizontal
+                        style={{ flex: 1, flexDirection: 'row' }}>
+                        <AguaCard />
+                        <EjercicioCard />
+                        {
+                            cart
+                                ? (
+                                    <FlatList
+                                        data={cart}
+                                        horizontal
+                                        keyExtractor={item => `${item.nombre}`}
+                                        renderItem={item =>
+                                            <ColorCardList
+                                                item={item}
+                                            />
+                                        }
+                                    />
+                                )
+                                : (null)
+                        }
+                        <AddAlimento />
+                    </ScrollView>
+                </View>
             </SafeAreaView>
         </View>
     )
