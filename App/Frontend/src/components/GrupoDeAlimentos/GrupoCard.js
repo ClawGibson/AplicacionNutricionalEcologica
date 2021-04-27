@@ -30,7 +30,7 @@ const GrupoCard = ({ categoria, imagen }) => {
     return (
         <TouchableOpacity
             style={styles.body}
-            onPress={() => navigation.navigate('')}
+            onPress={() => navigation.navigate('ListaPorGrupoDeAlimentos')}
         >
             <View style={[styles.container, { backgroundColor: evaluateCategory(categoria) }]}>
                 <Image style={styles.image}
