@@ -27,7 +27,10 @@ const MenusBase = () => {
                     {
                         food.length > 0
                             ? <View><Text>Toronjas</Text></View>
-                            : <TouchableOpacity style={menusBaseStyles.addFood}>
+                            : <TouchableOpacity
+                                style={menusBaseStyles.addFood}
+                                onPress={() => navigation.navigate('GrupoDeAlimentos')}
+                            >
                                 <Text>Agregar</Text>
                             </TouchableOpacity>
                     }
