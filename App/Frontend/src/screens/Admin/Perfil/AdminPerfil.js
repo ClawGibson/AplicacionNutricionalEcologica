@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import { standardAvatar } from '../../../assets/data/cloud'
 import Next from 'react-native-vector-icons/MaterialIcons'
 import styles from './adminPerfilStyles'
@@ -7,6 +8,7 @@ import styles from './adminPerfilStyles'
 const AdminPerfil = () => {
 
     const imagen = ''
+    const navigation = useNavigation();
 
     return (
         <View>
@@ -37,7 +39,10 @@ const AdminPerfil = () => {
                         <Text style={styles.optionsText}>Recordatorios</Text>
                         <Next name='navigate-next' size={34} color={'#000'} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.options}>
+                    <TouchableOpacity
+                        style={styles.options}
+                        onPress={() => navigation.navigate('NuevoMenuBase')}
+                    >
                         <Text style={styles.optionsText}>Nuevo menú base</Text>
                         <Next name='navigate-next' size={34} color={'#000'} />
                     </TouchableOpacity>
