@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { secondary, optional1, optional2 } from '../../styles/palette'
 
 const styles = StyleSheet.create({
     body: {
@@ -33,6 +34,28 @@ const styles = StyleSheet.create({
         top: -15,
         textAlignVertical: 'center',
         color: '#FFF'
+    },
+    wordContainer: {
+        height: 25,
+        justifyContent: 'center'
+    },
+    word: {
+        color: optional2,
+        fontSize: 35,
+        marginLeft: 10
+    },
+    listText: {
+        fontSize: 15
+    },
+    headerList: {
+        backgroundColor: optional1,
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    headerListText: {
+        color: '#fff',
+        fontSize: 35
     }
 });
 

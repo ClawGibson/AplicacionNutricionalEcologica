@@ -8,7 +8,7 @@ const GrupoCard = ({ categoria, imagen }) => {
 
     const navigation = useNavigation();
 
-    const evaluateCategory = (cat) => {
+    const returnColor = (cat) => {
         switch (cat) {
             case 'Verduras':
                 return '#00A24F'
@@ -30,9 +30,9 @@ const GrupoCard = ({ categoria, imagen }) => {
     return (
         <TouchableOpacity
             style={styles.body}
-            onPress={() => navigation.navigate('ListaPorGrupoDeAlimentos')}
+            onPress={() => navigation.navigate('ListaPorGrupoDeAlimentos', categoria)}
         >
-            <View style={[styles.container, { backgroundColor: evaluateCategory(categoria) }]}>
+            <View style={[styles.container, { backgroundColor: returnColor(categoria) }]}>
                 <Image style={styles.image}
                     source={{ uri: imagen ? imagen : imageNotFound }}
                 />

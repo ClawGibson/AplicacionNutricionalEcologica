@@ -1,41 +1,35 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import { AlphabetList } from "react-native-section-alphabet-list";
+import styles from './styles'
 
-const data = [
-    { value: 'Lillie-Mai Allen', key: 'lCUTs2' },
-    { value: 'Emmanuel Goldstein', key: 'TXdL0c' },
-    { value: 'Winston Smith', key: 'zqsiEw' },
-    { value: 'William Blazkowicz', key: 'psg2PM' },
-    { value: 'Gordon Comstock', key: '1K6I18' },
-    { value: 'Philip Ravelston', key: 'NVHSkA' },
-    { value: 'Rosemary Waterlow', key: 'SaHqyG' },
-    { value: 'Julia Comstock', key: 'iaT1Ex' },
-    { value: 'Mihai Maldonado', key: 'OvMd5e' },
-    { value: 'Murtaza Molina', key: '25zqAO' },
-    { value: 'Peter Petigrew', key: '8cWuu3' },
-]
+const equivalentes = require('../../assets/data/equivalentes.json')
 
+const ListaPorGrupo = ({ route }) => {
 
-const ListaPorGrupo = () => {
     return (
-        <AlphabetList
-            data={data}
-            indexLetterStyle={{
-                color: 'blue',
-                fontSize: 15,
-            }}
-            renderCustomItem={(item) => (
-                <View>
-                    <Text >{item.value}</Text>
-                </View>
-            )}
-            renderCustomSectionHeader={(section) => (
-                <View >
-                    <Text >{section.title}</Text>
-                </View>
-            )}
-        />
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.headerList}>
+                <Text style={styles.headerListText}>Equivalencias en {route.params}</Text>
+            </View>
+            <AlphabetList
+                data={equivalentes}
+                indexLetterStyle={{
+                    color: '#8AB832',
+                    fontSize: 15,
+                }}
+                renderCustomItem={(item) => (
+                    <TouchableOpacity>
+                        <Text style={styles.listText} >{item.value}</Text>
+                    </TouchableOpacity>
+                )}
+                renderCustomSectionHeader={(section) => (
+                    <View style={styles.wordContainer}>
+                        <Text style={styles.word} >{section.title}</Text>
+                    </View>
+                )}
+            />
+        </ScrollView>
     )
 }
 
