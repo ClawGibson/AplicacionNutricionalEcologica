@@ -10,11 +10,13 @@ import collation1Yesterday from './reducers/collation1Yesterday'
 import collation2Yesterday from './reducers/collation2Yesterday'
 import lunchYesterday from './reducers/lunchYesterday'
 import dinnerYesterday from './reducers/dinnerYesterday'
+import newMenu from './reducers/newMenu'
 
 const reducers = combineReducers({
     cart: cart,
     timeReducer: timeReducer,
     water: water,
+    newMenu: newMenu,
     breakfastYesterday: breakfastYesterday,
     collation1Yesterday: collation1Yesterday,
     collation2Yesterday: collation2Yesterday,

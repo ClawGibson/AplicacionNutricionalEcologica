@@ -1,15 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, Dimensions, ScrollView, TextInput, TouchableOpacity } from 'react-native'
 //import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native'
+import { useSelector, useDispatch } from 'react-redux'
+import { removeFromNewMenu } from '../../../Redux/actions/newMenu'
 import menusBaseStyles from './menusBaseStyles'
 
-const MenusBase = () => {
+const MenusBase = (props) => {
 
+
+    //const test = props?.route?.params;
+    //console.log(test?.value);
+    const test = useSelector(state => state.newMenu);
     const [name, onChangeName] = useState('');
     const [food, setFood] = useState([]);
-    const [categorySelected, setCategorySelected] = useState('');
     const navigation = useNavigation();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        setFood(test)
+        return () => {
+            setFood([])
+        }
+    }, [])
 
     return (
         <ScrollView>
@@ -25,8 +38,26 @@ const MenusBase = () => {
                 <View style={[menusBaseStyles.boxContainer, { height: Dimensions.get('screen').height * 0.5 }]}>
                     <Text style={menusBaseStyles.title}>Ingredientes</Text>
                     {
-                        food.length > 0
-                            ? <View><Text>Toronjas</Text></View>
+                        food?.length > 0
+                            ? <>
+                                {
+                                    food.map(item => (
+                                        <TouchableOpacity
+                                            onPress={() => dispatch(removeFromNewMenu(item))}
+                                            style={menusBaseStyles.badgeFood}>
+                                            <Text style={menusBaseStyles.badgeFoodText}>
+                                                {item}
+                                            </Text>
+                                        </TouchableOpacity>
+                                    ))
+                                }
+                                <TouchableOpacity
+                                    style={menusBaseStyles.addFood}
+                                    onPress={() => navigation.navigate('GrupoDeAlimentos')}
+                                >
+                                    <Text>Agregar</Text>
+                                </TouchableOpacity>
+                            </>
                             : <TouchableOpacity
                                 style={menusBaseStyles.addFood}
                                 onPress={() => navigation.navigate('GrupoDeAlimentos')}

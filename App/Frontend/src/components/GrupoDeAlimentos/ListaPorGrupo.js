@@ -2,6 +2,8 @@ import React from 'react'
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import { AlphabetList } from "react-native-section-alphabet-list";
 import { useNavigation } from '@react-navigation/native'
+import { useDispatch } from 'react-redux'
+import { addToNewMenu } from '../../Redux/actions/newMenu'
 import styles from './styles'
 
 const equivalentes = require('../../assets/data/equivalentes.json')
@@ -10,6 +12,7 @@ const ListaPorGrupo = ({ route }) => {
 
     const cat = route?.params;
     const navigation = useNavigation();
+    const dispatch = useDispatch();
 
     const returnColor = (cat) => {
         switch (cat) {
@@ -30,6 +33,11 @@ const ListaPorGrupo = ({ route }) => {
         }
     }
 
+    const handleClick = (item) => {
+        dispatch(addToNewMenu(item.value))
+        navigation.navigate('NuevoMenuBase')
+    }
+
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{ backgroundColor: returnColor(cat) }}>
@@ -46,7 +54,7 @@ const ListaPorGrupo = ({ route }) => {
                             }}
                             renderCustomItem={(item) => (
                                 <TouchableOpacity
-                                    onPress={() => navigation.navigate('NuevoMenuBase', item.value)}
+                                    onPress={() => handleClick(item)}
                                 >
                                     <Text style={styles.listText} >{item.value}</Text>
                                 </TouchableOpacity>

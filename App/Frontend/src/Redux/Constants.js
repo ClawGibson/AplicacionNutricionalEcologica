@@ -12,3 +12,6 @@ export const DECREASE_COUNT = 'DECREASE_COUNT'
 
 export const ADD_TIME = 'ADD_TIME'
 export const ADD_WATER = 'ADD_WATER'
+
+export const ADD_TO_NEW_MENU = 'ADD_TO_NEW_MENU'
+export const CLEAR_NEW_MENU = 'CLEAR_NEW_MENU'

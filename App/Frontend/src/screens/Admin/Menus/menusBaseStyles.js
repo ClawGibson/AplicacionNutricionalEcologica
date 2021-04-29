@@ -51,6 +51,18 @@ const styles = StyleSheet.create({
         height: 20,
         alignItems: 'center',
         marginLeft: 15
+    },
+    badgeFood: {
+        backgroundColor: secondary,
+        height: 20,
+        alignItems: 'center',
+        marginLeft: 15,
+        marginRight: 15,
+        marginBottom: 10,
+        borderRadius: 10,
+    },
+    badgeFoodText: {
+        color: '#fff'
     }
 });
 
