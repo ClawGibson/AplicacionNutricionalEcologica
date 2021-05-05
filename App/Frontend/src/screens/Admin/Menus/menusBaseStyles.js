@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     boxContainer: {
-        height: 145,
         width: Dimensions.get('screen').width * .9,
         borderRadius: 25,
         backgroundColor: '#fff',
