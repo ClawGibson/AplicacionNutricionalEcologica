@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 import { secondary, optional1, optional2 } from '../../styles/palette'
 
 const styles = StyleSheet.create({
@@ -51,11 +51,20 @@ const styles = StyleSheet.create({
         backgroundColor: optional1,
         height: 50,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 15
     },
     headerListText: {
         color: '#fff',
-        fontSize: 35
+        fontSize: 25
+    },
+    listContainer: {
+        backgroundColor: '#fff',
+        height: Dimensions.get('screen').height,
+        width: Dimensions.get('screen').width * 0.85,
+        borderRadius: 50,
+        padding: 15,
+        alignSelf: 'center'
     }
 });
 
