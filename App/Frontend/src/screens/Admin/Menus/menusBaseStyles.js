@@ -62,6 +62,28 @@ const styles = StyleSheet.create({
     },
     badgeFoodText: {
         color: '#fff'
+    },
+    selectedTrue: {
+        height: 25,
+        alignSelf: 'center',
+        backgroundColor: '#439776',
+        fontWeight: 'bold',
+        color: '#fff',
+        margin: 2.5,
+        width: Dimensions.get('screen').width * 0.6,
+        textAlign: 'center',
+        textAlignVertical: 'center'
+    },
+    selectedFalse: {
+        height: 25,
+        alignSelf: 'center',
+        backgroundColor: '#C1CF3A',
+        margin: 2.5,
+        borderRadius: 5,
+        color: '#000',
+        width: Dimensions.get('screen').width * 0.6,
+        textAlign: 'center',
+        textAlignVertical: 'center'
     }
 });
 

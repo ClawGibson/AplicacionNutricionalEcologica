@@ -25,6 +25,12 @@ const MenusBase = (props) => {
     const navigation = useNavigation();
     const dispatch = useDispatch();
     const [selectedOption, setSelectedOption2] = useState();
+    const [datos, setDatos] = useState([]);
+    let datosSeparados = [];
+    let alimentos = [{
+        name: '',
+        options: []
+    }];
 
     useEffect(() => {
         setFood(test)
@@ -39,28 +45,8 @@ const MenusBase = (props) => {
 
     function renderOption(option, selected, onSelect, index) {
         const style = selected
-            ? {
-                height: 25,
-                alignSelf: 'center',
-                backgroundColor: '#439776',
-                fontWeight: 'bold',
-                color: '#fff',
-                margin: 2.5,
-                width: Dimensions.get('screen').width * 0.6,
-                textAlign: 'center',
-                textAlignVertical: 'center'
-            }
-            : {
-                height: 25,
-                alignSelf: 'center',
-                backgroundColor: '#C1CF3A',
-                margin: 2.5,
-                borderRadius: 5,
-                color: '#000',
-                width: Dimensions.get('screen').width * 0.6,
-                textAlign: 'center',
-                textAlignVertical: 'center'
-            };
+            ? menusBaseStyles.selectedTrue
+            : menusBaseStyles.selectedFalse;
 
         return (
             <TouchableOpacity onPress={onSelect} key={index}>
@@ -73,6 +59,17 @@ const MenusBase = (props) => {
         return <View>{optionNodes}</View>;
     }
 
+    food.length > 0
+        ? (food.map(i => datosSeparados = i.split('|')))
+        : null
+
+    datos.length > 0
+        ? (
+            alimentos(datos.shift(), { ...datos })
+        )
+        : null
+
+    console.log(alimentos);
     return (
         <ScrollView>
             <View style={menusBaseStyles.mainContainer}>
@@ -91,13 +88,15 @@ const MenusBase = (props) => {
                             ? <>
                                 {
                                     food.map(item => (
-                                        <TouchableOpacity
-                                            onPress={() => dispatch(removeFromNewMenu(item))}
-                                            style={menusBaseStyles.badgeFood}>
-                                            <Text style={menusBaseStyles.badgeFoodText}>
-                                                {item}
-                                            </Text>
-                                        </TouchableOpacity>
+                                        <>
+                                            <TouchableOpacity
+                                                onPress={() => dispatch(removeFromNewMenu(item))}
+                                                style={menusBaseStyles.badgeFood}>
+                                                <Text style={menusBaseStyles.badgeFoodText}>
+                                                    {item}
+                                                </Text>
+                                            </TouchableOpacity>
+                                        </>
                                     ))
                                 }
                                 <TouchableOpacity
