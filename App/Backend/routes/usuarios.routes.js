@@ -1,7 +1,6 @@
 const { Usuarios } = require('../models/Usuarios');
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -78,7 +77,7 @@ router.post('/login', async (req, res) => {
             {
                 userId: usuario.id,
                 isAdmin: usuario.esAdmin
-            }, SECRET, { expiresIn: '1h' }
+            }, SECRET, { expiresIn: '1y' }
         )
         res.status(200).send({ usuario: usuario.email, token: token });
     } else {
