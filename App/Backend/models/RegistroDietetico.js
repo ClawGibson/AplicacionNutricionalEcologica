@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const registroDieteticoSchema = new Schema({
-  idUsuario: { type: Schema.Types.ObjectId, ref: "usuario", required: true },
+  idUsuario: { type: Schema.Types.ObjectId, ref: "Usuarios", required: true },
   agua: { type: Number, required: false },
   ejercicio: [
     {
@@ -13,7 +13,7 @@ const registroDieteticoSchema = new Schema({
     {
       idAlimento: {
         type: Schema.Types.ObjectId,
-        ref: "nombreAlimento",
+        ref: "Alimentos",
         required: false,
       },
       cantidad: { type: String, required: false },
