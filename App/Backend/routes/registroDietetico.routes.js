@@ -3,7 +3,6 @@ const RegistroDietetico = require("../models/RegistroDietetico");
 const Usuarios = require("../models/Usuarios");
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
 
 router.get("/", async (req, res) => {
   const registroDietetico = await RegistroDietetico.find();
