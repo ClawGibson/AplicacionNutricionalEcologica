@@ -54,17 +54,23 @@
    ```sh
    git clone https://github.com/ClawGibson/AplicacionNutricionalEcologica.git
    ```
-2. Install NPM packages
+2. Install NPM packages in both folders
    ```sh
    npm install
    ```
 3. Create your .env file `App\Backend\.env`
    ```.env
-   MONGODB = 'Request the url from the administrator'
-   API_URL = 'Request the url from the administrador'
+   MONGODB = 'Your mongodb url connection'
+   API_URL = 'Your api url'
    PORT =  'Enter your favorite port'
+   DBNAME = 'Your database name'
+   secret = 'Your secret'
    ```
-4. Run
+4. Create your .env file `App\Frontend\.env`
+   ```.env
+   CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/{your amazing clodinary name}/upload'
+   ```
+5. Run
    ```sh
    npm start
    ```
