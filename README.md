@@ -3,7 +3,7 @@
 [![NodeJs](https://img.shields.io/badge/NodeJs-v14.15.1-green.svg)](https://nodejs.org/dist/v14.15.1/docs/api/)
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/app-logo-white.png" alt="Logo" width="150" height="150">
+    <img src="images/app-logo-v3.png" alt="Logo" width="200" height="150">
   </a>
 
   <h3 align="center">DietaSo</h3>
@@ -11,13 +11,24 @@
   <p align="center">
     A nutritional and ecological application with react native.
     <br />
-    <a href="https://www.figma.com/proto/gRJRtkQBGebLt9kRrsC6SV/Mobile-design?node-id=1%3A3&viewport=308%2C200%2C0.141961008310318&scaling=scale-down"><strong>Explore the prototype »</strong></a>
+    <a href="https://www.figma.com/proto/gRJRtkQBGebLt9kRrsC6SV/Mobile-design?page-id=0%3A1&node-id=1%3A3&viewport=283%2C83%2C0.07182593643665314&scaling=scale-down"><strong>Explore the prototype »</strong></a>
     <br />
     <br />
   </p>
 </p>
 
-
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#components-examples">Examples of components</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
 ### Built With
 
@@ -58,6 +69,9 @@
    npm start
    ```
 
+## Components examples
+
+<a href="https://github.com/ClawGibson/AplicacionNutricionalEcologica/tree/main/images/Components%20Examples"> Tap here to explore the examples of the components</a>
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -84,3 +98,4 @@ Project Link: Pending
 ## Acknowledgements
 * [Octavio Bautista](https://github.com/OctavioBautista)
 * [Tulio Salazar](https://github.com/TulioA)
+* [Jorge Alfredo](https://github.com/jadelagarza)
