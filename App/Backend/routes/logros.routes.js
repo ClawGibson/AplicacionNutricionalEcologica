@@ -58,12 +58,18 @@ router.put("/:id", async (req, res) => {
         message: "El logro que está buscando no existe :c",
       });
 
-  let logroActualizado = await Logros.findByIdAndUpdate(req.params.id, {
-    logro: req.body.logro,
-    fotoLogro: req.body.fotoLogro,
-    puntosNecesarios: req.body.puntosNecesarios,
-    logroRequerido: req.body.logroRequerido,
-  });
+  let logroActualizado = await Logros.findByIdAndUpdate(
+    req.params.id,
+    {
+      logro: req.body.logro,
+      fotoLogro: req.body.fotoLogro,
+      puntosNecesarios: req.body.puntosNecesarios,
+      logroRequerido: req.body.logroRequerido,
+    },
+    {
+      new: true,
+    }
+  );
 
   logroActualizado = await logroActualizado.save();
 
