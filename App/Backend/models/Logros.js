@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose');
 
 const logrosSchema = new Schema({
   logro: { type: String, required: true },
@@ -6,17 +6,17 @@ const logrosSchema = new Schema({
   puntosNecesarios: { type: Number, required: true },
   logroRequerido: {
     type: Schema.Types.ObjectId,
-    ref: "Logros",
+    ref: 'Logros',
     required: false,
   },
 });
 
-logrosSchema.virtual("id").get(() => {
+logrosSchema.virtual('id').get(() => {
   return this._id.toHexString();
 });
 
-logrosSchema.set("toJSON", {
+logrosSchema.set('toJSON', {
   virtuals: true,
 });
 
-module.exports = model("Logros", logrosSchema);
+module.exports = model('Logros', logrosSchema);

@@ -1,8 +1,8 @@
-const Logros = require("../models/Logros");
-const express = require("express");
-const router = expres.Router();
+const Logros = require('../models/Logros');
+const express = require('express');
+const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   const listaLogros = await Logros.find();
 
   !listaLogros
@@ -10,28 +10,28 @@ router.get("/", async (req, res) => {
     : res.send(listaLogros);
 });
 
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   const logroInd = await Logros.findById(req.params.id);
 
   !logroInd
     ? res.status(500).json({
         success: false,
-        message: "No se encontró el logro que buscaba",
+        message: 'No se encontró el logro que buscaba',
       })
     : res.send(logroInd);
 });
 
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   const nameExiste = await Logros.findOne(req.body.logro);
   nameExiste
     ? res
         .status(500)
-        .json({ succes: false, message: "El nombre de este logro ya existe" })
+        .json({ succes: false, message: 'El nombre de este logro ya existe' })
     : null;
 
   const logroExiste = await Logros.findById(req.body.logroRequerido);
   logroExiste
-    ? res.status(500).json({ succes: false, message: "Este logro ya existe" })
+    ? res.status(500).json({ succes: false, message: 'Este logro ya existe' })
     : null;
 
   const nuevoLogro = new Logro({
@@ -44,18 +44,18 @@ router.post("/", async (req, res) => {
   nuevoLogro = await nuevoLogro.save();
 
   !nuevoLogro
-    ? res.status(400).send("No se pudo crear el nuevo logro")
+    ? res.status(400).send('No se pudo crear el nuevo logro')
     : res.send(nuevoLogro);
 });
 
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   const logroExiste = await Logros.findById(req.params.id);
 
   logroExiste
     ? null
     : res.status(500).json({
         succes: false,
-        message: "El logro que está buscando no existe :c",
+        message: 'El logro que está buscando no existe :c',
       });
 
   let logroActualizado = await Logros.findByIdAndUpdate(
@@ -74,20 +74,20 @@ router.put("/:id", async (req, res) => {
   logroActualizado = await logroActualizado.save();
 
   !logroActualizado
-    ? res.status(400).send("No se pudo actualizar el logro :c")
+    ? res.status(400).send('No se pudo actualizar el logro :c')
     : res.send(logroActualizado);
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   if (!mongoose.isValidObjectId(req.params.id))
-    return res.status(400).send("El ID del logro no es válido.");
+    return res.status(400).send('El ID del logro no es válido.');
 
   const logro = await Logros.findByIdAndRemove(req.params.id);
 
   if (!logro)
-    return res.status(400).send("No se encontró el logro a eliminar :c");
+    return res.status(400).send('No se encontró el logro a eliminar :c');
 
-  res.status(200).send("Logro eliminado :D!");
+  res.status(200).send('Logro eliminado :D!');
 });
 
 module.exports = router;

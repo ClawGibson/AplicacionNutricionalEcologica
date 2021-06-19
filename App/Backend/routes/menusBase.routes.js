@@ -12,16 +12,14 @@ router.get("/", async (req, res) => {
   res.send(ingredientesList);
 });
 
-router.get("/:id", async (req, req) => {
+router.get("/:id", async (req, res) => {
   const baseMenu = await MenusBase.findById(req.params.id);
 
   !baseMenu
-    ? res
-        .status(500)
-        .json({
-          succes: false,
-          message: "No se encontró el menú base que buscaba :c",
-        })
+    ? res.status(500).json({
+        succes: false,
+        message: "No se encontró el menú base que buscaba :c",
+      })
     : res.send(baseMenu);
 });
 
